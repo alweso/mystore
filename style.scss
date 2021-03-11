@@ -1,0 +1,197 @@
+/*
+Theme Name: Personal Blog
+Theme URI: http://www.pascaru.pl/personalblog
+Author: Aleksandra Pascaru
+Author URI: http://www.pascaru.pl
+License URI: http://www.pascaru.pl/licence
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: personal-blog
+*/
+
+/*bootstrap override
+*/
+//
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+}
+
+/* ---------------------------------- variables ------------------------------------- */
+
+$base-color: #393939;
+$base-color-darker: #2f6b71;
+$secondary-color: #142f56;
+$medium-grey: #5f5f5f;
+$light-grey: #b6b6b6;
+$white: #ffffff;
+/* -------------------- general -------------------------------- */
+body {
+  font-size: 14px;
+  font-family: "Roboto";
+  line-height: 28px;
+  background:#f4f4f4;
+}
+
+h1,h2,h3,h4,h5,h6 {font-family: "Mulish";font-weight:900;color: $base-color;}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+
+a {color: $base-color}
+
+// h4 a {color: #364b62}
+
+span {}
+b {}
+strong {}
+label {}
+hr {margin: 3em 8em;}
+blockquote {margin: 1.5em 0;
+  position:relative;
+  font-style: italic;
+  padding-left:42px;
+
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f10d";
+    font-size: 30px;
+    font-style: normal;
+    color: $base-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }}
+  ul {}
+  li {}
+  ol {}
+  input[type=search], input[type=text], input[type=password], textarea, select, option {box-sizing: border-box;border: 1px solid $light-grey;border-radius:2px;box-shadow:none;    height: 37px;
+    padding-left: 10px;}
+    button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
+    button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
+    button {position:relative;overflow:hidden;}
+    button:before {
+      content: "";
+      display: block;
+      background:white;
+      height:150px;
+      width:150px;
+      left:-150px;
+      top:-200px;
+      position:absolute;
+      transform:scale(1);
+      border-radius:100%;
+    }
+
+    button:hover:before {
+      background:rgba(255,255,255,0.15);
+      transform:scale(4);
+      transition: transform .3s ease-out;
+    }
+
+
+
+    .wp-caption, .wp-caption-text,  .screen-reader-text, .gallery-caption, .bypostauthor {display: block;}
+    .alignright {float: right;margin-left: 20px;margin-bottom:10px;}
+    .alignleft {float: left;margin-right: 20px;margin-bottom:10px;}
+    .aligncenter {margin: 0 auto;}
+
+
+
+    /* --------------------------- comment-form --------------------------- */
+
+    .comment-form {
+      &-comment {
+        label {
+          display: block;
+        }
+        textarea {
+          width: 100%;
+        }
+      }
+    }
+
+    /* ------------------------------- Wordpress elements ---------------------------------------- */
+
+    .entry-title {margin-bottom: 20px;}
+
+    .thumbnail {
+      position: relative;
+      background: $white;
+      padding: 7px;
+    }
+// 
+//
+// .wp-widget-categories ul {
+//   list-style-type: none;
+//   padding: 0;
+// }
+.hidden {display: none !important;}
