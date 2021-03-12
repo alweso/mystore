@@ -8,18 +8,7 @@
 */
 
 get_header(); ?>
- <?php
-  $categories = get_categories();
-  foreach ($categories as $cat) {
-        echo '<div class="category-color-box" style="height:0;width:0;overflow:hidden;opacity:0;">';
-        // echo '<h1 class="acf-category-name">'.$cat->name.'</h1>';
-        echo '<h1 class="acf-category-id">category-'.$cat->term_id.'</h1>';
-        echo '<h1 class="acf-category-color">'.get_field('category_colors', $cat).'</h1>';
-        //echo '<br />';
 
-        echo '</div>';
-    }
-?>
 <div class="">
       <?php
 
