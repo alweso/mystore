@@ -112,22 +112,6 @@ add_theme_support(
     )
 );
 
-function mytheme_add_woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-  // https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
-  // add_theme_support( 'wc-product-gallery-zoom' );
-  // add_theme_support( 'wc-product-gallery-lightbox' );
-  // add_theme_support( 'wc-product-gallery-slider' );
-
-  remove_theme_support( 'wc-product-gallery-zoom' );
-  // remove_theme_support( 'wc-product-gallery-lightbox' );
-  // remove_theme_support( 'wc-product-gallery-slider' );
-
-}
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
-
-
-
 if ( ! isset( $content_width ) ) $content_width = 1300;
 
 
@@ -158,18 +142,9 @@ function wpdocs_theme_setup() {
 
 set_post_thumbnail_size(850, 560, ['center', 'center']);
     // Add featured image sizes
-    add_image_size( 'hero', 2880, 1500 );
-    add_image_size( 'landscape-post-image', 1200, 900, true );
-    add_image_size( 'small-horizontal', 150, 100, true ); // width, height, crop
-    add_image_size( 'small-thumbnail', 150, 150, true ); // width, height, crop
-    add_image_size( 'medium-horizontal', 420, 315, true ); // width, height, crop
-    add_image_size( 'medium-thumbnail', 320, 320, true ); // width, height, crop
-    add_image_size( 'large-horizontal', 800, 600, true ); // width, height, crop
-    add_image_size( 'featured-small', 700, 460, true, true ); // width, height, crop
-    add_image_size( 'featured-gallery',600, 400, true ); // width, height, crop
+    
 
 }
-
 
 /**
  * Registers an editor stylesheet for the theme.
@@ -348,3 +323,10 @@ function personal_blog_register_required_plugins() {
  *
  * @return array
  */
+
+ /**
+  * Load WooCommerce compatibility file.
+  */
+ if (class_exists('WooCommerce')) {
+     require get_template_directory() . '/inc/woocommerce.php';
+ }
