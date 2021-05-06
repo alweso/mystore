@@ -10,12 +10,9 @@
 get_header(); ?>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8">
+		<div class="col-8">
 			<header class="page-header">
 				<?php the_archive_title( '<h1 class="page-title mt-4 mb-4">', '</h1>' ); ?>
-				<h5>
-					<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-				</h5>
 			</header><!-- .page-header -->
 			<div class="row">
 				<?php

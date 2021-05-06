@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Blog grid 4
+* Template Name: Blog grid 2
 * Template Post Type: page
 * @package WordPress
 * @subpackage personal-blog
