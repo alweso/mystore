@@ -142,7 +142,7 @@ function wpdocs_theme_setup() {
 
 set_post_thumbnail_size(850, 560, ['center', 'center']);
     // Add featured image sizes
-    
+
 
 }
 
@@ -330,3 +330,29 @@ function personal_blog_register_required_plugins() {
  if (class_exists('WooCommerce')) {
      require get_template_directory() . '/inc/woocommerce.php';
  }
+
+ add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects( $items, $args ) {
+
+	// loop
+	foreach( $items as &$item ) {
+
+		// vars
+		$badge_text = get_field('badge_text', $item);
+
+
+		// append icon
+		if( $badge_text ) {
+
+			$item->title .= '<span style="display:inline-block;margin-left:5px;color:white;padding:0 7px;background-color:' . get_field('badge_color', $item) . '">'. $badge_text .'</span>';
+
+		}
+
+	}
+
+
+	// return
+	return $items;
+
+}
