@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-8">
-			<header class="page-header">
+			<header class="page-header">fsddfsdfsfddfas
 				<?php the_archive_title( '<h1 class="page-title mt-4 mb-4">', '</h1>' ); ?>
 			</header><!-- .page-header -->
 			<div class="row">

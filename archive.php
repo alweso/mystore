@@ -1,27 +1,25 @@
-
-<?php
-get_header();
-
-?>
-<section id="main-content" class="blog main-container" role="main">
-	<div class="container">
-     <div class="row">
-       <!-- <?php get_sidebar();  ?> -->
-			<div class="col-8">
-				<?php if ( have_posts() ) : ?>
-
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'template-parts/blog/contents/content', get_post_format() ); ?>
-					<?php endwhile; ?>
-
-					<h2><?php the_posts_pagination(); ?></h2>
-				<?php else : ?>
-
-				<?php endif; ?>
-			</div><!-- .col-md-8 -->
-
-         <?php get_sidebar();  ?>
-		</div><!-- .row -->
-	</div><!-- .container -->
-</section><!-- #main-content -->
+<?php get_header(); ?>
+<div class="container">
+  <div class="row">
+    <?php get_template_part( 'template-parts/archive-post/article-header'); ?>
+    <div class="col-12">
+      <div class="row">
+        <?php
+        $args = array(
+          'post_type' => 'post',
+        );
+        $post_query = new WP_Query($args);
+        if($post_query->have_posts() ) {
+          while($post_query->have_posts() ) {
+            $post_query->the_post();
+            ?>
+            <div class="col-4">
+              <?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
+            </div>
+            <?php
+          }
+        }?>
+      </div>
+    </div>
+  </div>
 <?php get_footer(); ?>
