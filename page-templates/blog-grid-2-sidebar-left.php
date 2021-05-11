@@ -10,9 +10,7 @@
 <div class="container">
   <div class="row">
     <?php get_template_part( 'template-parts/archive-post/article-header'); ?>
-    <div class="col-3">
-      <?php get_sidebar(); ?>
-    </div>
+    <?php get_sidebar(); ?>
     <div class="col-9">
       <div class="row">
         <?php

@@ -30,8 +30,6 @@
         }?>
       </div>
     </div>
-    <div class="col-3">
-      <?php get_sidebar(); ?>
-    </div>
+    <?php get_sidebar(); ?>
   </div>
 <?php get_footer(); ?>
