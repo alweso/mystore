@@ -10,10 +10,10 @@
 <?php get_header(); ?>
 <div class="container">
   <div class="row">
-    <?php get_template_part( 'template-parts/archive-post/blog-header'); ?>
+    <?php get_template_part( 'template-parts/blog-header'); ?>
     <?php get_sidebar(); ?>
     <div class="col-9">
-      <?php get_template_part( 'template-parts/archive-post/blog-columns'); ?>
+      <?php get_template_part( 'template-parts/blog-columns'); ?>
     </div>
   </div>
 <?php get_footer(); ?>

@@ -32,7 +32,7 @@ get_header(); ?>
 					<div class="row">
 						<?php while( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 							<div class="col-3">
-								<?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
+								<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 							</div>
 							<?php
 						endwhile; ?>

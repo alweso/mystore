@@ -12,7 +12,7 @@
 				the_post();
 				?>
 				<div class="col-12 col-sm-3">
-					<?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 				</div>
 				<?php
 // End the loop.
@@ -21,7 +21,7 @@
 		</div>
 		<?php
 	else :
-		get_template_part( 'template-parts/archive-post/content', 'none' );
+		get_template_part( 'template-parts/content', 'none' );
 	endif;
 	?>
 	<h2><?php the_posts_pagination(); ?></h2>

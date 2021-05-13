@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container">
   <div class="row">
-    <?php get_template_part( 'template-parts/archive-post/blog-header'); ?>
+    <?php get_template_part( 'template-parts/blog-header'); ?>
     <div class="col-12">
       <div class="row">
         <?php
@@ -14,7 +14,7 @@
             $post_query->the_post();
             ?>
             <div class="col-4">
-              <?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
+              <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
             </div>
             <?php
           }
