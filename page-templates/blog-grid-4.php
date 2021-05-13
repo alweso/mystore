@@ -10,25 +10,9 @@
 <?php get_header(); ?>
 <div class="container">
   <div class="row">
-    <?php get_template_part( 'template-parts/archive-post/article-header'); ?>
+    <?php get_template_part( 'template-parts/archive-post/blog-header'); ?>
     <div class="col-12">
-      <div class="row">
-        <?php
-        $args = array(
-          'post_type' => 'post',
-        );
-        $post_query = new WP_Query($args);
-        if($post_query->have_posts() ) {
-          while($post_query->have_posts() ) {
-            $post_query->the_post();
-            ?>
-            <div class="col-3">
-              <?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
-            </div>
-            <?php
-          }
-        }?>
-      </div>
+      <?php get_template_part( 'template-parts/archive-post/blog-columns'); ?>
     </div>
   </div>
 <?php get_footer(); ?>

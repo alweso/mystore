@@ -16,11 +16,17 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">
-      <?php the_custom_logo() ?>
-    </a>
-    <div>
-      <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <?php the_custom_logo() ?>
+        </a>
+        <div>
+          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </div>
+</div>

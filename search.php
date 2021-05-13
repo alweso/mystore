@@ -11,7 +11,7 @@
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<div class="col-xs-12 col-sm-3">
+				<div class="col-12 col-sm-3">
 					<?php get_template_part( 'template-parts/archive-post/content', get_post_format() ); ?>
 				</div>
 				<?php
@@ -21,7 +21,7 @@
 		</div>
 		<?php
 	else :
-		get_template_part( 'template-parts/archive-post/content', 'none' ); 
+		get_template_part( 'template-parts/archive-post/content', 'none' );
 	endif;
 	?>
 	<h2><?php the_posts_pagination(); ?></h2>

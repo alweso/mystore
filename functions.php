@@ -98,7 +98,7 @@ function bootstrapstarter_widgets_init() {
 
 }
 add_action( 'widgets_init', 'bootstrapstarter_widgets_init' );
-add_theme_support( 'post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
+add_theme_support( 'post-formats', array('standard', 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
 add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) ); // Posts and Pages
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -140,7 +140,7 @@ add_action( 'after_setup_theme', 'themename_custom_header_setup' );
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
 
-set_post_thumbnail_size(850, 560, ['center', 'center']);
+set_post_thumbnail_size(1200, 628, true);
     // Add featured image sizes
 
 
