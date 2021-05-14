@@ -8,6 +8,7 @@
 */
 ?>
 <?php get_header(); ?>
+<?php storezz_breadcrumbs(); ?>
 <main  id="site-content" class="container" >
 	<div class="row">
 		<?php

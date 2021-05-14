@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-8">
-			<header class="page-header">fsddfsdfsfddfas
+			<header class="page-header">
 				<?php the_archive_title( '<h1 class="page-title mt-4 mb-4">', '</h1>' ); ?>
 			</header><!-- .page-header -->
 			<div class="row">
@@ -32,7 +32,7 @@ get_header(); ?>
 					<div class="row">
 						<?php while( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 							<div class="col-3">
-								<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+								<?php get_template_part( 'template-parts/blog/archive/content', get_post_format() ); ?>
 							</div>
 							<?php
 						endwhile; ?>

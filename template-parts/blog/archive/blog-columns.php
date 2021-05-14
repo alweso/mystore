@@ -25,6 +25,7 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
       </div>
       <?php
     }
+    get_template_part( 'template-parts/blog/pagination');
   } else { ?>
     <div class="col-12">
     <?php get_template_part( 'template-parts/blog/archive/content-none'); ?>
