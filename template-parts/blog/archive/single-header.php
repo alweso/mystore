@@ -14,6 +14,8 @@ if ( is_single() ) {
     </a>
     <span>by <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></span>
     <?php the_date( 'F j, Y' ); ?>
+    <?php if (has_category() ) { ?>
     <span><?php the_category() ?></span>
+  <?php } ?>
   </div>
 </header>

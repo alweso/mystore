@@ -8,20 +8,22 @@
 */
 ?>
 <?php get_header(); ?>
-<div class="container-fluid">
+<main  id="site-content" class="container" >
 	<div class="row">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) : the_post();
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class('col-12'); ?>>
-				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+				<?php get_template_part( 'template-parts/blog/single/content', get_post_type() ); ?>
 			</article><!-- #post-<?php the_ID(); ?> -->
 			<?php
 		endwhile;
-	}
-	?>
-</div><!-- /.blog-main -->
-
-</div> <!-- / .row -->
+	} else { ?>
+		<div class="col-12">
+		<?php get_template_part( 'template-parts/single/archive/content-none'); ?>
+	</div>
+	<?php } ?>
+</div>
+</main>
 <?php get_footer(); ?>

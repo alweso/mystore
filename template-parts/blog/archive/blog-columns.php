@@ -5,6 +5,8 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
   $columns = 'col-4';
 } elseif (is_page_template( 'page-templates/blog-grid-4.php' )) {
   $columns = 'col-3';
+} elseif (is_page_template( 'page-templates/blog-grid-1-sidebar-left.php' ) || is_page_template( 'page-templates/blog-grid-1-sidebar-right.php' )) {
+  $columns = 'col-12';
 }
 
 ?>
@@ -19,13 +21,13 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
       $post_query->the_post();
       ?>
       <div class=<?php echo $columns ?>>
-        <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+        <?php get_template_part( 'template-parts/blog/archive/content', get_post_format() ); ?>
       </div>
       <?php
     }
   } else { ?>
     <div class="col-12">
-    <?php get_template_part( 'template-parts/content-none'); ?>
+    <?php get_template_part( 'template-parts/blog/archive/content-none'); ?>
   </div>
   <?php } ?>
 </div>

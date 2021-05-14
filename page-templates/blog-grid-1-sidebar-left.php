@@ -1,12 +1,11 @@
 <?php
 /**
-* Template Name: Blog grid 3 sidebar left
+* Template Name: Blog grid 1 sidebar left
 * Template Post Type: page
 * @package WordPress
 * @subpackage personal-blog
 * @since personal-blog 1.0
 */ ?>
-
 <?php get_header(); ?>
 <main  id="site-content" class="container" >
   <div class="row">

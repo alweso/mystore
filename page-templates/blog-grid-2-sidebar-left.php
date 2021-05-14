@@ -7,12 +7,13 @@
 * @since personal-blog 1.0
 */ ?>
 <?php get_header(); ?>
-<div class="container">
+<main  id="site-content" class="container" >
   <div class="row">
-    <?php get_template_part( 'template-parts/blog-header'); ?>
+    <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
     <?php get_sidebar(); ?>
     <div class="col-9">
-        <?php get_template_part( 'template-parts/blog-columns'); ?>
+      <?php get_template_part( 'template-parts/blog/archive/blog-columns'); ?>
     </div>
   </div>
+</main>
 <?php get_footer(); ?>
