@@ -21,6 +21,7 @@
 			</article><!-- #post-<?php the_ID(); ?> -->
 			<?php
 		endwhile;
+		
 	} else { ?>
 		<div class="col-9">
 		<?php get_template_part( 'template-parts/single/archive/content-none'); ?>

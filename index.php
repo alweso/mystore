@@ -11,10 +11,14 @@ get_header(); ?>
 <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
 <main  id="site-content" class="container" >
   <div class="row">
-    <div class="col-9">
-      <?php get_template_part( 'template-parts/blog/archive/blog-columns'); ?>
-    </div>
-    <?php get_sidebar(); ?>
+  <?php  if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post();
+		//
+		// Post Content here
+		//
+	} // end while
+} // end if ?>
   </div>
 </main>
 <?php get_footer(); ?>

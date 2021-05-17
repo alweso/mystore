@@ -496,7 +496,7 @@ function storezz_breadcrumbs() {
                 }
 
                 // Display parent pages
-                echo $parents;
+                echo esc_html__($parents);
 
                 // Current page
                 echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></li>';
@@ -587,3 +587,9 @@ function storezz_breadcrumbs() {
     }
 
 }
+
+
+/**
+ * Custom Metabox
+ */
+require get_template_directory() . '/inc/metabox.php';
