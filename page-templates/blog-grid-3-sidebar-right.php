@@ -8,6 +8,7 @@
 */ ?>
 
 <?php get_header(); ?>
+<?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
 <main  id="site-content" class="container" >
   <div class="row">
     <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>

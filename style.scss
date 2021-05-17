@@ -198,3 +198,11 @@ blockquote {margin: 1.5em 0;
 //   padding: 0;
 // }
 .hidden {display: none !important;}
+
+/* ------------------------ Breadcrumbs ------------------------------------------- */
+
+.breadcrumbs {
+  li {
+    display: inline-block;
+  }
+}

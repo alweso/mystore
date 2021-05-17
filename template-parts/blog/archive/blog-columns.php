@@ -15,16 +15,17 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
   $args = array(
     'post_type' => 'post',
   );
-  $post_query = new WP_Query($args);
-  if($post_query->have_posts()) {
-    while($post_query->have_posts() ) {
-      $post_query->the_post();
+  $query = new WP_Query($args);
+  if($query->have_posts()) {
+    while($query->have_posts() ) {
+      $query->the_post();
       ?>
       <div class=<?php echo $columns ?>>
         <?php get_template_part( 'template-parts/blog/archive/content', get_post_format() ); ?>
       </div>
       <?php
     }
+    // wp_reset_postdata();
     get_template_part( 'template-parts/blog/pagination');
   } else { ?>
     <div class="col-12">
