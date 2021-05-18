@@ -4,7 +4,7 @@
  */
 function storezz_sidebar_layout_meta_box() {
 
-    $screens = array('page');
+    $screens = array('post', 'page', 'home');
 
     add_meta_box(
             'storezz_sidebar_layout', esc_html__('Sidebar Layout', 'meta-store'), 'storezz_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
@@ -103,5 +103,4 @@ function storezz_sidebar_layout_save_meta_box($post_id) {
 }
 
 add_action('save_post', 'storezz_sidebar_layout_save_meta_box');
-
-?>
+ ?>

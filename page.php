@@ -1,31 +1,31 @@
 <?php
 /**
-* Template Name: Just a  Page
-* Template Post Type: page
-* @package WordPress
-* @subpackage personal-blog
-* @since personal-blog 1.0
-*/
+ * The template for displaying all pages
+ *
+ * @package Meta Store
+ */
+get_header();
+?>
 
-get_header(); ?>
+<div id="ms-primary" class="ms-content-area">
 
-<div class="">
-      <?php
+    <?php
+    while (have_posts()) :
+        the_post();
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+        get_template_part('template-parts/content', 'page'); ?>
+        <h1><?php echo get_post_meta(get_the_ID(), 'meta_store_sidebar_layout')[0]; ?></h1>
+        <?php echo '<pre>'; var_dump(get_post_meta(get_the_ID())); echo '</pre>';
+        // If comments are open or we have at least one comment, load up the comment template.
+        if (comments_open() || get_comments_number()) :
+            comments_template();
+        endif;
 
-				the_content();
+    endwhile; // End of the loop.
+    ?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+</div>
 
-			endwhile; // End of the loop.
-			?>
-
-
-</div> <!-- / .container -->
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
