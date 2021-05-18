@@ -11,6 +11,7 @@ get_header();
   <div class="row">
     <div class="col-9">
       <div class="row">
+        <h1>home.php</h1>
         <?php if (have_posts()) : ?>
           <?php
           /* Start the Loop */
@@ -25,9 +26,15 @@ get_header();
             <div class="col-4">
               <?php  get_template_part('template-parts/content', get_post_type()); ?>
             </div>
-          <?php endwhile;
-          the_posts_navigation();
+          <?php endwhile; ?>
+          <div class="col-12">
+            <?php the_posts_pagination(array(
+                'prev_text' => '<span class="arrow_carrot-left"></span>',
+                'next_text' => '<span class="arrow_carrot-right"></span>'
+            )); ?>
+          </div>
 
+<?php 
           else :
 
             get_template_part('template-parts/content', 'none');
