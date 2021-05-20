@@ -539,6 +539,8 @@ function storezz_breadcrumbs() {
             // Day display
             echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
 
+        } else if (is_home()) {
+          echo '<li class="item-current"><strong>' . 'Blog' . '</strong></li>';
         } else if ( is_month() ) {
 
             // Month Archive
@@ -590,6 +592,7 @@ function storezz_breadcrumbs() {
 
 
 /**
- * Custom Metabox
+ * Custom Metaboxes
  */
-require get_template_directory() . '/inc/metabox.php';
+require get_template_directory() . '/inc/blog_sidebar_layout.php';
+require get_template_directory() . '/inc/blog_column_layout.php';

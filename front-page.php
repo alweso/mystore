@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<div id="ms-primary" class="ms-content-area">
+<main id="storezz-primary">
 
     <?php
     while (have_posts()) :
@@ -22,7 +22,7 @@ get_header();
     endwhile; // End of the loop.
     ?>
 
-</div>
+</main>
 
 <?php
 get_footer();

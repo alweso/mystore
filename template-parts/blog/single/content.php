@@ -1,4 +1,4 @@
-<article class="post-wrap post-wrap--standard">
+<!-- <article class="post-wrap post-wrap--standard"> -->
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php get_template_part( 'template-parts/blog/single/post-media'); ?>
 	<?php endif; ?>
@@ -12,4 +12,4 @@
 		<?php	comments_template(); ?>
 		</div>
 		<?php } ?>
-</article>
+<!-- </article> -->

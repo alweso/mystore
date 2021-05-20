@@ -4,10 +4,10 @@
  */
 function storezz_sidebar_layout_meta_box() {
 
-    $screens = array('post', 'page', 'home');
+    $screens = array('post', 'page');
 
     add_meta_box(
-            'storezz_sidebar_layout', esc_html__('Sidebar Layout', 'meta-store'), 'storezz_sidebar_layout_meta_box_callback', $screens, 'side', 'high'
+            'storezz_sidebar_layout', esc_html__('Sidebar Layout', 'meta-store'), 'storezz_sidebar_layout_meta_box_callback', $screens, 'side', 'low'
     );
 }
 
@@ -30,32 +30,19 @@ function storezz_sidebar_layout_meta_box_callback($post) {
     $storezz_sidebar_layout = get_post_meta($post->ID, 'storezz_sidebar_layout', true);
 
     if (!$storezz_sidebar_layout) {
-        $storezz_sidebar_layout = 'default';
+        $storezz_sidebar_layout = 'right-sidebar';
     }
 
-    echo '<label>';
-    echo '<input type="radio" name="storezz_sidebar_layout" value="default" ' . checked($storezz_sidebar_layout, 'default', false) . ' />';
-    // echo '<img src="' . esc_url(META_STORE_OPT_DIR_URI_IMAGES) . 'sidebar-layouts/default-sidebar.jpg"/>';
-    echo '</label>';
-
-    echo '<label>';
+    echo '<label>right sidebar';
     echo '<input type="radio" name="storezz_sidebar_layout" value="right-sidebar" ' . checked($storezz_sidebar_layout, 'right-sidebar', false) . ' />';
-    // echo '<img src="' . esc_url(META_STORE_OPT_DIR_URI_IMAGES) . 'sidebar-layouts/right-sidebar.jpg"/>';
     echo '</label>';
 
-    echo '<label>';
+    echo '<label>left sidebar';
     echo '<input type="radio" name="storezz_sidebar_layout" value="left-sidebar" ' . checked($storezz_sidebar_layout, 'left-sidebar', false) . ' />';
-    // echo '<img src="' . esc_url(META_STORE_OPT_DIR_URI_IMAGES) . 'sidebar-layouts/left-sidebar.jpg"/>';
     echo '</label>';
 
-    echo '<label>';
+    echo '<label>no sidebar';
     echo '<input type="radio" name="storezz_sidebar_layout" value="no-sidebar" ' . checked($storezz_sidebar_layout, 'no-sidebar', false) . ' />';
-    // echo '<img src="' . esc_url(META_STORE_OPT_DIR_URI_IMAGES) . 'sidebar-layouts/no-sidebar.jpg"/>';
-    echo '</label>';
-
-    echo '<label>';
-    echo '<input type="radio" name="storezz_sidebar_layout" value="no-sidebar-narrow" ' . checked($storezz_sidebar_layout, 'no-sidebar-narrow', false) . ' />';
-    // echo '<img src="' . esc_url(META_STORE_OPT_DIR_URI_IMAGES) . 'sidebar-layouts/no-sidebar-narrow.jpg"/>';
     echo '</label>';
 }
 
