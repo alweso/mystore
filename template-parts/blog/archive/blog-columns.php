@@ -14,6 +14,8 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
   <?php
   $args = array(
     'post_type' => 'post',
+    'posts_per_page' => 12,
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
   );
   $query = new WP_Query($args);
   if($query->have_posts()) {
@@ -26,10 +28,18 @@ if (is_page_template( 'page-templates/blog-grid-2.php' ) || is_page_template( 'p
       <?php
     }
     // wp_reset_postdata();
-    get_template_part( 'template-parts/blog/pagination');
   } else { ?>
     <div class="col-12">
     <?php get_template_part( 'template-parts/blog/archive/content-none'); ?>
   </div>
-  <?php } ?>
+  <?php }
+  $big = 999999999; // need an unlikely integer
+ echo paginate_links( array(
+    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+    'format' => '?paged=%#%',
+    'current' => max( 1, get_query_var('paged') ),
+    'total' => $query->max_num_pages
+) );
+
+wp_reset_postdata(); ?>
 </div>
