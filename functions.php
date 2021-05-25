@@ -49,6 +49,9 @@ add_action( 'after_setup_theme', 'bootstrapstarter_wp_setup' );
 
 // add_action( 'init', 'bootstrapstarter_register_menu' );
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
+
 function bootstrapstarter_widgets_init() {
 
     register_sidebar( array(
@@ -358,3 +361,21 @@ function my_wp_nav_menu_objects( $items, $args ) {
 }
 
 require get_template_directory() . '/inc/breadcrumbs.php';
+
+
+/**
+ * Show cart contents / total Ajax
+ */
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<?php
+	$fragments['a.cart-customlocation'] = ob_get_clean();
+	return $fragments;
+}

@@ -1,12 +1,4 @@
 <?php
-/**
-* Template Name: Index Page
-* Template Post Type: page
-* @package WordPress
-* @subpackage personal-blog
-* @since personal-blog 1.0
-*/
-
 get_header(); ?>
 <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
 <main  id="site-content" class="container" >
@@ -14,6 +6,7 @@ get_header(); ?>
     <div class="col-8">
       <?php get_template_part( 'template-parts/blog/archive/blog-columns'); ?>
     </div>
+    <?php get_sidebar(); ?>
   </div>
 </main>
 <?php get_footer(); ?>

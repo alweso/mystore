@@ -11,9 +11,8 @@
 <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
 <main  id="site-content" class="container" >
   <div class="row">
-    <?php get_template_part( 'template-parts/blog/archive/blog-header'); ?>
     <?php get_sidebar(); ?>
-    <div class="col-9">
+    <div class="col-8">
       <?php get_template_part( 'template-parts/blog/archive/blog-columns'); ?>
     </div>
   </div>

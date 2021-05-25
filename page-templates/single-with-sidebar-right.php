@@ -16,13 +16,13 @@
 		if ( have_posts()) {
 			while ( have_posts() ) : the_post();
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class('col-9'); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('col-8'); ?>>
 				<?php get_template_part( 'template-parts/blog/single/content', get_post_type() ); ?>
 			</article><!-- #post-<?php the_ID(); ?> -->
 			<?php
 		endwhile;
 	} else { ?>
-		<div class="col-9">
+		<div class="col-8">
 		<?php get_template_part( 'template-parts/single/archive/content-none'); ?>
 	</div>
 	<?php }
