@@ -8,7 +8,7 @@
 */
 
 get_header(); ?>
-
+<?php echo get_post_meta(get_the_ID(), 'storezz_column_layout')[0]; ?>
 <div class="">
       <?php
 

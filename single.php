@@ -2,6 +2,7 @@
 
 <div class="container post-container">
 	<div class="row">
+		<?php echo get_page_template_slug(); ?>
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) : the_post();

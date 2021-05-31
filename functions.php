@@ -51,6 +51,7 @@ add_action( 'after_setup_theme', 'bootstrapstarter_wp_setup' );
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
+require_once get_template_directory() . '/inc/headers.php';
 
 function bootstrapstarter_widgets_init() {
 

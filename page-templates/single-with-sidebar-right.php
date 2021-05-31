@@ -8,9 +8,11 @@
 */
 ?>
 
+>
+
 <?php get_header(); ?>
 <?php storezz_breadcrumbs(); ?>
-<main  id="site-content" class="container" >
+<main id="site-content" class="container" >
 	<div class="row">
 		<?php
 		if ( have_posts()) {
@@ -26,8 +28,8 @@
 		<?php get_template_part( 'template-parts/single/archive/content-none'); ?>
 	</div>
 	<?php }
-	get_sidebar();
 	?>
+	<?php get_sidebar(); ?>
 </div>
 </main>
 <?php get_footer(); ?>
