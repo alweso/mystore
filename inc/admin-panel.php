@@ -1,33 +1,33 @@
 <?php
-add_action('admin_menu', 'wnb_settings_page');
-function wnb_settings_page() {
+add_action('admin_menu', 'storezz_settings_page');
+function storezz_settings_page() {
    add_submenu_page(
       'options-general.php',
-      __('Notifications Bar', 'arch-wnb'),
-      __('Notifications Bar', 'arch-wnb'),
+      __('Notifications Bar', 'arch-storezz'),
+      __('Notifications Bar', 'arch-storezz'),
       'manage_options',
-      'wnb_notifications',
-      'wnb_render_settings_page'
+      'storezz_notifications',
+      'storezz_render_settings_page'
    );
 }
 
 /**
  * Creates the settings page
  */
-function wnb_render_settings_page() {
+function storezz_render_settings_page() {
    ?>
     <!-- Create a header in the default WordPress 'wrap' container -->
     <div class="wrap">
 
         <h2><?php esc_html_e('Notification Bar Settings',
-                             'arch-wnb'); ?></h2>
+                             'arch-storezz'); ?></h2>
 
         <form method="post" action="options.php">
 
            <?php
            // Get plugin  settings to display in the form
-           settings_fields('wnb_settings');
-           do_settings_sections('wnb_settings');
+           settings_fields('storezz_settings');
+           do_settings_sections('storezz_settings');
            // Form submit button
            submit_button();
            ?>
@@ -41,35 +41,35 @@ function wnb_render_settings_page() {
 /**
  * Creates settings for the plugin
  */
-add_action('admin_init', 'wnb_initialize_settings');
-function wnb_initialize_settings() {
+add_action('admin_init', 'storezz_initialize_settings');
+function storezz_initialize_settings() {
    add_settings_section(
       'general_section',
-      __('General Settings', 'arch-wnb'),
+      __('General Settings', 'arch-storezz'),
       'general_settings_callback',
-      'wnb_settings'
+      'storezz_settings'
    );
    add_settings_field(
       'notification_text',
-      __('Notification Text', 'arch-wnb'),
+      __('Notification Text', 'arch-storezz'),
       'text_input_callback',
-      'wnb_settings',
+      'storezz_settings',
       'general_section',
       [
          'label_for' => 'notification_text',
-         'option_group' => 'wnb_settings',
+         'option_group' => 'storezz_settings',
          'option_id' => 'notification_text',
       ]
    );
    add_settings_field(
       'display_location',
-      __('Where will the notification bar display?', 'arch-wnb'),
+      __('Where will the notification bar display?', 'arch-storezz'),
       'radio_input_callback',
-      'wnb_settings',
+      'storezz_settings',
       'general_section',
       [
          'label_for' => 'display_location',
-         'option_group' => 'wnb_settings',
+         'option_group' => 'storezz_settings',
          'option_id' => 'display_location',
          'option_description' => 'Display notification bar on bottom of the site',
          'radio_options' => [
@@ -81,24 +81,24 @@ function wnb_initialize_settings() {
    );
    add_settings_field(
       'display_sticky',
-      __('Will the notificaton bar be sticky?', 'arch-wnb'),
+      __('Will the notificaton bar be sticky?', 'arch-storezz'),
       'radio_input_callback',
-      'wnb_settings',
+      'storezz_settings',
       'general_section',
       [
          'label_for' => 'display_sticky',
-         'option_group' => 'wnb_settings',
+         'option_group' => 'storezz_settings',
          'option_id' => 'display_sticky',
          'option_description' => 'Make display sticky or not',
          'radio_options' => [
-            'display_sticky' => 'Make the notification bar sticky',
-            'display_relative' => 'Do not make the notification bar sticky',
+            'red' => 'Make menu red',
+            'blue' => 'Make menu blue',
          ],
       ]
    );
    register_setting(
-      'wnb_settings',
-      'wnb_settings'
+      'storezz_settings',
+      'storezz_settings'
    );
 }
 
@@ -106,7 +106,7 @@ function wnb_initialize_settings() {
  * Displays the header of the general settings
  */
 function general_settings_callback() {
-   esc_html_e('Notification Settings', 'arch-wnb');
+   esc_html_e('Notification Settings', 'arch-storezz');
 }
 
 /**
@@ -154,18 +154,12 @@ function radio_input_callback($radio_input) {
 
 
 
-add_action('wp_footer', 'wnb_display_notification_bar');
-function wnb_display_notification_bar() {
-   if (null !== get_option('wnb_settings')) {
-      $options = get_option('wnb_settings');
-      ?>
-       <div class="wnb-notification-bar <?php echo $options['display_location']; ?>
-            <?php echo $options['display_sticky']; ?>">
-           <div class="wnb-notification-text">
-              <?php echo $options['notification_text']; ?>
-           </div>
-       </div>
-      <?php
+add_action('wp_footer', 'storezz_display_notification_bar');
+function storezz_display_notification_bar() {
+   if (null !== get_option('storezz_settings')) {
+      $options = get_option('storezz_settings');
+
+      return $options['display_sticky'];
    }
 }
 

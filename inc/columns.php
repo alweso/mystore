@@ -4,7 +4,7 @@
  */
 function storezz_column_layout_meta_box() {
 
-    $screens = array('mt-top-level-handle');
+    $screens = array('page');
 
     add_meta_box(
             'storezz_column_layout', esc_html__('Column Layout', 'meta-store'), 'storezz_column_layout_meta_box_callback', $screens, 'side', 'low'
