@@ -16,9 +16,10 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open();
-if (storezz_display_notification_bar() === "red") {
+$menuOptions = storezz_display_notification_bar();
+if ($menuOptions['display_sticky'] === "red") {
 get_template_part( 'template-parts/navmenus/menu_1');
-} elseif (storezz_display_notification_bar() === "blue") {
+} elseif ($menuOptions['display_sticky'] === "blue") {
   get_template_part( 'template-parts/navmenus/menu_2');
 } else {
   get_template_part( 'template-parts/navmenus/menu_3');

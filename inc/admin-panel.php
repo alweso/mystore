@@ -158,8 +158,7 @@ add_action('wp_footer', 'storezz_display_notification_bar');
 function storezz_display_notification_bar() {
    if (null !== get_option('storezz_settings')) {
       $options = get_option('storezz_settings');
-
-      return $options['display_sticky'];
+      return $options;
    }
 }
 
