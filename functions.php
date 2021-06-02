@@ -14,7 +14,7 @@ function wpdocs_theme_name_scripts() {
 }
 
 function my_theme_scripts() {
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), true );
 }
 
 function menheer_add_google_fonts() {
@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', 'bootstrapstarter_wp_setup' );
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
-require_once get_template_directory() . '/inc/columns.php';
+// require_once get_template_directory() . '/inc/columns.php';
 
 function bootstrapstarter_widgets_init() {
 
@@ -331,9 +331,9 @@ function personal_blog_register_required_plugins() {
  /**
   * Load WooCommerce compatibility file.
   */
- if (class_exists('WooCommerce')) {
-     require get_template_directory() . '/inc/woocommerce.php';
- }
+ // if (class_exists('WooCommerce')) {
+ //     require get_template_directory() . '/inc/woocommerce.php';
+ // }
 
  add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
@@ -367,18 +367,27 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 /**
  * Show cart contents / total Ajax
  */
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+ add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
 
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
-	global $woocommerce;
+ function woocommerce_header_add_to_cart_fragment( $fragments ) {
+     global $woocommerce;
 
-	ob_start();
+     ob_start();
 
-	?>
-	<a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-	<?php
-	$fragments['a.cart-customlocation'] = ob_get_clean();
-	return $fragments;
-}
+     ?>
+     <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+       <i class="fas fa-shopping-cart"></i>
+
+       <?php echo WC()->cart->get_cart_contents_count(); ?>
+     </a>
+
+     <?php
+
+     $fragments['a.cart-customlocation'] = ob_get_clean();
+
+     return $fragments;
+
+ }
 
 require get_template_directory() . '/inc/admin-panel.php';
+require get_template_directory() . '/inc/woocommerce.php';

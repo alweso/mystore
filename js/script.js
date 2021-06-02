@@ -1,5 +1,4 @@
 jQuery(function($){
- 
 	/*
 	 * Load More
 	 */
@@ -17,7 +16,7 @@ jQuery(function($){
 				beforeSend: function( xhr ){
 					// you can also add your own preloader here
 					// you see, the AJAX call is in process, we shouldn't run it again until complete
-					canBeLoaded = false; 
+					canBeLoaded = false;
 					$('#misha_loadmore').show();
 					console.log('beforesend in progress');
 				},
@@ -29,7 +28,7 @@ jQuery(function($){
  					// canBeLoaded = true;
  					console.log(misha_loadmore_params.current_page);
  					console.log(misha_loadmore_params.max_page );
-					if ( misha_loadmore_params.current_page < misha_loadmore_params.max_page ) 
+					if ( misha_loadmore_params.current_page < misha_loadmore_params.max_page )
 					// 	$('#misha_loadmore').hide(); // if last page, HIDE the button
 						console.log("more posts to be loaded");
 						canBeLoaded = true; // the ajax is completed, now we can run it again
@@ -54,7 +53,7 @@ jQuery(function($){
 	});
 
 
- 
+
 	$(window).scroll(function(){
 		var data = {
 			'action': 'loadmore',
@@ -66,7 +65,7 @@ jQuery(function($){
 			loadMorePosts(data);
 		};
 	});
- 
+
 	/*
 	 * Filter
 	 */
@@ -88,15 +87,15 @@ jQuery(function($){
 				// when filter applied:
 				// set the current page to 1
 				misha_loadmore_params.current_page = 1;
- 
+
 				// set the new query parameters
 				misha_loadmore_params.posts = data.posts;
- 
+
 				// set the new max page parameter
 				misha_loadmore_params.max_page = data.max_page;
 
 				console.log("max page is " + data.max_page);
- 
+
 				// insert the posts to the container
 				$('#misha_posts_wrap').html(data.content);
  // canBeLoaded = true;
@@ -111,10 +110,10 @@ jQuery(function($){
 
 			}
 		});
- 
+
 		// do not submit the form
 		return false;
- 
+
 	});
- 
+
 });

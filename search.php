@@ -12,7 +12,7 @@
 				the_post();
 				?>
 				<div class="col-12 col-sm-3">
-					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/blog/archive/content', get_post_format() ); ?>
 				</div>
 				<?php
 // End the loop.

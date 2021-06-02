@@ -10,5 +10,3 @@ jQuery(function($) {
         $grid.masonry('layout');
     });
 });
-
-
