@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', 'bootstrapstarter_wp_setup' );
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
-// require_once get_template_directory() . '/inc/columns.php';
+require_once get_template_directory() . '/inc/sidebars.php';
 
 function bootstrapstarter_widgets_init() {
 
@@ -83,18 +83,36 @@ function bootstrapstarter_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => 'Sidebar - Inset',
+        'name'          => 'sidebar 1',
         'id'            => 'sidebar-1',
-        'before_widget' => '<div class="sidebar-module sidebar-module-inset">',
+        'before_widget' => '<div class="sidebar-1">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     ) );
 
     register_sidebar( array(
-        'name'          => 'Sidebar - Default',
+        'name'          => 'sidebar 2',
         'id'            => 'sidebar-2',
-        'before_widget' => '<div class="sidebar-module">',
+        'before_widget' => '<div class="sidebar-2">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'sidebar 3',
+        'id'            => 'sidebar-3',
+        'before_widget' => '<div class="sidebar-3">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'sidebar 4',
+        'id'            => 'sidebar-4',
+        'before_widget' => '<div class="sidebar-4">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',

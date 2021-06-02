@@ -12,7 +12,9 @@
 <?php storezz_breadcrumbs(); ?>
 <main id="site-content" class="container" >
 	<div class="row">
-			<?php get_sidebar(); ?>
+		<div class="col-4">
+		<?php dynamic_sidebar(get_post_meta(get_the_ID(), 'storezz_sidebar_left')[0]); ?>
+	</div>
 		<?php
 		if ( have_posts()) {
 			while ( have_posts() ) : the_post();

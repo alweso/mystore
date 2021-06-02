@@ -26,7 +26,6 @@
 	?>
 	<h2><?php the_posts_pagination(); ?></h2>
 </div><!-- /.blog-main -->
-<!-- <?php get_sidebar(); ?> -->
 </div> <!-- / .row -->
 </div> <!-- / .container -->
 <?php get_footer(); ?>

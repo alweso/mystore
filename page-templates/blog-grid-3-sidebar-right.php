@@ -14,7 +14,9 @@
     <div class="col-8">
       <?php get_template_part( 'template-parts/blog/archive/blog-columns'); ?>
     </div>
-    <?php get_sidebar(); ?>
+    <div class="col-4">
+    <?php dynamic_sidebar(get_post_meta(get_the_ID(), 'storezz_sidebar_right')[0]); ?>
+  </div>
   </div>
 </main>
 <?php get_footer(); ?>

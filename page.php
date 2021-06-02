@@ -8,7 +8,9 @@
 */
 
 get_header(); ?>
-<?php echo get_post_meta(get_the_ID(), 'storezz_column_layout')[0]; ?>
+<h1><?php echo get_post_meta(get_the_ID(), 'storezz_sidebar_left')[0]; ?></h1>
+<h1><?php echo get_post_meta(get_the_ID(), 'storezz_sidebar_right')[0]; ?></h1>
+
 <div class="">
       <?php
 
