@@ -1,10 +1,16 @@
 <?php
+
+add_action('admin_menu', 'my_menu_pages');
+function my_menu_pages(){
+    add_menu_page('My Page Title', 'My Menu Title', 'manage_options', 'my-menu', 'storezz_settings_page' );
+}
+
 add_action('admin_menu', 'storezz_settings_page');
 function storezz_settings_page() {
    add_submenu_page(
-      'options-general.php',
-      __('Notifications Bar', 'arch-storezz'),
-      __('Notifications Bar', 'arch-storezz'),
+      'my-menu',
+      __('Storezz settings', 'arch-storezz'),
+      __('Storezz settings', 'arch-storezz'),
       'manage_options',
       'storezz_notifications',
       'storezz_render_settings_page'
@@ -18,12 +24,9 @@ function storezz_render_settings_page() {
    ?>
     <!-- Create a header in the default WordPress 'wrap' container -->
     <div class="wrap">
-
-        <h2><?php esc_html_e('Notification Bar Settings',
+        <h2><?php esc_html_e('Storezz Settings',
                              'arch-storezz'); ?></h2>
-
         <form method="post" action="options.php">
-
            <?php
            // Get plugin  settings to display in the form
            settings_fields('storezz_settings');
@@ -31,7 +34,6 @@ function storezz_render_settings_page() {
            // Form submit button
            submit_button();
            ?>
-
         </form>
 
     </div><!-- /.wrap -->
@@ -59,24 +61,6 @@ function storezz_initialize_settings() {
          'label_for' => 'notification_text',
          'option_group' => 'storezz_settings',
          'option_id' => 'notification_text',
-      ]
-   );
-   add_settings_field(
-      'display_location',
-      __('Where will the notification bar display?', 'arch-storezz'),
-      'radio_input_callback',
-      'storezz_settings',
-      'general_section',
-      [
-         'label_for' => 'display_location',
-         'option_group' => 'storezz_settings',
-         'option_id' => 'display_location',
-         'option_description' => 'Display notification bar on bottom of the site',
-         'radio_options' => [
-            'display_none' => 'Do not display notification bar',
-            'display_top' => 'Display notification bar on the top of the site',
-            'display_bottom' => 'Display notification bar on the bottom of the site',
-         ],
       ]
    );
    add_settings_field(

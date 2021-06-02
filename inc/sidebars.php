@@ -54,18 +54,6 @@ function storezz_sidebars_layout_meta_box_callback($post) {
   </select>
 </div>
   <?php
-  // echo '<label>one sidebars';
-  // echo '<input type="radio" name="storezz_sidebars_layout" value="col-12" ' . checked($storezz_sidebars_layout, 'col-12', false) . ' />';
-  // echo '</label>';
-  //
-  // echo '<label>two sidebarss';
-  // echo '<input type="radio" name="storezz_sidebars_layout" value="col-12 col-md-6" ' . checked($storezz_sidebars_layout, 'col-12 col-md-6', false) . ' />';
-  // echo '</label>';
-  //
-  // echo '<label>three sidebarss';
-  // echo '<input type="radio" name="storezz_sidebars_layout" value="col-12 col-md-6 col-xl-4" ' . checked($storezz_sidebars_layout, 'col-12 col-md-6 col-xl-4', false) . ' />';
-  // echo '</label>';
-
 }
 
 /**
