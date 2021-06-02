@@ -2,20 +2,18 @@
 
 add_action('admin_menu', 'my_menu_pages');
 function my_menu_pages(){
-    add_menu_page('My Page Title', 'My Menu Title', 'manage_options', 'my-menu', 'storezz_settings_page' );
+    add_menu_page('Header menu', 'My Menu Title', 'manage_options', 'my-menu' );
+    add_submenu_page('my-menu',
+    __('Header menu', 'arch-storezz'),
+    __('Header menus', 'arch-storezz'),
+    'manage_options',
+    'my-menu',
+    'storezz_render_settings_page');
+    add_submenu_page('my-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'my-menu2' );
 }
 
-add_action('admin_menu', 'storezz_settings_page');
-function storezz_settings_page() {
-   add_submenu_page(
-      'my-menu',
-      __('Storezz settings', 'arch-storezz'),
-      __('Storezz settings', 'arch-storezz'),
-      'manage_options',
-      'storezz_notifications',
-      'storezz_render_settings_page'
-   );
-}
+add_action('admin_menu', 'my_menu_output');
+
 
 /**
  * Creates the settings page
