@@ -16,6 +16,7 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open();
+if ( get_theme_mod( 'storezz-header-navmenu' ) ) :
 $navmenu = get_theme_mod( 'storezz-navmenu' );
 if ($navmenu === "menu_1") {
 get_template_part( 'template-parts/navmenus/menu_1');
@@ -24,21 +25,6 @@ get_template_part( 'template-parts/navmenus/menu_1');
 } else {
   get_template_part( 'template-parts/navmenus/menu_3');
 }
-
-$smth = storezz_choose_smth();
-echo 'aaaaaaaaaaaaaaaaaaaaaaa' . $smth['display_sticky_2'];
-
-
-// check to see if the logo exists and add it to the page
-if ( get_theme_mod( 'storezz-header-navmenu' ) ) : ?>
-
-<img src="<?php echo get_theme_mod( 'storezz-header-navmenu' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
-<h2>dddddddddddd<?php echo get_theme_mod( 'storezz-navmenu' )?></h2>
-<?php // add a fallback if the logo doesn't exist
-else : ?>
-
-<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-
-<?php endif;
+endif;
 
 ?>
