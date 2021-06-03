@@ -6,6 +6,7 @@
 function storezz_new_customizer_settings($wp_customize) {
 // add a setting for the site logo
 $wp_customize->add_setting('storezz-header-navmenu');
+$wp_customize->add_setting('storezz-smth');
 // Add a control to upload the logo
 // $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'storezz_logo',
 // array(
@@ -25,6 +26,27 @@ array(
 'section' => 'storezz-header-navmenu',
 'settings' => 'storezz-header-navmenu',
 ) ) );
+
+$wp_customize->add_control('storezz-smth', array(
+    'type' => 'radio',
+    'label' => 'Color Scheme:',
+    'section' => 'storezz-header-navmenu',
+    'settings' => 'storezz-smth',
+    'choices' => array(
+        'black' => 'Black',
+        'blue' => 'Blue',
+        'brown' => 'Brown',
+        'gray-red' => 'Gray-Red',
+        'green' => 'Green',
+        'orange' => 'Orange',
+        'purple' => 'Purple',
+        'red' => 'Red',
+        'taupe' => 'Taupe',
+        'turqoise' => 'Turqoise',
+        ),
+    )
+);
+
 
 }
 add_action('customize_register', 'storezz_new_customizer_settings');

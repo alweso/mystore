@@ -33,7 +33,7 @@ echo 'aaaaaaaaaaaaaaaaaaaaaaa' . $smth['display_sticky_2'];
 if ( get_theme_mod( 'storezz-header-navmenu' ) ) : ?>
 
 <img src="<?php echo get_theme_mod( 'storezz-header-navmenu' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
-
+<h2>dddddddddddd<?php echo get_theme_mod( 'storezz-smth' )?></h2>
 <?php // add a fallback if the logo doesn't exist
 else : ?>
 
