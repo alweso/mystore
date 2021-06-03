@@ -9,10 +9,8 @@ function my_menu_pages(){
     'manage_options',
     'my-menu',
     'storezz_render_settings_page');
-    add_submenu_page('my-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'my-menu2' );
+    add_submenu_page('my-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'my-menu2', 'storezz_render_settings_page_2' );
 }
-
-// add_action('admin_menu', 'my_menu_output');
 
 
 /**
@@ -38,10 +36,31 @@ function storezz_render_settings_page() {
    <?php
 }
 
+function storezz_render_settings_page_2() {
+   ?>
+    <!-- Create a header in the default WordPress 'wrap' container -->
+    <div class="wrap">
+        <h2><?php esc_html_e('Storezz Settings 2',
+                             'arch-storezz'); ?></h2>
+        <form method="post" action="options.php">
+           <?php
+           // Get plugin  settings to display in the form
+           settings_fields('storezz_settings_2');
+           do_settings_sections('storezz_settings_2');
+           // Form submit button
+           submit_button();
+           ?>
+        </form>
+
+    </div><!-- /.wrap -->
+   <?php
+}
+
 /**
  * Creates settings for the plugin
  */
 add_action('admin_init', 'storezz_initialize_settings');
+add_action('admin_init', 'storezz_initialize_settings_2');
 function storezz_initialize_settings() {
    add_settings_section(
       'general_section',
@@ -81,6 +100,38 @@ function storezz_initialize_settings() {
    register_setting(
       'storezz_settings',
       'storezz_settings'
+   );
+}
+
+function storezz_initialize_settings_2() {
+   add_settings_section(
+      'general_section',
+      __('General Settings', 'arch-storezz'),
+      'general_settings_callback',
+      'storezz_settings_2'
+   );
+
+   add_settings_field(
+      'display_sticky_2',
+      __('Will the notificaton bar be sticky?', 'arch-storezz'),
+      'radio_input_callback',
+      'storezz_settings_2',
+      'general_section',
+      [
+         'label_for' => 'display_sticky_2',
+         'option_group' => 'storezz_settings_2',
+         'option_id' => 'display_sticky',
+         'option_description' => 'Make display sticky or not',
+         'radio_options' => [
+            'red' => 'Make menu red',
+            'blue' => 'Make menu blue',
+         ],
+      ]
+   );
+
+   register_setting(
+      'storezz_settings_2',
+      'storezz_settings_2'
    );
 }
 
