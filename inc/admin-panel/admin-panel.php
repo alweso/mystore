@@ -1,15 +1,15 @@
 <?php
 
-add_action('admin_menu', 'my_menu_pages');
-function my_menu_pages(){
-    add_menu_page('Header menu', 'My Menu Title', 'manage_options', 'my-menu' );
-    add_submenu_page('my-menu',
+add_action('admin_menu', 'storezz_menu_pages');
+function storezz_menu_pages(){
+    add_menu_page('Storezz options', 'Storezz options', 'manage_options', 'storezz-menu' );
+    add_submenu_page('storezz-menu',
     __('Header menu', 'arch-storezz'),
     __('Header menus', 'arch-storezz'),
     'manage_options',
-    'my-menu',
+    'storezz-menu',
     'storezz_render_settings_page');
-    add_submenu_page('my-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'my-menu2', 'storezz_render_settings_page_2' );
+    add_submenu_page('storezz-menu', 'Submenu Page Title2', 'Whatever You Want2', 'manage_options', 'storezz-menu2', 'storezz_render_settings_page_2' );
 }
 
 
@@ -20,8 +20,7 @@ function storezz_render_settings_page() {
    ?>
     <!-- Create a header in the default WordPress 'wrap' container -->
     <div class="wrap">
-        <h2><?php esc_html_e('Storezz Settings',
-                             'arch-storezz'); ?></h2>
+        <h2>Header menu settings</h2>
         <form method="post" action="options.php">
            <?php
            // Get plugin  settings to display in the form
@@ -64,25 +63,13 @@ add_action('admin_init', 'storezz_initialize_settings_2');
 function storezz_initialize_settings() {
    add_settings_section(
       'general_section',
-      __('General Settings', 'arch-storezz'),
+      __('Header menu settings', 'arch-storezz'),
       'general_settings_callback',
       'storezz_settings'
    );
    add_settings_field(
-      'notification_text',
-      __('Notification Text', 'arch-storezz'),
-      'text_input_callback',
-      'storezz_settings',
-      'general_section',
-      [
-         'label_for' => 'notification_text',
-         'option_group' => 'storezz_settings',
-         'option_id' => 'notification_text',
-      ]
-   );
-   add_settings_field(
       'display_sticky',
-      __('Will the notificaton bar be sticky?', 'arch-storezz'),
+      __('Choose navigation menu in header', 'arch-storezz'),
       'radio_input_callback',
       'storezz_settings',
       'general_section',
@@ -90,10 +77,11 @@ function storezz_initialize_settings() {
          'label_for' => 'display_sticky',
          'option_group' => 'storezz_settings',
          'option_id' => 'display_sticky',
-         'option_description' => 'Make display sticky or not',
+         'option_description' => 'Choose navigation menu in header',
          'radio_options' => [
-            'red' => 'Make menu red',
-            'blue' => 'Make menu blue',
+            'menu_1' => 'Menu 1',
+            'menu_2' => 'Menu 2',
+            'menu_3' => 'Menu 3',
          ],
       ]
    );
@@ -107,7 +95,7 @@ function storezz_initialize_settings_2() {
    add_settings_section(
       'general_section',
       __('General Settings', 'arch-storezz'),
-      'general_settings_callback',
+      'general_settings_callback_2',
       'storezz_settings_2'
    );
 
@@ -120,7 +108,7 @@ function storezz_initialize_settings_2() {
       [
          'label_for' => 'display_sticky_2',
          'option_group' => 'storezz_settings_2',
-         'option_id' => 'display_sticky',
+         'option_id' => 'display_sticky_2',
          'option_description' => 'Make display sticky or not',
          'radio_options' => [
             'red' => 'Make menu red',
@@ -139,6 +127,10 @@ function storezz_initialize_settings_2() {
  * Displays the header of the general settings
  */
 function general_settings_callback() {
+   esc_html_e('Notification Settings', 'arch-storezz');
+}
+
+function general_settings_callback_2() {
    esc_html_e('Notification Settings', 'arch-storezz');
 }
 
@@ -187,10 +179,18 @@ function radio_input_callback($radio_input) {
 
 
 
-add_action('wp_footer', 'storezz_display_notification_bar');
-function storezz_display_notification_bar() {
+add_action('wp_head', 'storezz_choose_menu');
+function storezz_choose_menu() {
    if (null !== get_option('storezz_settings')) {
       $options = get_option('storezz_settings');
+      return $options;
+   }
+}
+
+add_action('wp_head', 'storezz_choose_smth');
+function storezz_choose_smth() {
+   if (null !== get_option('storezz_settings_2')) {
+      $options = get_option('storezz_settings_2');
       return $options;
    }
 }
