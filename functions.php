@@ -411,3 +411,8 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 
 require get_template_directory() . '/inc/admin-panel/admin-panel.php';
 require get_template_directory() . '/inc/woocommerce.php';
+
+/**
+* Customizer additions.
+*/
+require get_template_directory() . '/inc/customizer.php';
