@@ -6,17 +6,10 @@
 function storezz_new_customizer_settings($wp_customize) {
 // add a setting for the site logo
 $wp_customize->add_setting('storezz-header-navmenu');
-$wp_customize->add_setting('storezz-smth');
-// Add a control to upload the logo
-// $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'storezz_logo',
-// array(
-// 'label' => 'Upload Logo',
-// 'section' => 'title_tagline',
-// 'settings' => 'storezz_logo',
-// ) ) );
-// Add Footer Section
+$wp_customize->add_setting('storezz-navmenu');
+
 $wp_customize->add_section('storezz-header-navmenu', array(
-'title' => 'Footer',
+'title' => 'Storezz navmenu',
 'description' => '',
 'priority' => 120,
 ));
@@ -27,22 +20,15 @@ array(
 'settings' => 'storezz-header-navmenu',
 ) ) );
 
-$wp_customize->add_control('storezz-smth', array(
+$wp_customize->add_control('storezz-navmenu', array(
     'type' => 'radio',
     'label' => 'Color Scheme:',
     'section' => 'storezz-header-navmenu',
-    'settings' => 'storezz-smth',
+    'settings' => 'storezz-navmenu',
     'choices' => array(
-        'black' => 'Black',
-        'blue' => 'Blue',
-        'brown' => 'Brown',
-        'gray-red' => 'Gray-Red',
-        'green' => 'Green',
-        'orange' => 'Orange',
-        'purple' => 'Purple',
-        'red' => 'Red',
-        'taupe' => 'Taupe',
-        'turqoise' => 'Turqoise',
+        'menu_1' => 'Menu 1',
+        'menu_2' => 'Menu 2',
+        'menu_3' => 'Menu 3',
         ),
     )
 );

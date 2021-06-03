@@ -16,10 +16,10 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open();
-$menuOptions = storezz_choose_menu();
-if ($menuOptions['display_sticky'] === "menu_1") {
+$navmenu = get_theme_mod( 'storezz-navmenu' );
+if ($navmenu === "menu_1") {
 get_template_part( 'template-parts/navmenus/menu_1');
-} elseif ($menuOptions['display_sticky'] === "menu_2") {
+} elseif ($navmenu === "menu_2") {
   get_template_part( 'template-parts/navmenus/menu_2');
 } else {
   get_template_part( 'template-parts/navmenus/menu_3');
@@ -33,7 +33,7 @@ echo 'aaaaaaaaaaaaaaaaaaaaaaa' . $smth['display_sticky_2'];
 if ( get_theme_mod( 'storezz-header-navmenu' ) ) : ?>
 
 <img src="<?php echo get_theme_mod( 'storezz-header-navmenu' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
-<h2>dddddddddddd<?php echo get_theme_mod( 'storezz-smth' )?></h2>
+<h2>dddddddddddd<?php echo get_theme_mod( 'storezz-navmenu' )?></h2>
 <?php // add a fallback if the logo doesn't exist
 else : ?>
 
