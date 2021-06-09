@@ -18,8 +18,8 @@
       'walker'            => new wp_bootstrap_navwalker())
     );
     ?>
-    <?php get_search_form(); ?>
-    <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo WC()->cart->get_cart_contents_count(); ?></a>
-
+  </div>
+  <div>
+    <?php get_template_part( 'template-parts/navmenus/menu_icons'); ?>
   </div>
 </nav>
