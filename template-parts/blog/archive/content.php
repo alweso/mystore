@@ -2,11 +2,10 @@
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php get_template_part( 'template-parts/blog/archive/post-media'); ?>
 	<?php endif; ?>
+	<div>
 	<?php get_template_part( 'template-parts/blog/archive/single-header'); ?>
-	<?php
-	if (is_page_template( 'page-templates/blog-grid-1-sidebar-left.php' ) || is_page_template( 'page-templates/blog-grid-1-sidebar-right.php' )) { ?>
 		<div class="entry-content">
 			<?php the_excerpt(); ?>
 		</div>
-	<?php } ?>
+	</div>
 </article>

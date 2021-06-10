@@ -1,8 +1,5 @@
 <article class="post-wrap post-wrap--standard">
-	<?php if ( has_post_thumbnail() ) : ?>
-		<?php get_template_part( 'template-parts/blog/single/post-media'); ?>
-	<?php endif; ?>
-	<?php get_template_part( 'template-parts/blog/single/single-header'); ?>
+	<?php get_template_part( 'template-parts/blog/single/single-header-1'); ?>
 		<div class="entry-content">
 			<?php the_content(); ?>
 		</div>
