@@ -14,10 +14,9 @@ $wp_customize->add_panel( 'storezz_theme_options',
 $wp_customize->add_setting('storezz-navmenu');
 $wp_customize->add_setting('storezz-blog-layout');
 $wp_customize->add_setting('storezz-blog-choose-sidebar');
-$wp_customize->add_setting('storezz-blog-sidebar-left-right');
 $wp_customize->add_setting('storezz-single-layout');
 $wp_customize->add_setting('storezz-single-choose-sidebar');
-$wp_customize->add_setting('storezz-single-sidebar-left-right');
+
 
 $wp_customize->add_section('storezz-header-navmenu', array(
 'title' => 'Menu Layout',
@@ -81,18 +80,6 @@ $wp_customize->add_control('storezz-blog-choose-sidebar', array(
     )
 );
 
-$wp_customize->add_control('storezz-blog-sidebar-left-right', array(
-    'type' => 'radio',
-    'label' => 'Sidebar left or right?',
-    'section' => 'storezz-blog-layout',
-    'settings' => 'storezz-blog-sidebar-left-right',
-    'choices' => array(
-        'sidebar_left' => 'Sidebar left',
-        'sidebar_right' => 'Sidebar right',
-        ),
-    )
-);
-
 $wp_customize->add_control('storezz-choose-single-layout', array(
     'type' => 'radio',
     'label' => 'Choose single post layout:',
@@ -104,7 +91,6 @@ $wp_customize->add_control('storezz-choose-single-layout', array(
         'single_3' => 'Single 3',
         'single_4' => 'Single 4',
         'single_5' => 'Single 5',
-        'single_6' => 'Single 6',
         ),
     )
 );
@@ -115,28 +101,13 @@ $wp_customize->add_control('storezz-single-choose-sidebar', array(
     'section' => 'storezz-single-layout',
     'settings' => 'storezz-single-choose-sidebar',
     'choices' => array(
-        'sidebar_single_1' => 'Sidebar 1',
-        'sidebar_single_2' => 'Sidebar 2',
-        'sidebar_single_3' => 'Sidebar 3',
-        'sidebar_single_4' => 'Sidebar 4',
+        'sidebar_1' => 'Sidebar 1',
+        'sidebar_2' => 'Sidebar 2',
+        'sidebar_3' => 'Sidebar 3',
+        'sidebar_4' => 'Sidebar 4',
         ),
     )
 );
-
-$wp_customize->add_control('storezz-single-sidebar-left-right', array(
-    'type' => 'radio',
-    'label' => 'Sidebar left or right?',
-    'section' => 'storezz-single-layout',
-    'settings' => 'storezz-single-sidebar-left-right',
-    'choices' => array(
-        'sidebar__single_left' => 'Sidebar left',
-        'sidebar__single_right' => 'Sidebar right',
-        'sidebar__single_none' => 'Sidebar none',
-        ),
-    )
-);
-
-
 }
 add_action('customize_register', 'storezz_new_customizer_settings');
 
