@@ -1,51 +1,62 @@
 <?php
-function storezz_enqueue_styles() {
-    wp_register_style('bootstrap', get_template_directory_uri() . '/assets/Bootstrap/css/bootstrap.min.css' );
-    $dependencies = array('bootstrap');
-    wp_enqueue_style( 'storezz-style', get_stylesheet_uri(), $dependencies );
-}
 
-function storezz_enqueue_scripts() {
-    $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/Bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true );
-}
-function storezz_theme_name_scripts() {
-    wp_enqueue_style( 'style-name',  get_template_directory_uri() . '/Fontawesome/css/all.css');
-}
 
+/**
+ * Enqueue scripts and styles.
+ */
 function storezz_scripts() {
-    wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), true );
+  wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/Bootstrap/css/bootstrap.min.css' );
+  wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/Bootstrap/js/bootstrap.min.js', 'jquery', '3.3.6', true );
+  wp_enqueue_style( 'storezz-style', get_stylesheet_uri(), 'bootstrap' );
+  wp_enqueue_script('storezz_owl_carousel_scripts', get_template_directory_uri().'/assets/OwlCarousel/dist/owl.carousel.min.js', 'jquery', '3.3.6', true );
+  wp_enqueue_style( 'storezz_owl_carousel_styles',  get_template_directory_uri() . '/assets/OwlCarousel/dist/assets/owl.carousel.min.css');
+  wp_enqueue_style( 'storezz_owl_carousel_styles_demo',  get_template_directory_uri() . '/assets/OwlCarousel/dist/assets/owl.theme.default.min.css');
+  wp_enqueue_style( ' wpblog_google_fonts ', 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap', false );
+  wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), true );
 }
 
-function storezz_add_google_fonts() {
-wp_enqueue_style( ' wpblog_google_fonts ', 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap', false );
+add_action('wp_enqueue_scripts', 'storezz_scripts');
+
+function storezz_theme_setup() {
+  if ( ! isset( $content_width ) ) $content_width = 1300;
+  register_nav_menus( array(
+  	'primary' => __( 'Primary Menu', 'storezz' ),
+  ) );
+  register_nav_menus( array(
+      'secondary' => __( 'Secondary Menu', 'storezz' ),
+  ) );
+  set_post_thumbnail_size(1200, 628, true);
+  add_theme_support( 'title-tag' );
+  add_theme_support( 'post-formats', array('standard', 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
+  add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) ); // Posts and Pages
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+  add_theme_support(
+      'custom-logo',
+      array(
+          'height'      => 100,
+          'width'       => 200,
+          'flex-width'  => true,
+          'flex-height' => true,
+      )
+  );
+  $args = array(
+      'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
+      'default-text-color' => '000',
+      'width'              => 1000,
+      'height'             => 250,
+      'flex-width'         => true,
+      'flex-height'        => true,
+  );
+  add_theme_support( 'custom-header', $args );
 }
 
+add_action( 'after_setup_theme', 'storezz_theme_setup' );
 
-function storezz_owl_carousel_styles() {
-    wp_enqueue_style( 'storezz_owl_carousel_styles',  get_template_directory_uri() . '/assets/OwlCarousel/dist/assets/owl.carousel.min.css');
-    wp_enqueue_style( 'storezz_owl_carousel_styles_demo',  get_template_directory_uri() . '/assets/OwlCarousel/dist/assets/owl.theme.default.min.css');
 
-    }
 
-function storezz_owl_carousel_scripts() {
-    $dependencies = array('jquery');
-    wp_enqueue_script('storezz_owl_carousel_scripts', get_template_directory_uri().'/assets/OwlCarousel/dist/owl.carousel.min.js', $dependencies, '3.3.6', true );
-}
 
-add_action( 'wp_enqueue_scripts', 'storezz_enqueue_styles' );
-add_action( 'wp_enqueue_scripts', 'storezz_enqueue_scripts' );
-add_action( 'wp_enqueue_scripts', 'storezz_theme_name_scripts' );
-add_action( 'wp_enqueue_scripts', 'storezz_owl_carousel_scripts' );
-add_action( 'wp_enqueue_scripts', 'storezz_owl_carousel_styles' );
-add_action( 'wp_enqueue_scripts', 'storezz_scripts' );
-add_action( 'wp_enqueue_scripts', 'storezz_add_google_fonts' );
 
-function storezz_wp_setup() {
-    add_theme_support( 'title-tag' );
-}
-
-add_action( 'after_setup_theme', 'storezz_wp_setup' );
 
 require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
 
@@ -115,52 +126,10 @@ function storezz_widgets_init() {
     ) );
 
 }
+
 add_action('widgets_init', 'storezz_widgets_init');
-add_theme_support( 'post-formats', array('standard', 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
-add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) ); // Posts and Pages
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-add_theme_support(
-    'custom-logo',
-    array(
-        'height'      => 100,
-        'width'       => 200,
-        'flex-width'  => true,
-        'flex-height' => true,
-    )
-);
-
-if ( ! isset( $content_width ) ) $content_width = 1300;
 
 
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'storezz' ),
-) );
-register_nav_menus( array(
-    'secondary' => __( 'Secondary Menu', 'storezz' ),
-) );
-
-
-function storezz_custom_header_setup() {
-    $args = array(
-        'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
-        'default-text-color' => '000',
-        'width'              => 1000,
-        'height'             => 250,
-        'flex-width'         => true,
-        'flex-height'        => true,
-    );
-    add_theme_support( 'custom-header', $args );
-}
-add_action( 'after_setup_theme', 'storezz_custom_header_setup' );
-
-
-add_action( 'after_setup_theme', 'storezz_theme_setup' );
-function storezz_theme_setup() {
-
-set_post_thumbnail_size(1200, 628, true);
-    // Add featured image sizes
-}
 
 /**
  * Registers an editor stylesheet for the theme.
