@@ -5,7 +5,6 @@ function storezz_new_customizer_settings($wp_customize) {
   // Theme Options Panel
 $wp_customize->add_panel( 'storezz_theme_options',
     array(
-        //'priority'       => 100,
         'title'            => __( 'Storezz Theme Options', 'storezz' ),
         'description'      => __( 'Theme Modifications like color scheme, theme texts and layout preferences can be done here', 'nd_dosth' ),
     )
@@ -111,5 +110,4 @@ $wp_customize->add_control('storezz-single-choose-sidebar', array(
 }
 add_action('customize_register', 'storezz_new_customizer_settings');
 
-
- ?>
+?>
