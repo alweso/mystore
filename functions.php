@@ -1,13 +1,13 @@
 <?php
 function storezz_enqueue_styles() {
-    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css' );
+    wp_register_style('bootstrap', get_template_directory_uri() . '/assets/Bootstrap/css/bootstrap.min.css' );
     $dependencies = array('bootstrap');
     wp_enqueue_style( 'storezz-style', get_stylesheet_uri(), $dependencies );
 }
 
 function storezz_enqueue_scripts() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri().'/bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true );
+    wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/Bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true );
 }
 function storezz_theme_name_scripts() {
     wp_enqueue_style( 'style-name',  get_template_directory_uri() . '/Fontawesome/css/all.css');
