@@ -11,7 +11,6 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <?php wp_head(); ?>
-  <script src="https://kit.fontawesome.com/eb33fc95bf.js" crossorigin="anonymous"></script>
 </head>
 
 <body <?php body_class(); ?>>
