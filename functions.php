@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Storezz functions
+ * @since Storezz 1.0.0
+ **/
+
 /*** Scripts and styles ***/
 
 function storezz_scripts_and_styles() {
