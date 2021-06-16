@@ -28,14 +28,12 @@ $wp_customize->add_section('storezz-blog-layout', array(
 'title' => 'Blog Layout',
 'panel' => 'storezz_theme_options',
 'description' => '',
-// 'priority' => 120,
 ));
 
 $wp_customize->add_section('storezz-single-layout', array(
 'title' => 'Single Post Layout',
 'panel' => 'storezz_theme_options',
 'description' => '',
-// 'priority' => 120,
 ));
 
 $wp_customize->add_control('storezz-navmenu', array(
@@ -55,7 +53,7 @@ $wp_customize->add_control('storezz-choose-blog-layout', array(
     'type' => 'radio',
     'label' => 'Choose blog layout:',
     'section' => 'storezz-blog-layout',
-    'settings' => 'storezz-blog-layout',
+    'settings' => 'storezz-choose-blog-layout',
     'choices' => array(
         'blog_1' => 'Blog 1',
         'blog_2' => 'Blog 2',
@@ -71,10 +69,8 @@ $wp_customize->add_control('storezz-blog-choose-sidebar', array(
     'section' => 'storezz-blog-layout',
     'settings' => 'storezz-blog-choose-sidebar',
     'choices' => array(
-        'sidebar_1' => 'Sidebar 1',
-        'sidebar_2' => 'Sidebar 2',
-        'sidebar_3' => 'Sidebar 3',
-        'sidebar_4' => 'Sidebar 4',
+        'blog_sidebar_1' => 'Blog sidebar 1',
+        'blog_sidebar_2' => 'Blog sidebar 2',
         ),
     )
 );
@@ -83,7 +79,7 @@ $wp_customize->add_control('storezz-choose-single-layout', array(
     'type' => 'radio',
     'label' => 'Choose single post layout:',
     'section' => 'storezz-single-layout',
-    'settings' => 'storezz-single-layout',
+    'settings' => 'storezz-choose-single-layout',
     'choices' => array(
         'single_1' => 'Single 1',
         'single_2' => 'Single 2',
@@ -100,10 +96,8 @@ $wp_customize->add_control('storezz-single-choose-sidebar', array(
     'section' => 'storezz-single-layout',
     'settings' => 'storezz-single-choose-sidebar',
     'choices' => array(
-        'sidebar_1' => 'Sidebar 1',
-        'sidebar_2' => 'Sidebar 2',
-        'sidebar_3' => 'Sidebar 3',
-        'sidebar_4' => 'Sidebar 4',
+        'single_sidebar_1' => 'Single sidebar 1',
+        'single_sidebar_2' => 'Single sidebar 2',
         ),
     )
 );

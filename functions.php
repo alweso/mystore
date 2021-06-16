@@ -88,36 +88,36 @@ function storezz_widgets_init() {
     ) );
 
     register_sidebar( array(
-        'name'          => 'sidebar 1',
-        'id'            => 'sidebar_1',
-        'before_widget' => '<div class="storezz-sidebar-1">',
+        'name'          => 'blog sidebar 1',
+        'id'            => 'blog_sidebar_1',
+        'before_widget' => '<div class="storezz-blog-sidebar-1">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     ) );
 
     register_sidebar( array(
-        'name'          => 'sidebar 2',
-        'id'            => 'sidebar_2',
-        'before_widget' => '<div class="storezz-sidebar-2">',
+        'name'          => 'blog sidebar 2',
+        'id'            => 'blog_sidebar_2',
+        'before_widget' => '<div class="storezz-blog-sidebar-2">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     ) );
 
     register_sidebar( array(
-        'name'          => 'sidebar 3',
-        'id'            => 'sidebar_3',
-        'before_widget' => '<div class="storezz-sidebar-3">',
+        'name'          => 'single sidebar 1',
+        'id'            => 'single_sidebar_1',
+        'before_widget' => '<div class="storezz-single-sidebar-1>',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
     ) );
 
     register_sidebar( array(
-        'name'          => 'sidebar 4',
-        'id'            => 'sidebar_4',
-        'before_widget' => '<div class="storezz-sidebar-4">',
+        'name'          => 'single sidebar 2',
+        'id'            => 'single_sidebar_2',
+        'before_widget' => '<div class="storezz-single-sidebar-2">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
