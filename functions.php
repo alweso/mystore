@@ -62,6 +62,18 @@ function storezz_theme_setup() {
 
 add_action('after_setup_theme', 'storezz_theme_setup');
 
+/*** Comment reply form ***/
+
+function storezz_enqueue_comment_reply_script() {
+  if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+  };
+}
+
+
+
+add_action( 'comment_form_before', 'storezz_enqueue_comment_reply_script' );
+
 /*** Widget areas ***/
 
 function storezz_widgets_init() {
