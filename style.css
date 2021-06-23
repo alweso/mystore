@@ -184,7 +184,7 @@ button:hover:before {
   cursor: pointer;
 }
 
-.storezz-search-form {
+.storezz-search-form-wrap {
   display: none;
   width: 100%;
   height: 100%;
@@ -195,7 +195,7 @@ button:hover:before {
   z-index: 1;
   text-align: center;
 }
-.storezz-search-form .storezz-search-close {
+.storezz-search-form-wrap .storezz-search-close {
   text-transform: uppercase;
   cursor: pointer;
   font-size: 30px;
@@ -203,7 +203,7 @@ button:hover:before {
   top: 20px;
   right: 20px;
 }
-.storezz-search-form--inner {
+.storezz-search-form-wrap--inner {
   display: flex;
   align-items: center;
   justify-content: center;

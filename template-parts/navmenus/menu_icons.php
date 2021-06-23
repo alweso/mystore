@@ -1,6 +1,6 @@
 <i class="fas fa-search storezz-search-trigger"></i>
-<div class="storezz-search-form">
-  <div class="storezz-search-form--inner">
+<div class="storezz-search-form-wrap">
+  <div class="storezz-search-form-wrap--inner">
     <?php get_search_form(); ?>
     <span class="storezz-search-close">
       Close

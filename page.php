@@ -1,33 +1,30 @@
 <?php
+
 /**
-* Template Name: Just a  Page
-* Template Post Type: page
-* @package WordPress
-* @subpackage personal-blog
-* @since personal-blog 1.0
-*/
+* Storezz page template
+* @since 1.0.0
+**/
 
-get_header(); ?>
-<h1><?php echo get_post_meta(get_the_ID(), 'storezz_sidebar_left')[0]; ?></h1>
-<h1><?php echo get_post_meta(get_the_ID(), 'storezz_sidebar_right')[0]; ?></h1>
-
-<div class="">
-      <?php
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				the_content();
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
-
-
-</div> <!-- / .container -->
+get_header();
+$sidebar_id = get_theme_mod( 'storezz-page-choose-sidebar' );
+$show_sidebar = get_theme_mod( 'storezz-page-show-sidebar' );
+$page_layout = get_theme_mod( 'storezz-choose-page-layout' );
+?>
+<main id="main-content" class="container storezz-post-container">
+	<div class="row">
+		<?php
+		if ( have_posts() ) {
+			while ( have_posts() ) : the_post();
+			if ( $page_layout === 'page_1' ) {
+				get_template_part( 'template-parts/page/content', 'style-1' );
+			} elseif ( $page_layout === 'page_2' ) {
+				get_template_part( 'template-parts/page/content', 'style-2' );
+        get_sidebar();
+			}
+		endwhile;
+	}
+	get_template_part( 'template-parts/post-navigation' );
+  ?>
+</div>
+</main>
 <?php get_footer(); ?>
