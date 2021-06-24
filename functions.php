@@ -182,5 +182,4 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/tgmpa-plugin.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
-require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/customizer.php';
