@@ -31,7 +31,7 @@ function storezz_theme_setup() {
   	'primary' => __( 'Primary Menu', 'storezz' ),
   ) );
   register_nav_menus( array(
-      'secondary' => __( 'Secondary Menu', 'storezz' ),
+      'secondary' => __( 'Footer', 'storezz' ),
   ) );
   set_post_thumbnail_size( 850, 560, ['center', 'center'] );
   add_theme_support( 'title-tag' );
@@ -98,6 +98,15 @@ function storezz_widgets_init() {
         'name'          => 'Footer 3',
         'id'            => 'footer_3',
         'before_widget' => '<div class="storezz-footer-3">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Footer 4',
+        'id'            => 'footer_4',
+        'before_widget' => '<div class="storezz-footer-4">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',

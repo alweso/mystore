@@ -75,7 +75,7 @@ if (!function_exists('meta_store_woocommerce_scripts')) {
      * @return void
      */
     function meta_store_woocommerce_scripts() {
-        wp_enqueue_style('meta-store-woocommerce-style', get_template_directory_uri() . '/woocommerce.css');
+        wp_enqueue_style('storezz-woocommerce-style', get_template_directory_uri() . '/woocommerce.css');
 
         $font_path = esc_url(WC()->plugin_url() . '/assets/fonts/');
         $inline_font = '@font-face {
@@ -89,7 +89,7 @@ if (!function_exists('meta_store_woocommerce_scripts')) {
 			font-style: normal;
 		}';
 
-        wp_add_inline_style('meta-store-woocommerce-style', $inline_font);
+        wp_add_inline_style('storezz-woocommerce-style', $inline_font);
     }
 
 }
@@ -262,11 +262,11 @@ if (!function_exists('meta_store_woocommerce_cart_link')) {
      */
     function meta_store_woocommerce_cart_link() {
         ?>
-        <a class="ms-cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'meta-store'); ?>">
+        <a class="ms-cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'storezz'); ?>">
             <?php
             $item_count_text = sprintf(
                     /* translators: number of items in the mini cart. */
-                    _n('%d item', '%d items', absint(WC()->cart->get_cart_contents_count()), 'meta-store'), absint(WC()->cart->get_cart_contents_count())
+                    _n('%d item', '%d items', absint(WC()->cart->get_cart_contents_count()), 'storezz'), absint(WC()->cart->get_cart_contents_count())
             );
             ?>
             <span class="ms-cart-amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> - <span class="ms-cart-count"><?php echo esc_html($item_count_text); ?></span>
@@ -312,7 +312,7 @@ if (!function_exists('meta_store_product_search_form')) {
             if (taxonomy_exists('product_cat')) {
                 $cat_args = array(
                     'taxonomy' => 'product_cat',
-                    'show_option_all' => __('All Category', 'meta-store'),
+                    'show_option_all' => __('All Category', 'storezz'),
                     'name' => 'product_category',
                     'selected' => $selected_category,
                     'id' => 'ms-product-category',
@@ -322,7 +322,7 @@ if (!function_exists('meta_store_product_search_form')) {
                 wp_dropdown_categories($cat_args);
             }
             ?>
-            <input type="search" class="ms-search-field" placeholder="<?php esc_attr_e('Search...', 'meta-store'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr_e('Search for:', 'meta-store'); ?>" />
+            <input type="search" class="ms-search-field" placeholder="<?php esc_attr_e('Search...', 'storezz'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr_e('Search for:', 'storezz'); ?>" />
             <input type="hidden" name="post_type" value="product" />
             <button type="submit" class="ms-search-submit" type="search"><i class="icon_search"></i></button>
         </form>
@@ -343,7 +343,7 @@ if (!function_exists('meta_store_mobile_product_search_form')) {
                 if (taxonomy_exists('product_cat')) {
                     $cat_args = array(
                         'taxonomy' => 'product_cat',
-                        'show_option_all' => __('All Category', 'meta-store'),
+                        'show_option_all' => __('All Category', 'storezz'),
                         'name' => 'product_category',
                         'selected' => $selected_category,
                         'id' => 'ms-product-category',
@@ -353,7 +353,7 @@ if (!function_exists('meta_store_mobile_product_search_form')) {
                     wp_dropdown_categories($cat_args);
                 }
                 ?>
-                <input type="search" class="ms-search-field" placeholder="<?php esc_attr_e('Search...', 'meta-store'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr_e('Search for:', 'meta-store'); ?>" />
+                <input type="search" class="ms-search-field" placeholder="<?php esc_attr_e('Search...', 'storezz'); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr_e('Search for:', 'storezz'); ?>" />
                 <input type="hidden" name="post_type" value="product" />
                 <button type="submit" class="ms-search-submit" type="search"><i class="icon_search"></i></button>
             </form>
@@ -408,7 +408,7 @@ if (!function_exists('meta_store_product_title_wrap_close')) {
 if (!function_exists('meta_store_flash_sale')) {
 
     function meta_store_flash_sale() {
-        echo '<div class="onsale"><span>' . esc_html__('Sale', 'meta-store') . '<span></div>';
+        echo '<div class="onsale"><span>' . esc_html__('Sale', 'storezz') . '<span></div>';
     }
 
 }
