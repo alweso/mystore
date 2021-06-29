@@ -11,6 +11,7 @@ $single_layout = get_theme_mod( 'storezz-choose-single-layout' );
 <main id="main-content" class="container storezz-post-container">
 	<div class="row">
 		<?php
+		storezz_breadcrumbs();
 		if ( have_posts() ) {
 			while ( have_posts() ) : the_post();
 			if ( $single_layout === 'single_1' || $single_layout === 'single_2' ) {

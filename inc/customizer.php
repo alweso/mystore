@@ -8,7 +8,7 @@
 function storezz_new_customizer_settings($wp_customize) {
   $wp_customize->add_panel( 'storezz_theme_options', array(
     'title'            => esc_html__( 'Storezz Theme Options', 'storezz' ),
-    'description'      => esc_html__( 'Theme Modifications like color scheme, theme texts and layout preferences can be done here', 'storezz' ),
+    'description'      => esc_html__( 'Theme Modifications panel', 'storezz' ),
   )
 );
 
@@ -22,7 +22,6 @@ $wp_customize->add_setting( 'storezz-navmenu', array(
 $wp_customize->add_section( 'storezz-header-navmenu', array(
   'title' => esc_html__( 'Menu Layout', 'storezz' ),
   'panel' => 'storezz_theme_options',
-  'description' => '',
   'priority' => 120,
 ));
 
@@ -175,7 +174,7 @@ $wp_customize->add_setting( 'storezz-copyright-text', array(
 ) );
 
 $wp_customize->add_section( 'storezz-footer', array(
-  'title' => 'Footer',
+  'title' => esc_html__('Footer'),
   'panel' => 'storezz_theme_options',
 ));
 
