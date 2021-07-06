@@ -5,10 +5,10 @@
 			<?php the_content(); ?>
 		</div>
 		<?php
-		if (comments_open()){ ?>
-			<div>
-		<?php	comments_template(); ?>
+		if ( comments_open() || get_comments_number() ) : ?>
+		<div>
+			<?php	comments_template(); ?>
 		</div>
-		<?php } ?>
-		</article>
-	</div>
+	<?php endif ?>
+</article>
+</div>

@@ -9,12 +9,10 @@ get_header();
 $sidebar_id = get_theme_mod( 'storezz-blog-choose-sidebar' );
 $blog_layout = get_theme_mod( 'storezz-choose-blog-layout' );
 
-if (is_archive()) {
- get_template_part( 'template-parts/blog/archive/blog-header' );
-}
-
 if (is_search()) {
  get_template_part( 'template-parts/blog/archive/search-header' );
+} else {
+ get_template_part( 'template-parts/blog/archive/blog-header' );
 }
 ?>
 <main id="site-content" class="container">

@@ -174,7 +174,7 @@ $wp_customize->add_setting( 'storezz-copyright-text', array(
 ) );
 
 $wp_customize->add_section( 'storezz-footer', array(
-  'title' => esc_html__('Footer'),
+  'title' => esc_html__( 'Footer' ),
   'panel' => 'storezz_theme_options',
 ));
 
