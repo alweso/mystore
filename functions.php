@@ -177,7 +177,7 @@ add_action( 'admin_init', 'storezz_add_editor_styles' );
 
 /*** Required files ***/
 
-require_once get_template_directory() . '/inc/class-wp-bootstrap-walker.php';
+require_once get_template_directory() . '/inc/class-storezz-menu-walker.php';
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/tgmpa-plugin.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
