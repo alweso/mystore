@@ -35,7 +35,6 @@ function storezz_theme_setup() {
   ) );
   set_post_thumbnail_size( 850, 560, ['center', 'center'] );
   add_theme_support( 'title-tag' );
-  add_theme_support( 'post-formats', array( 'standard', 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio' ) );
   add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) );
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );

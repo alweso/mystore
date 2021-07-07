@@ -18,13 +18,13 @@ if (is_search()) {
 <main id="site-content" class="container">
   <div class="row">
     <div class="col-8">
-      <div class="<?php echo esc_attr($blog_layout); ?>">
+      <div class="<?php echo esc_attr( $blog_layout ); ?>">
       <?php if ( have_posts() ) {
         while ( have_posts() ) {
           the_post();
           ?>
           <div>
-            <?php get_template_part( 'template-parts/blog/archive/content', get_post_format() ); ?>
+            <?php get_template_part( 'template-parts/blog/archive/content'); ?>
           </div>
           <?php
         } ?>

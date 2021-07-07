@@ -5,6 +5,8 @@
 			<?php the_content(); ?>
 		</div>
 		<?php
+		get_template_part( 'template-parts/linked-pages' );
+		get_template_part( 'template-parts/post-navigation' );
 		if ( comments_open() || get_comments_number() ) : ?>
 			<div>
 		<?php	comments_template(); ?>

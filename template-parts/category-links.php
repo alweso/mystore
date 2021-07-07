@@ -4,5 +4,5 @@
   'title_li' => __( '' ),
 ); ?>
 <ul class="storezz-category-links">
-  <?php esc_html__( wp_list_categories( $categoryArgs ) ); ?>
+  <?php esc_html__( wp_list_categories( $categoryArgs ), 'storezz' ); ?>
 </ul>

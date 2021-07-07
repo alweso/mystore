@@ -1,4 +1,4 @@
-<article class="post-wrap post-wrap--standard">
+<article id="post-<?php the_ID(); ?>" <?php post_class();?> >
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php get_template_part( 'template-parts/blog/archive/post-media'); ?>
 	<?php endif; ?>
