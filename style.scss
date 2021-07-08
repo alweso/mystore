@@ -141,25 +141,24 @@ blockquote {margin: 1.5em 0;
     button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
     button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
     button {position:relative;overflow:hidden;}
-    button:before {
-      content: "";
-      display: block;
-      background:white;
-      height:150px;
-      width:150px;
-      left:-150px;
-      top:-200px;
-      position:absolute;
-      transform:scale(1);
-      border-radius:100%;
-    }
-
-    button:hover:before {
-      background:rgba(255,255,255,0.15);
-      transform:scale(4);
-      transition: transform .3s ease-out;
-    }
-
+    // button:before {
+    //   content: "";
+    //   display: block;
+    //   background:white;
+    //   height:150px;
+    //   width:150px;
+    //   left:-150px;
+    //   top:-200px;
+    //   position:absolute;
+    //   transform:scale(1);
+    //   border-radius:100%;
+    // }
+    //
+    // button:hover:before {
+    //   background:rgba(255,255,255,0.15);
+    //   transform:scale(4);
+    //   transition: transform .3s ease-out;
+    // }
 
 
     .wp-caption, .wp-caption-text,  .screen-reader-text, .gallery-caption, .bypostauthor {display: block;}

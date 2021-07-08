@@ -11,7 +11,7 @@
 <a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' )); ?>">
   <i class="fas fa-user"></i>
 </a>
-<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'storezz' ); ?>">
+<a class="storezz-menu-cart" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'storezz' ); ?>">
   <i class="fas fa-shopping-cart"></i>
   <?php echo WC()->cart->get_cart_contents_count(); ?>
 </a>

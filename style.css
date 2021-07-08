@@ -112,25 +112,6 @@ button {
   overflow: hidden;
 }
 
-button:before {
-  content: "";
-  display: block;
-  background: white;
-  height: 150px;
-  width: 150px;
-  left: -150px;
-  top: -200px;
-  position: absolute;
-  transform: scale(1);
-  border-radius: 100%;
-}
-
-button:hover:before {
-  background: rgba(255, 255, 255, 0.15);
-  transform: scale(4);
-  transition: transform 0.3s ease-out;
-}
-
 .wp-caption, .wp-caption-text, .screen-reader-text, .gallery-caption, .bypostauthor {
   display: block;
 }
