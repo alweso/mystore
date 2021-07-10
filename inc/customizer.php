@@ -45,11 +45,6 @@ $wp_customize->add_setting( 'storezz-choose-blog-layout', array(
   'sanitize_callback' => 'storezz_sanitize_radio',
 ) );
 
-$wp_customize->add_setting( 'storezz-blog-choose-sidebar', array(
-  'default'           => 'blog_sidebar_1',
-  'sanitize_callback' => 'storezz_sanitize_radio',
-) );
-
 $wp_customize->add_setting( 'storezz-show-categories-blog', array(
   'default'           => 'yes',
   'sanitize_callback' => 'storezz_sanitize_radio',
@@ -75,18 +70,6 @@ $wp_customize->add_control( 'storezz-choose-blog-layout', array(
     'blog_2' => esc_html__( 'Blog 2', 'storezz' ),
     'blog_3' => esc_html__( 'Blog 3', 'storezz' ),
     'blog_4' => esc_html__( 'Blog 4', 'storezz' ),
-  ),
-)
-);
-
-$wp_customize->add_control( 'storezz-blog-choose-sidebar', array(
-  'type' => 'radio',
-  'label' => esc_html__( 'Choose sidebar:', 'storezz' ),
-  'section' => 'storezz-blog-layout',
-  'settings' => 'storezz-blog-choose-sidebar',
-  'choices' => array(
-    'blog_sidebar_1' => esc_html__( 'Blog sidebar 1', 'storezz' ),
-    'blog_sidebar_2' => esc_html__( 'Blog sidebar 2', 'storezz' ),
   ),
 )
 );
@@ -118,11 +101,6 @@ $wp_customize->add_control( 'storezz-show-tags-blog', array(
 
 $wp_customize->add_setting( 'storezz-choose-single-layout', array(
   'default'           => 'single_1',
-  'sanitize_callback' => 'storezz_sanitize_radio',
-) );
-
-$wp_customize->add_setting( 'storezz-single-choose-sidebar', array(
-  'default'           => 'single_sidebar_1',
   'sanitize_callback' => 'storezz_sanitize_radio',
 ) );
 
@@ -177,18 +155,6 @@ $wp_customize->add_control( 'storezz-show-tags-single', array(
   ),
 ));
 
-$wp_customize->add_control( 'storezz-single-choose-sidebar', array(
-  'type' => 'radio',
-  'label' => esc_html__( 'Choose sidebar:', 'storezz' ),
-  'section' => 'storezz-single-layout',
-  'settings' => 'storezz-single-choose-sidebar',
-  'choices' => array(
-    'single_sidebar_1' => esc_html__( 'Single sidebar 1', 'storezz' ),
-    'single_sidebar_2' => esc_html__( 'Single sidebar 2', 'storezz' ),
-  ),
-)
-);
-
 /** Footer **/
 
 $wp_customize->add_setting( 'storezz-copyright-text', array(
@@ -208,6 +174,55 @@ $wp_customize->add_control( 'storezz-copyright-text', array(
   'settings' => 'storezz-copyright-text',
 )
 );
+
+/** WooCommerce **/
+/** WooCommerce Shop **/
+
+$wp_customize->add_setting( 'storezz-choose-shop-layout', array(
+  'default'           => 'layout_1',
+  'sanitize_callback' => 'storezz_sanitize_radio',
+));
+
+$wp_customize->add_section( 'storezz-shop-layout', array(
+  'title' => esc_html__( 'Shop Layout', 'storezz' ),
+  'panel' => 'storezz_theme_options',
+));
+
+$wp_customize->add_control( 'storezz-choose-shop-layout', array(
+  'type' => 'radio',
+  'label' => esc_html__( 'Choose shop layout:', 'storezz' ),
+  'section' => 'storezz-shop-layout',
+  'settings' => 'storezz-choose-shop-layout',
+  'choices' => array(
+    'layout_1' => esc_html__( 'Layout 1', 'storezz' ),
+    'layout_2' => esc_html__( 'Layout 2', 'storezz' ),
+    'layout_3' => esc_html__( 'Layout 3', 'storezz' ),
+  ),
+));
+
+/** WooCommerce Single Product **/
+
+$wp_customize->add_setting( 'storezz-choose-product-layout', array(
+  'default'           => 'layout_1',
+  'sanitize_callback' => 'storezz_sanitize_radio',
+));
+
+$wp_customize->add_section( 'storezz-product-layout', array(
+  'title' => esc_html__( 'Single Product Layout', 'storezz' ),
+  'panel' => 'storezz_theme_options',
+));
+
+$wp_customize->add_control( 'storezz-choose-product-layout', array(
+  'type' => 'radio',
+  'label' => esc_html__( 'Choose product layout:', 'storezz' ),
+  'section' => 'storezz-product-layout',
+  'settings' => 'storezz-choose-product-layout',
+  'choices' => array(
+    'layout_1' => esc_html__( 'Layout 1', 'storezz' ),
+    'layout_2' => esc_html__( 'Layout 2', 'storezz' ),
+    'layout_3' => esc_html__( 'Layout 3', 'storezz' ),
+  ),
+));
 }
 
 add_action( 'customize_register', 'storezz_new_customizer_settings' );

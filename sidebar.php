@@ -5,13 +5,17 @@
  **/
 
  if ( !is_front_page() && is_home() ) {
-   $sidebar_id = get_theme_mod( 'storezz-blog-choose-sidebar' );
- } elseif ( is_single() ) {
-	 $sidebar_id = get_theme_mod( 'storezz-single-choose-sidebar' );
+   $sidebar_id = 'blog_sidebar';
+ } elseif ( is_single() && !is_product() ) {
+	 $sidebar_id = 'single_sidebar';
  } elseif ( is_page() ) {
-	 $sidebar_id = get_theme_mod( 'storezz-page-choose-sidebar' );
+	 $sidebar_id = 'page_sidebar';
+ } elseif ( is_shop() ) {
+	 $sidebar_id = 'shop_sidebar';
+ } elseif ( is_product() ) {
+	 $sidebar_id = 'product_sidebar';
  } else {
-	  $sidebar_id = 'sidebar_1';
+	 $sidebar_id = 'blog_sidebar';
  } ?>
 
 <aside class="col-4">

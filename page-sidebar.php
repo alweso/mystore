@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Page sidebar 2
+* Template Name: Page with sidebar 
 *
 * @package WordPress
 * @subpackage Storezz
@@ -24,7 +24,7 @@ get_header();
 	</div>
   <aside class="col-4">
   	<ul id="sidebar">
-  		<?php dynamic_sidebar( 'page_sidebar_2' ); ?>
+  		<?php dynamic_sidebar( 'page_sidebar' ); ?>
   	</ul>
   </aside>
 </div>

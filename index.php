@@ -6,7 +6,6 @@
 **/
 
 get_header();
-$sidebar_id = get_theme_mod( 'storezz-blog-choose-sidebar' );
 $blog_layout = get_theme_mod( 'storezz-choose-blog-layout' );
 
 if (is_search()) {
@@ -40,11 +39,7 @@ if (is_search()) {
     <?php } ?>
     </div>
     </div>
-      <aside class="col-4">
-        <ul id="sidebar">
-          <?php dynamic_sidebar( $sidebar_id ); ?>
-        </ul>
-      </aside>
+      <?php get_sidebar(); ?>
   </div>
 </main>
 <?php get_footer(); ?>
