@@ -194,9 +194,11 @@ $wp_customize->add_control( 'storezz-choose-shop-layout', array(
   'section' => 'storezz-shop-layout',
   'settings' => 'storezz-choose-shop-layout',
   'choices' => array(
-    'layout_1' => esc_html__( 'Layout 1', 'storezz' ),
-    'layout_2' => esc_html__( 'Layout 2', 'storezz' ),
-    'layout_3' => esc_html__( 'Layout 3', 'storezz' ),
+    'layout_1' => esc_html__( 'Sidebar right', 'storezz' ),
+    'layout_2' => esc_html__( 'Sidebar left', 'storezz' ),
+    'layout_3' => esc_html__( 'Full width 3 columns', 'storezz' ),
+    'layout_4' => esc_html__( 'Full width 4 columns', 'storezz' ),
+    'layout_5' => esc_html__( 'Full width 5 columns', 'storezz' ),
   ),
 ));
 
@@ -218,9 +220,8 @@ $wp_customize->add_control( 'storezz-choose-product-layout', array(
   'section' => 'storezz-product-layout',
   'settings' => 'storezz-choose-product-layout',
   'choices' => array(
-    'layout_1' => esc_html__( 'Layout 1', 'storezz' ),
-    'layout_2' => esc_html__( 'Layout 2', 'storezz' ),
-    'layout_3' => esc_html__( 'Layout 3', 'storezz' ),
+    'horizontal' => esc_html__( 'Horizontal gallery', 'storezz' ),
+    'vertical' => esc_html__( 'Vertical gallery', 'storezz' ),
   ),
 ));
 }

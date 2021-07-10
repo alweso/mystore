@@ -16,7 +16,7 @@ if (is_search()) {
 ?>
 <main id="site-content" class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-9">
       <div class="<?php echo esc_attr( $blog_layout ); ?>">
       <?php if ( have_posts() ) {
         while ( have_posts() ) {

@@ -18,7 +18,7 @@
 	 $sidebar_id = 'blog_sidebar';
  } ?>
 
-<aside class="col-4">
+<aside class="col-3">
 	<ul id="sidebar">
 		<?php dynamic_sidebar( $sidebar_id ); ?>
 	</ul>

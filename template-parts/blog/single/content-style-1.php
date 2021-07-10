@@ -1,4 +1,4 @@
-<div class="col-8">
+<div class="col-9">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php get_template_part( 'template-parts/blog/single/single-header-1'); ?>
 		<div class="entry-content">

@@ -16,7 +16,7 @@ $page_layout = get_theme_mod( 'storezz-choose-page-layout' );
 		if ( $page_layout === 'page_1' ) : ?>
 		<div class="col-12">
 		<?php  elseif ( $page_layout === 'page_2' ) : ?>
-			<div class="col-8">
+			<div class="col-9">
 			<?php endif;
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
