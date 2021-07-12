@@ -12,14 +12,12 @@
 	 $sidebar_id = 'page_sidebar';
  } elseif ( is_shop() ) {
 	 $sidebar_id = 'shop_sidebar';
- } elseif ( is_product() ) {
-	 $sidebar_id = 'product_sidebar';
- } else {
-	 $sidebar_id = 'blog_sidebar';
- } ?>
+ }
 
+if ( $sidebar_id ) : ?>
 <aside class="col-3">
 	<ul id="sidebar">
 		<?php dynamic_sidebar( $sidebar_id ); ?>
 	</ul>
 </aside>
+<?php endif; ?>

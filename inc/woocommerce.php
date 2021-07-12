@@ -1,62 +1,90 @@
 <?php
+/* -------------------- Product opening wrapper ---------------------------------------------------------- */
 
-/**
- * Opening div for our content wrapper
- */
-add_action('woocommerce_before_main_content', 'iconic_open_div', 5);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+add_action('woocommerce_before_main_content', 'storezz_opening_wrapper', 5);
 
-function iconic_open_div() {
-    echo '<div class="iconic-div">';
+function storezz_opening_wrapper() {
+  global $product;
+  if( is_product() ) :
+    $product = wc_get_product( get_the_id() );
+    $attachment_ids = $product->get_gallery_image_ids();
+    $product_layout = get_theme_mod( 'storezz-choose-product-layout' );
+  endif;
+
+  if (is_product() && !empty($attachment_ids) ) : ?>
+    <section id="main-content" class="container storezz-product-<?php echo esc_html__( $product_layout, 'storezz' ); ?>" role="main">
+  <?php else : ?>
+    <section id="main-content" class="container" role="main">
+  <?php endif;
 }
 
-/**
- * Closing div for our content wrapper
- */
-add_action('woocommerce_after_main_content', 'iconic_close_div', 50);
+/* -------------------- Shop columns ---------------------------------------------------------- */
 
-function iconic_close_div() {
-    echo '</div>';
+add_filter('loop_shop_columns', 'storezz_loop_columns', 999);
+
+if ( !function_exists('storezz_loop_columns') ) :
+  function storezz_loop_columns() {
+  $shop_layout = get_theme_mod( 'storezz-choose-shop-layout', 'layout_1' );
+  if ( $shop_layout === 'layout_1' || $shop_layout === 'layout_2' ) :
+    return 2;
+  elseif ( $shop_layout === 'layout_3' || $shop_layout === 'layout_4' || $shop_layout === 'layout_5' ):
+    return 3;
+  elseif ( $shop_layout === 'layout_6' ):
+    return 4;
+  elseif ( $shop_layout === 'layout_7' ):
+    return 5;
+  endif;
+  }
+endif;
+
+/* -------------------- Adding opening Bootstrap divs ---------------------------------------------------------- */
+
+add_action('woocommerce_before_shop_loop', 'storezz_add_bootstrap_opening', 4);
+
+function storezz_add_bootstrap_opening() {
+  remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+  $shop_layout = get_theme_mod( 'storezz-choose-shop-layout' );
+  echo '<div class="row">';
+  if ( is_shop() && ( $shop_layout === 'layout_1' || $shop_layout === 'layout_2' || $shop_layout === 'layout_3' || $shop_layout === 'layout_4' ) ) :
+    get_sidebar();
+    echo '<div class="col-9">';
+  else :
+    echo '<div class="col-12">';
+  endif;
 }
 
-add_action( 'woocommerce_sidebar', 'boostrapit' );
+/* -------------------- Closing Bootstrap divs ---------------------------------------------------------- */
 
-function boostrapit() {
-    echo '<div class="bootstrapit">';
+add_action('woocommerce_after_shop_loop', 'storezz_add_bootstrap_closing', 3);
+
+function storezz_add_bootstrap_closing() {
+$shop_layout = get_theme_mod( 'storezz-choose-shop-layout' );
+echo '</div>';
+if ( is_shop() && $shop_layout === 'layout_1' ) :
+  get_sidebar();
+endif;
+echo '</div>';
 }
 
+/* -------------------- Add to cart ajaxify ---------------------------------------------------------- */
 
-
-/**
- * Show cart contents / total Ajax
- */
 add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
 
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
-	global $woocommerce;
-
-	ob_start();
-
-	?>
-	<a class="storezz-menu-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> – <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-	<?php
-	$fragments['a.storezz-menu-cart'] = ob_get_clean();
-	return $fragments;
+  global $woocommerce;
+  ob_start();
+  ?>
+  <a class="storezz-menu-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'storezz'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'storezz'), $woocommerce->cart->cart_contents_count);?> – <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+  <?php
+  $fragments['a.storezz-menu-cart'] = ob_get_clean();
+  return $fragments;
 }
 
-// add_action( 'woocommerce_before_main_content', 'shopppp' );
-// function shopppp() {
-//     echo '<div class="shopppp">';
-// }
+/* -------------------- Removing reviews title  ---------------------------------------------------------- */
 
-
-
-add_filter( 'woocommerce_reviews_title', 'misha_reviews_heading', 10, 3 );
-function misha_reviews_heading( $heading, $count, $product ){
-
-	return '';
-
+add_filter( 'woocommerce_reviews_title', 'storezz_reviews_heading', 10, 3 );
+function storezz_reviews_heading( $heading, $count, $product ) {
+  return '';
 }
-
-
-
- ?>
+?>

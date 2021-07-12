@@ -194,11 +194,13 @@ $wp_customize->add_control( 'storezz-choose-shop-layout', array(
   'section' => 'storezz-shop-layout',
   'settings' => 'storezz-choose-shop-layout',
   'choices' => array(
-    'layout_1' => esc_html__( 'Sidebar right', 'storezz' ),
-    'layout_2' => esc_html__( 'Sidebar left', 'storezz' ),
-    'layout_3' => esc_html__( 'Full width 3 columns', 'storezz' ),
-    'layout_4' => esc_html__( 'Full width 4 columns', 'storezz' ),
-    'layout_5' => esc_html__( 'Full width 5 columns', 'storezz' ),
+    'layout_1' => esc_html__( 'Sidebar right 2 columns', 'storezz' ),
+    'layout_2' => esc_html__( 'Sidebar left 2 columns', 'storezz' ),
+    'layout_3' => esc_html__( 'Sidebar right 3 columns', 'storezz' ),
+    'layout_4' => esc_html__( 'Sidebar left 3 columns', 'storezz' ),
+    'layout_5' => esc_html__( 'Full width 3 columns', 'storezz' ),
+    'layout_6' => esc_html__( 'Full width 4 columns', 'storezz' ),
+    'layout_7' => esc_html__( 'Full width 5 columns', 'storezz' ),
   ),
 ));
 
