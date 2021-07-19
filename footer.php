@@ -23,7 +23,7 @@ $copyright_text = get_theme_mod('storezz-copyright-text');
 				<?php dynamic_sidebar( 'footer_4' ); ?>
 			</div>
 			<div class="col-12">
-				<?php echo esc_html__( $copyright_text, 'storezz' ); ?>
+				<?php echo '<p>' . esc_html( $copyright_text, 'storezz' ) . '</p>'?>
 			</div>
 		</div>
 	</div>

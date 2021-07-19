@@ -13,7 +13,6 @@ function storezz_opening_wrapper() {
   endif;
 
   if (is_product() && !empty($attachment_ids) ) : ?>
-    <section id="main-content" class="container storezz-product-<?php echo esc_html__( $product_layout, 'storezz' ); ?>" role="main">
   <?php else : ?>
     <section id="main-content" class="container" role="main">
   <?php endif;
@@ -75,7 +74,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
   global $woocommerce;
   ob_start();
   ?>
-  <a class="storezz-menu-cart" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'storezz'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'storezz'), $woocommerce->cart->cart_contents_count);?> – <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+  <?php echo '<a class="storezz-menu-cart" href="' . esc_url(wc_get_cart_url()) . '" title="' . esc_attr_e('View your shopping cart', 'storezz') . '">' . sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'storezz'), $woocommerce->cart->cart_contents_count) .  '–' . $woocommerce->cart->get_cart_total() . '</a>'; ?>
   <?php
   $fragments['a.storezz-menu-cart'] = ob_get_clean();
   return $fragments;

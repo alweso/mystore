@@ -4,7 +4,7 @@
  * @since 1.0.0
  **/
 
- if ( !is_front_page() && is_home() ) {
+ if ( !is_front_page() && is_home() || is_archive() ) {
    $sidebar_id = 'blog_sidebar';
  } elseif ( is_single() && !is_product() ) {
 	 $sidebar_id = 'single_sidebar';
@@ -14,7 +14,7 @@
 	 $sidebar_id = 'shop_sidebar';
  }
 
-if ( $sidebar_id ) : ?>
+if ( !empty($sidebar_id )) : ?>
 <aside class="col-3">
 	<ul id="sidebar">
 		<?php dynamic_sidebar( $sidebar_id ); ?>
