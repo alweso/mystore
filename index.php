@@ -27,7 +27,6 @@ if (is_search()) {
           </div>
           <?php
         } ?>
-        <?php echo get_theme_mod( 'storezz-blog-layout' ); ?>
         <div class="col-12">
           <?php echo the_posts_pagination(); ?>
         </div>
