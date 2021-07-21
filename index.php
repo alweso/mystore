@@ -6,6 +6,7 @@
 **/
 
 get_header();
+
 $blog_layout = get_theme_mod( 'storezz-choose-blog-layout' );
 
 if (is_search()) {

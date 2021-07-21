@@ -68,8 +68,6 @@ function storezz_enqueue_comment_reply_script() {
   };
 }
 
-
-
 add_action( 'comment_form_before', 'storezz_enqueue_comment_reply_script' );
 
 /*** Widget areas ***/
