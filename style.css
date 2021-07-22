@@ -13,10 +13,57 @@ Text Domain: storezz
 */
 /* ---------------------------------- WP classes ----------------------------------- */
 /* ---------------------------------- variables ------------------------------------- */
-/* -------------------- general -------------------------------- */
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup
+	2. 	Element Base
+	3. 	Helper Classes
+	4. 	Site Header
+	5. 	Menu Modal
+	6. 	Search Modal
+	7. 	Page Templates
+		a. 	Template: Cover Template
+		c. 	Template: Full Width
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Comments
+	13. Site Pagination
+	14. Error 404
+	15. Widgets
+	16. Site Footer
+	17. Media Queries
+/* ----------------------- CSS reset -------------------------------------- */
+html, body {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small,
+strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+  content: "";
+}
+
+/* -------------------- Document Setup -------------------------------- */
 body {
   font-size: 14px;
   font-family: "Mulish";
+  font-weight: 600;
   line-height: 28px;
   background: #f4f4f4;
 }
@@ -57,9 +104,27 @@ h6 {
   line-height: 28px;
 }
 
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+  font-weight: bolder;
+}
+
+b,
+strong {
+  font-weight: 900;
+}
+
 a {
   color: #393939;
   text-decoration: none;
+}
+a:hover {
+  color: #393939;
+  opacity: 0.9;
 }
 
 hr {
@@ -133,6 +198,10 @@ button {
   margin: 0 auto;
 }
 
+.wp-block-cover {
+  margin-bottom: 20px;
+}
+
 /* --------------------------- comment-form --------------------------- */
 .comment-form-comment label {
   display: block;
@@ -192,35 +261,25 @@ button {
   height: 100%;
 }
 
-/* ------------------------------ navbar --------------------------------- */
-ul.dropdown-menu li > ul.dropdown-menu {
-  left: 100%;
-  top: 0;
+/* =========================================== NATIVE WIDGETS ================================================= */
+ul[class^=wp-block-] {
+  margin-bottom: 20px;
 }
 
-.menu-item-has-children:hover > ul.dropdown-menu {
-  display: block !important;
+/* ----------------------------------------- categories native widget ------------------------------------- */
+.wp-block-categories {
+  padding: 10px !important;
+  border: 1px solid #b6b6b6;
+  list-style-type: none;
 }
 
-/* ------------------------------------------------------------------------------------------------------------ */
-.storezz-entry-header .entry-title {
-  margin-bottom: 10px;
-}
-.storezz-entry-header .post-categories {
-  padding: 0;
-}
-.storezz-entry-header .post-categories li {
-  display: inline-block;
-  background: #928478;
-  padding: 0px 10px;
-  border-radius: 3px;
-  margin-right: 3px;
-}
-.storezz-entry-header .post-categories li a {
-  color: #fff;
+/* ------------------------------------- recent post native widget --------------------------------------- */
+.wp-block-latest-posts {
+  padding: 10px !important;
+  border: 1px solid #b6b6b6;
 }
 
-/* -------------------------------- Calendar widget --------------------------------------------- */
+/* -------------------------------- Calendar native widget --------------------------------------------- */
 #wp-calendar {
   width: 100%;
 }
@@ -272,6 +331,40 @@ ul.dropdown-menu li > ul.dropdown-menu {
   padding-top: 10px;
 }
 
+/* ------------------------------ navbar --------------------------------- */
+ul.dropdown-menu li > ul.dropdown-menu {
+  left: 100%;
+  top: 0;
+}
+
+.menu-item-has-children:hover > ul.dropdown-menu {
+  display: block !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+.storezz-entry-header .entry-title {
+  margin-bottom: 10px;
+}
+.storezz-entry-header .storezz-post-details {
+  color: #959595;
+}
+.storezz-entry-header .storezz-post-details span {
+  margin-right: 5px;
+}
+.storezz-entry-header .post-categories {
+  padding: 0;
+}
+.storezz-entry-header .post-categories li {
+  display: inline-block;
+  background: #928478;
+  padding: 0px 10px;
+  border-radius: 3px;
+  margin-right: 3px;
+}
+.storezz-entry-header .post-categories li a {
+  color: #fff;
+}
+
 /* ------------------------------ Blog Layouts ------------------------- */
 .blog_1 {
   display: grid;
@@ -288,11 +381,9 @@ ul.dropdown-menu li > ul.dropdown-menu {
   grid-column: 1/3;
 }
 
-.blog_3 article {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  margin-bottom: 15px;
+.blog_3 .storezz-entry-media {
+  width: 50%;
+  float: left;
 }
 
 .blog_4 {
@@ -301,6 +392,7 @@ ul.dropdown-menu li > ul.dropdown-menu {
   grid-gap: 15px;
 }
 
+/* ----------------------------------------------- MENU -------------------------------------------------- */
 #storezz-menu {
   background: #4cb6ea;
   margin: 0;
@@ -581,6 +673,12 @@ ul.dropdown-menu li > ul.dropdown-menu {
   display: block;
 }
 
+/* --------------------------------------------------- FOOTER ----------------------------------------------------- */
+.storezz-site-footer {
+  background: #000000;
+}
+
+/* ---------------------------------- woocommerce ------------------------------------ */
 .storezz-product-vertical .woocommerce-product-gallery {
   position: relative;
   padding-left: 120px;

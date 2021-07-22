@@ -7,8 +7,5 @@
 		<div class="entry-content">
 			<?php the_excerpt(); ?>
 		</div>
-		<a class="storezz-post-readmore" href="<?php echo esc_url(get_permalink()); ?>">
-			<?php esc_html_e('Read More', 'storezz'); ?>
-		</a>
 	</div>
 </article>

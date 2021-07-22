@@ -64,14 +64,67 @@ Text Domain: storezz
 
 $base-color: #393939;
 $base-color-darker: #2f6b71;
-$secondary-color: #142f56;
-$medium-grey: #5f5f5f;
+$secondary-color: #928478;
+$medium-grey: #959595;
 $light-grey: #b6b6b6;
 $white: #ffffff;
-/* -------------------- general -------------------------------- */
+$black: #000000;
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup
+	2. 	Element Base
+	3. 	Helper Classes
+	4. 	Site Header
+	5. 	Menu Modal
+	6. 	Search Modal
+	7. 	Page Templates
+		a. 	Template: Cover Template
+		c. 	Template: Full Width
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Comments
+	13. Site Pagination
+	14. Error 404
+	15. Widgets
+	16. Site Footer
+	17. Media Queries
+/* ----------------------- CSS reset -------------------------------------- */
+
+
+
+html, body {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small,
+strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+}
+
+
+/* -------------------- Document Setup -------------------------------- */
 body {
   font-size: 14px;
   font-family: "Mulish";
+  font-weight: 600;
   line-height: 28px;
   background:#f4f4f4;
 }
@@ -108,14 +161,30 @@ h6 {
   line-height: 28px;
 }
 
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+	font-weight: bolder;
+}
 
-a {color: $base-color; text-decoration: none;}
+b,
+strong {
+	font-weight: 900;
+}
 
-// h4 a {color: #364b62}
+a {
+  color: $base-color;
+  text-decoration: none;
+  &:hover {
+    color: $base-color;
+    opacity: 0.9;
+  }
+}
 
 span {}
-b {}
-strong {}
 label {}
 hr {margin: 3em 8em;}
 blockquote {margin: 1.5em 0;
@@ -141,30 +210,17 @@ blockquote {margin: 1.5em 0;
     button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
     button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
     button {position:relative;overflow:hidden;}
-    // button:before {
-    //   content: "";
-    //   display: block;
-    //   background:white;
-    //   height:150px;
-    //   width:150px;
-    //   left:-150px;
-    //   top:-200px;
-    //   position:absolute;
-    //   transform:scale(1);
-    //   border-radius:100%;
-    // }
-    //
-    // button:hover:before {
-    //   background:rgba(255,255,255,0.15);
-    //   transform:scale(4);
-    //   transition: transform .3s ease-out;
-    // }
 
 
     .wp-caption, .wp-caption-text,  .screen-reader-text, .gallery-caption, .bypostauthor {display: block;}
     .alignright {float: right;margin-left: 20px;margin-bottom:10px;}
     .alignleft {float: left;margin-right: 20px;margin-bottom:10px;}
     .aligncenter {margin: 0 auto;}
+
+
+    .wp-block-cover {
+    	margin-bottom: 20px;
+    }
 
 
 
@@ -190,402 +246,428 @@ blockquote {margin: 1.5em 0;
       background: $white;
       padding: 7px;
     }
-//
-//
-// .wp-widget-categories ul {
-//   list-style-type: none;
-//   padding: 0;
-// }
-.hidden {display: none !important;}
+    //
+    //
+    // .wp-widget-categories ul {
+    //   list-style-type: none;
+    //   padding: 0;
+    // }
+    .hidden {display: none !important;}
 
-/* ------------------------ Breadcrumbs ------------------------------------------- */
+    /* ------------------------ Breadcrumbs ------------------------------------------- */
 
-.breadcrumbs {
-  li {
-    display: inline-block;
-  }
-}
-
-/* ------------------------- Search form ---------------------------------------- */
-.storezz-search-trigger {
-  cursor: pointer;
-}
-.storezz-search-form-wrap {
-display: none;
-width: 100%;
-height: 100%;
-background: rgba(255,255,255,0.95);
-position: fixed;
-left: 0;
-top: 0;
-z-index: 1;
-text-align: center;
-.storezz-search-close {
-  text-transform: uppercase;
-  cursor: pointer;
-  font-size: 30px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-&--inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%
-}
-}
-
-/* ------------------------------ navbar --------------------------------- */
-ul.dropdown-menu li > ul.dropdown-menu{
-    left: 100%;
-    top: 0;
-}
-
-.menu-item-has-children:hover > ul.dropdown-menu {
-    display: block !important;
-}
-
-/* ------------------------------------------------------------------------------------------------------------ */
-
-.storezz-entry-header {
-  .entry-title {
-    margin-bottom: 10px;
-  }
-
-  // .storezz-post-details {
-  //   display: grid;
-  //   grid-template-columns: 1fr 2fr;
-  // }
-
-  .post-categories {
-    padding: 0;
-    li {
-      display: inline-block;
-      background: #928478;
-      padding: 0px 10px;
-      border-radius: 3px;
-      margin-right: 3px;
-      a {
-        color: #fff;
+    .breadcrumbs {
+      li {
+        display: inline-block;
       }
     }
-  }
-}
 
-/* -------------------------------- Calendar widget --------------------------------------------- */
-#wp-calendar {width: 100%; }
-#wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
-#wp-calendar thead { font-size: 10px; }
-#wp-calendar thead th { padding-bottom: 10px; }
-#wp-calendar tbody { color: #aaa; }
-#wp-calendar tbody td { background: #f5f5f5; outline: 1px solid #d8d8d8; text-align: center; padding:8px;}
-#wp-calendar tbody td:hover { background: #fff; }
-#wp-calendar tbody .pad { background: none; }
-#wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
-#wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
-
-/* ------------------------------ Blog Layouts ------------------------- */
-.blog_1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-}
-
-.blog_2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15px;
-  &>div:first-of-type {
-    grid-column: 1/3;
-  }
-}
-
-.blog_3 {
-  article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-    margin-bottom: 15px;
-  }
-}
-
-.blog_4 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-#storezz-menu {
-  background: #4cb6ea;
-  margin: 0;
-  width: auto;
-  padding: 0;
-  line-height: 1;
-  display: block;
-  position: relative;
-  font-family: 'PT Sans', sans-serif;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-#storezz-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-#storezz-menu ul:after,
-#storezz-menu:after {
-  content: ' ';
-  display: block;
-  font-size: 0;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-#storezz-menu ul li {
-  margin: 0;
-  padding: 0;
-  display: block;
-  position: relative;
-}
-#storezz-menu ul li a {
-  text-decoration: none;
-  display: block;
-  margin: 0;
-  -webkit-transition: color .2s ease;
-  -moz-transition: color .2s ease;
-  -ms-transition: color .2s ease;
-  -o-transition: color .2s ease;
-  transition: color .2s ease;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#storezz-menu ul li ul {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-}
-#storezz-menu ul li ul li {
-  max-height: 0;
-  position: absolute;
-  -webkit-transition: max-height 0.4s ease-out;
-  -moz-transition: max-height 0.4s ease-out;
-  -ms-transition: max-height 0.4s ease-out;
-  -o-transition: max-height 0.4s ease-out;
-  transition: max-height 0.4s ease-out;
-  background: #ffffff;
-}
-#storezz-menu ul li ul li.has-sub:after {
-  display: block;
-  position: absolute;
-  content: '';
-  height: 10px;
-  width: 10px;
-  border-radius: 5px;
-  background: #000000;
-  z-index: 1;
-  top: 13px;
-  right: 15px;
-}
-#storezz-menu.align-right ul li ul li.has-sub:after {
-  right: auto;
-  left: 15px;
-}
-#storezz-menu ul li ul li.has-sub:before {
-  display: block;
-  position: absolute;
-  content: '';
-  height: 0;
-  width: 0;
-  border: 3px solid transparent;
-  border-left-color: #ffffff;
-  z-index: 2;
-  top: 15px;
-  right: 15px;
-}
-#storezz-menu.align-right ul li ul li.has-sub:before {
-  right: auto;
-  left: 15px;
-  border-left-color: transparent;
-  border-right-color: #ffffff;
-}
-#storezz-menu ul li ul li a {
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: none;
-  color: #000000;
-  letter-spacing: 0;
-  display: block;
-  width: 170px;
-  padding: 11px 10px 11px 20px;
-}
-#storezz-menu ul li ul li:hover > a,
-#storezz-menu ul li ul li.active > a {
-  color: #4cb6ea;
-}
-#storezz-menu ul li ul li:hover:after,
-#storezz-menu ul li ul li.active:after {
-  background: #4cb6ea;
-}
-#storezz-menu ul li ul li:hover > ul {
-  left: 100%;
-  top: 0;
-}
-#storezz-menu ul li ul li:hover > ul > li {
-  max-height: 72px;
-  position: relative;
-}
-#storezz-menu > ul > li {
-  float: left;
-}
-#storezz-menu.align-center > ul > li {
-  float: none;
-  display: inline-block;
-}
-#storezz-menu.align-center > ul {
-  text-align: center;
-}
-#storezz-menu.align-center ul ul {
-  text-align: left;
-}
-#storezz-menu.align-right > ul {
-  float: right;
-}
-#storezz-menu.align-right > ul > li:hover > ul {
-  left: auto;
-  right: 0;
-}
-#storezz-menu.align-right ul ul li:hover > ul {
-  right: 100%;
-  left: auto;
-}
-#storezz-menu.align-right ul ul li a {
-  text-align: right;
-}
-#storezz-menu > ul > li:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 0;
-  top: 0;
-  z-index: 0;
-  background: #ffffff;
-  -webkit-transition: height .2s;
-  -moz-transition: height .2s;
-  -ms-transition: height .2s;
-  -o-transition: height .2s;
-  transition: height .2s;
-}
-#storezz-menu > ul > li.has-sub > a {
-  padding-right: 40px;
-}
-#storezz-menu > ul > li.has-sub > a:after {
-  display: block;
-  content: '';
-  background: #ffffff;
-  height: 12px;
-  width: 12px;
-  position: absolute;
-  border-radius: 13px;
-  right: 14px;
-  top: 16px;
-}
-#storezz-menu > ul > li.has-sub > a:before {
-  display: block;
-  content: '';
-  border: 4px solid transparent;
-  border-top-color: #4cb6ea;
-  z-index: 2;
-  height: 0;
-  width: 0;
-  position: absolute;
-  right: 16px;
-  top: 21px;
-}
-#storezz-menu > ul > li > a {
-  color: #ffffff;
-  padding: 15px 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 14px;
-  z-index: 2;
-  position: relative;
-}
-#storezz-menu > ul > li:hover:after,
-#storezz-menu > ul > li.active:after {
-  height: 100%;
-}
-#storezz-menu > ul > li:hover > a,
-#storezz-menu > ul > li.active > a {
-  color: #000000;
-}
-#storezz-menu > ul > li:hover > a:after,
-#storezz-menu > ul > li.active > a:after {
-  background: #000000;
-}
-#storezz-menu > ul > li:hover > a:before,
-#storezz-menu > ul > li.active > a:before {
-  border-top-color: #ffffff;
-}
-#storezz-menu > ul > li:hover > ul {
-  left: 0;
-}
-#storezz-menu > ul > li:hover > ul > li {
-  max-height: 72px;
-  position: relative;
-}
-#storezz-menu #menu-button {
-  display: none;
-}
-#storezz-menu > ul > li > a {
-  display: block;
-}
-#storezz-menu > ul > li {
-  width: auto;
-}
-#storezz-menu > ul > li > ul {
-  width: 170px;
-  display: block;
-}
-#storezz-menu > ul > li > ul > li {
-  width: 170px;
-  display: block;
-}
-
-.storezz-product-vertical {
-  .woocommerce-product-gallery {
-    position: relative;
-padding-left: 120px;
-      .flex-control-thumbs {
-        display: block !important;
-margin: 0 !important;
-padding-right: 20px;
-position: absolute;
-top: 0;
-left: 0;
-width: 120px;
-height: 100%;
-overflow: hidden;
-          li {
-              width: 100% !important;
-              padding-top: 0;
-              padding-bottom: 15px;
-          }
+    /* ------------------------- Search form ---------------------------------------- */
+    .storezz-search-trigger {
+      cursor: pointer;
+    }
+    .storezz-search-form-wrap {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.95);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      text-align: center;
+      .storezz-search-close {
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 30px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
-  }
-}
+      &--inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%
+      }
+    }
+
+    /* =========================================== NATIVE WIDGETS ================================================= */
+
+    ul[class^="wp-block-"] {
+      margin-bottom: 20px;
+    }
+
+    /* ----------------------------------------- categories native widget ------------------------------------- */
+
+    .wp-block-categories {
+      padding: 10px !important;
+      border: 1px solid $light-grey;
+      list-style-type: none;
+    }
+    /* ------------------------------------- recent post native widget --------------------------------------- */
+
+    .wp-block-latest-posts {
+      padding: 10px !important;
+      border: 1px solid $light-grey;
+    }
+
+
+    /* -------------------------------- Calendar native widget --------------------------------------------- */
+    #wp-calendar {width: 100%; }
+    #wp-calendar caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+    #wp-calendar thead { font-size: 10px; }
+    #wp-calendar thead th { padding-bottom: 10px; }
+    #wp-calendar tbody { color: #aaa; }
+    #wp-calendar tbody td { background: #f5f5f5; outline: 1px solid #d8d8d8; text-align: center; padding:8px;}
+    #wp-calendar tbody td:hover { background: #fff; }
+    #wp-calendar tbody .pad { background: none; }
+    #wp-calendar tfoot #next { font-size: 10px; text-transform: uppercase; text-align: right; }
+    #wp-calendar tfoot #prev { font-size: 10px; text-transform: uppercase; padding-top: 10px; }
+
+    /* ------------------------------ navbar --------------------------------- */
+    ul.dropdown-menu li > ul.dropdown-menu{
+      left: 100%;
+      top: 0;
+    }
+
+    .menu-item-has-children:hover > ul.dropdown-menu {
+      display: block !important;
+    }
+
+    /* ------------------------------------------------------------------------------------------------------------ */
+
+    .storezz-entry-header {
+      .entry-title {
+        margin-bottom: 10px;
+      }
+
+      .storezz-post-details {
+        color: $medium-grey;
+        span {
+          margin-right: 5px;
+        }
+      }
+
+
+      .post-categories {
+        padding: 0;
+        li {
+          display: inline-block;
+          background: $secondary-color;
+          padding: 0px 10px;
+          border-radius: 3px;
+          margin-right: 3px;
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+
+    /* ------------------------------ Blog Layouts ------------------------- */
+    .blog_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+    }
+
+    .blog_2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+      &>div:first-of-type {
+        grid-column: 1/3;
+      }
+    }
+
+    .blog_3 {
+      .storezz-entry-media {
+        width: 50%;
+        float: left;
+      }
+    }
+
+    .blog_4 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+
+/* ----------------------------------------------- MENU -------------------------------------------------- */
+
+
+
+    #storezz-menu {
+      background: #4cb6ea;
+      margin: 0;
+      width: auto;
+      padding: 0;
+      line-height: 1;
+      display: block;
+      position: relative;
+      font-family: 'PT Sans', sans-serif;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+
+    #storezz-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    #storezz-menu ul:after,
+    #storezz-menu:after {
+      content: ' ';
+      display: block;
+      font-size: 0;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    #storezz-menu ul li {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative;
+    }
+    #storezz-menu ul li a {
+      text-decoration: none;
+      display: block;
+      margin: 0;
+      -webkit-transition: color .2s ease;
+      -moz-transition: color .2s ease;
+      -ms-transition: color .2s ease;
+      -o-transition: color .2s ease;
+      transition: color .2s ease;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    #storezz-menu ul li ul {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+    }
+    #storezz-menu ul li ul li {
+      max-height: 0;
+      position: absolute;
+      -webkit-transition: max-height 0.4s ease-out;
+      -moz-transition: max-height 0.4s ease-out;
+      -ms-transition: max-height 0.4s ease-out;
+      -o-transition: max-height 0.4s ease-out;
+      transition: max-height 0.4s ease-out;
+      background: #ffffff;
+    }
+    #storezz-menu ul li ul li.has-sub:after {
+      display: block;
+      position: absolute;
+      content: '';
+      height: 10px;
+      width: 10px;
+      border-radius: 5px;
+      background: #000000;
+      z-index: 1;
+      top: 13px;
+      right: 15px;
+    }
+    #storezz-menu.align-right ul li ul li.has-sub:after {
+      right: auto;
+      left: 15px;
+    }
+    #storezz-menu ul li ul li.has-sub:before {
+      display: block;
+      position: absolute;
+      content: '';
+      height: 0;
+      width: 0;
+      border: 3px solid transparent;
+      border-left-color: #ffffff;
+      z-index: 2;
+      top: 15px;
+      right: 15px;
+    }
+    #storezz-menu.align-right ul li ul li.has-sub:before {
+      right: auto;
+      left: 15px;
+      border-left-color: transparent;
+      border-right-color: #ffffff;
+    }
+    #storezz-menu ul li ul li a {
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: none;
+      color: #000000;
+      letter-spacing: 0;
+      display: block;
+      width: 170px;
+      padding: 11px 10px 11px 20px;
+    }
+    #storezz-menu ul li ul li:hover > a,
+    #storezz-menu ul li ul li.active > a {
+      color: #4cb6ea;
+    }
+    #storezz-menu ul li ul li:hover:after,
+    #storezz-menu ul li ul li.active:after {
+      background: #4cb6ea;
+    }
+    #storezz-menu ul li ul li:hover > ul {
+      left: 100%;
+      top: 0;
+    }
+    #storezz-menu ul li ul li:hover > ul > li {
+      max-height: 72px;
+      position: relative;
+    }
+    #storezz-menu > ul > li {
+      float: left;
+    }
+    #storezz-menu.align-center > ul > li {
+      float: none;
+      display: inline-block;
+    }
+    #storezz-menu.align-center > ul {
+      text-align: center;
+    }
+    #storezz-menu.align-center ul ul {
+      text-align: left;
+    }
+    #storezz-menu.align-right > ul {
+      float: right;
+    }
+    #storezz-menu.align-right > ul > li:hover > ul {
+      left: auto;
+      right: 0;
+    }
+    #storezz-menu.align-right ul ul li:hover > ul {
+      right: 100%;
+      left: auto;
+    }
+    #storezz-menu.align-right ul ul li a {
+      text-align: right;
+    }
+    #storezz-menu > ul > li:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 0;
+      top: 0;
+      z-index: 0;
+      background: #ffffff;
+      -webkit-transition: height .2s;
+      -moz-transition: height .2s;
+      -ms-transition: height .2s;
+      -o-transition: height .2s;
+      transition: height .2s;
+    }
+    #storezz-menu > ul > li.has-sub > a {
+      padding-right: 40px;
+    }
+    #storezz-menu > ul > li.has-sub > a:after {
+      display: block;
+      content: '';
+      background: #ffffff;
+      height: 12px;
+      width: 12px;
+      position: absolute;
+      border-radius: 13px;
+      right: 14px;
+      top: 16px;
+    }
+    #storezz-menu > ul > li.has-sub > a:before {
+      display: block;
+      content: '';
+      border: 4px solid transparent;
+      border-top-color: #4cb6ea;
+      z-index: 2;
+      height: 0;
+      width: 0;
+      position: absolute;
+      right: 16px;
+      top: 21px;
+    }
+    #storezz-menu > ul > li > a {
+      color: #ffffff;
+      padding: 15px 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 14px;
+      z-index: 2;
+      position: relative;
+    }
+    #storezz-menu > ul > li:hover:after,
+    #storezz-menu > ul > li.active:after {
+      height: 100%;
+    }
+    #storezz-menu > ul > li:hover > a,
+    #storezz-menu > ul > li.active > a {
+      color: #000000;
+    }
+    #storezz-menu > ul > li:hover > a:after,
+    #storezz-menu > ul > li.active > a:after {
+      background: #000000;
+    }
+    #storezz-menu > ul > li:hover > a:before,
+    #storezz-menu > ul > li.active > a:before {
+      border-top-color: #ffffff;
+    }
+    #storezz-menu > ul > li:hover > ul {
+      left: 0;
+    }
+    #storezz-menu > ul > li:hover > ul > li {
+      max-height: 72px;
+      position: relative;
+    }
+    #storezz-menu #menu-button {
+      display: none;
+    }
+    #storezz-menu > ul > li > a {
+      display: block;
+    }
+    #storezz-menu > ul > li {
+      width: auto;
+    }
+    #storezz-menu > ul > li > ul {
+      width: 170px;
+      display: block;
+    }
+    #storezz-menu > ul > li > ul > li {
+      width: 170px;
+      display: block;
+    }
+
+    /* --------------------------------------------------- FOOTER ----------------------------------------------------- */
+
+    .storezz-site-footer {
+      background: $black;
+    }
+
+    /* ---------------------------------- woocommerce ------------------------------------ */
+
+    .storezz-product-vertical {
+      .woocommerce-product-gallery {
+        position: relative;
+        padding-left: 120px;
+        .flex-control-thumbs {
+          display: block !important;
+          margin: 0 !important;
+          padding-right: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 120px;
+          height: 100%;
+          overflow: hidden;
+          li {
+            width: 100% !important;
+            padding-top: 0;
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
