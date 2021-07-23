@@ -1,0 +1,123 @@
+
+
+$base-color: #393939;
+$base-color-darker: #2f6b71;
+$secondary-color: #928478;
+$medium-grey: #959595;
+$light-grey: #b6b6b6;
+$white: #ffffff;
+$black: #000000;
+
+body {
+  font-size: 14px;
+  font-family: "Mulish";
+  font-weight: 600;
+  line-height: 27px;
+	// max-width: 960px;
+	margin: 0 auto;
+}
+//
+// .edit-post-visual-editor {
+// 	max-width: 960px;
+// 	margin: 0 auto;
+// }
+/* Main column width */
+.wp-block {
+    max-width: 960px;
+		margin: 0 auto;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align='wide'] {
+	// max-width: 960px;
+	margin: 0 auto;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align='full'] {
+	// max-width: 960px;
+	margin: 0 auto;
+}
+
+.wp-block-button {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	&__link {
+		line-height: 18px;
+		font-size: 14px;
+		border-radius: 0;
+		padding: 15px 20px;
+	}
+}
+
+
+.wp-block-image {
+	figcaption {
+		max-width: 960px;
+		margin: 0 auto;
+		color: $medium-grey;
+		font-weight: 400;
+		margin-top: 0px;
+	}
+}
+
+
+.wp-block-pullquote {
+	// max-width: 960px;
+	margin: 0 auto;
+	border-width: 3px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+		margin: 35px 0;
+}
+
+blockquote, blockquote.wp-block-quote {
+	// max-width: 960px;
+	margin: 0 auto;
+	margin: 1.5em 0;
+	position:relative;
+	font-style: italic;
+	text-align: center !important;
+	cite {
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 0;
+			width: 30px;
+			height: 1px;
+			background: #6c757d;
+			content: '';
+			bottom: 0;
+			margin: 10px 0 13px -40px;
+		}
+		&:after {
+			position: absolute;
+			top: 0;
+			width: 30px;
+			height: 1px;
+			background: #6c757d;
+			content: '';
+			bottom: 0;
+			right: 0;
+			margin: 10px -40px 13px 0px;
+		}
+	}
+	&:before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d" !important;
+		font-size: 30px;
+		font-style: normal;
+		color: $base-color;
+		top: 0;
+		left: 0;
+	}
+	&.is-style-large {
+		margin: 35px auto;
+		cite {
+			position: relative;
+			&:before, &:after {
+				content: none;
+			}
+		}
+	}
+}

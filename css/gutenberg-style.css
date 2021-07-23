@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/*
+Theme Name: Storezz
+Theme URI: http://www.pascaru.pl/storezz
+Author: Aleksandra Pascaru
+Author URI: http://www.pascaru.pl
+License URI: http://www.pascaru.pl/licence
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: storezz
+*/
+.wp-block-button {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.wp-block-button__link {
+  line-height: 18px;
+  font-size: 14px;
+  border-radius: 0;
+  padding: 15px 20px;
+}
+
+.wp-block-image figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.wp-block-pullquote {
+  border-width: 3px;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  margin: 35px 0;
+}
+
+blockquote, blockquote.wp-block-quote {
+  margin: 1.5em 0;
+  position: relative;
+  font-style: italic;
+  text-align: center;
+}
+blockquote cite, blockquote.wp-block-quote cite {
+  position: relative;
+}
+blockquote cite:before, blockquote.wp-block-quote cite:before {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 1px;
+  background: #6c757d;
+  content: "";
+  bottom: 0;
+  margin: 10px 0 13px -40px;
+}
+blockquote cite:after, blockquote.wp-block-quote cite:after {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 1px;
+  background: #6c757d;
+  content: "";
+  bottom: 0;
+  right: 0;
+  margin: 10px -40px 13px 0px;
+}
+blockquote:before, blockquote.wp-block-quote:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-size: 30px;
+  font-style: normal;
+  color: #393939;
+  top: 0;
+  left: 0;
+}
+blockquote.is-style-large, blockquote.wp-block-quote.is-style-large {
+  margin: 35px 0;
+}
+blockquote.is-style-large cite, blockquote.wp-block-quote.is-style-large cite {
+  position: relative;
+}
+blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blockquote.wp-block-quote.is-style-large cite:before, blockquote.wp-block-quote.is-style-large cite:after {
+  content: none;
+}
+
+/*# sourceMappingURL=gutenberg-style.css.map */

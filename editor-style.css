@@ -1,0 +1,103 @@
+@charset "UTF-8";
+body {
+  font-size: 14px;
+  font-family: "Mulish";
+  font-weight: 600;
+  line-height: 27px;
+  margin: 0 auto;
+}
+
+/* Main column width */
+.wp-block {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align=wide] {
+  margin: 0 auto;
+}
+
+/* Width of "full-wide" blocks */
+.wp-block[data-align=full] {
+  margin: 0 auto;
+}
+
+.wp-block-button {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.wp-block-button__link {
+  line-height: 18px;
+  font-size: 14px;
+  border-radius: 0;
+  padding: 15px 20px;
+}
+
+.wp-block-image figcaption {
+  max-width: 960px;
+  margin: 0 auto;
+  color: #959595;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.wp-block-pullquote {
+  margin: 0 auto;
+  border-width: 3px;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  margin: 35px 0;
+}
+
+blockquote, blockquote.wp-block-quote {
+  margin: 0 auto;
+  margin: 1.5em 0;
+  position: relative;
+  font-style: italic;
+  text-align: center !important;
+}
+blockquote cite, blockquote.wp-block-quote cite {
+  position: relative;
+}
+blockquote cite:before, blockquote.wp-block-quote cite:before {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 1px;
+  background: #6c757d;
+  content: "";
+  bottom: 0;
+  margin: 10px 0 13px -40px;
+}
+blockquote cite:after, blockquote.wp-block-quote cite:after {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 1px;
+  background: #6c757d;
+  content: "";
+  bottom: 0;
+  right: 0;
+  margin: 10px -40px 13px 0px;
+}
+blockquote:before, blockquote.wp-block-quote:before {
+  font-family: "Font Awesome 5 Free";
+  content: "" !important;
+  font-size: 30px;
+  font-style: normal;
+  color: #393939;
+  top: 0;
+  left: 0;
+}
+blockquote.is-style-large, blockquote.wp-block-quote.is-style-large {
+  margin: 35px auto;
+}
+blockquote.is-style-large cite, blockquote.wp-block-quote.is-style-large cite {
+  position: relative;
+}
+blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blockquote.wp-block-quote.is-style-large cite:before, blockquote.wp-block-quote.is-style-large cite:after {
+  content: none;
+}
+
+/*# sourceMappingURL=editor-style.css.map */

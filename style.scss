@@ -8,6 +8,7 @@ Description: A basic theme using the Bootstrap framework.
 Version: 1.0
 Text Domain: storezz
 */
+@import url("https://use.fontawesome.com/releases/v5.14.0/css/all.css");
 
 /*bootstrap override
 */
@@ -125,8 +126,8 @@ body {
   font-size: 14px;
   font-family: "Mulish";
   font-weight: 600;
-  line-height: 28px;
-  background:#f4f4f4;
+  line-height: 27px;
+  // background:#f4f4f4;
 }
 
 h1,h2,h3,h4,h5,h6 {font-family: "Mulish";font-weight:900;color: $base-color;}
@@ -161,6 +162,11 @@ h6 {
   line-height: 28px;
 }
 
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 em em,
 em i,
 i em,
@@ -187,21 +193,7 @@ a {
 span {}
 label {}
 hr {margin: 3em 8em;}
-blockquote {margin: 1.5em 0;
-  position:relative;
-  font-style: italic;
-  padding-left:42px;
 
-  &:before {
-    font-family: "FontAwesome";
-    content: "\f10d";
-    font-size: 30px;
-    font-style: normal;
-    color: $base-color;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }}
   ul {}
   li {}
   ol {}
@@ -216,12 +208,6 @@ blockquote {margin: 1.5em 0;
     .alignright {float: right;margin-left: 20px;margin-bottom:10px;}
     .alignleft {float: left;margin-right: 20px;margin-bottom:10px;}
     .aligncenter {margin: 0 auto;}
-
-
-    .wp-block-cover {
-    	margin-bottom: 20px;
-    }
-
 
 
     /* --------------------------- comment-form --------------------------- */

@@ -1,0 +1,95 @@
+/*
+Theme Name: Storezz
+Theme URI: http://www.pascaru.pl/storezz
+Author: Aleksandra Pascaru
+Author URI: http://www.pascaru.pl
+License URI: http://www.pascaru.pl/licence
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: storezz
+*/
+
+$base-color: #393939;
+$base-color-darker: #2f6b71;
+$secondary-color: #928478;
+$medium-grey: #959595;
+$light-grey: #b6b6b6;
+$white: #ffffff;
+$black: #000000;
+
+.wp-block-button {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	&__link {
+		line-height: 18px;
+		font-size: 14px;
+		border-radius: 0;
+		padding: 15px 20px;
+	}
+}
+
+
+.wp-block-image {
+	figcaption {
+		color: $medium-grey;
+		font-weight: 400;
+		margin-top: 0px;
+	}
+}
+
+
+.wp-block-pullquote {
+	border-width: 3px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+		margin: 35px 0;
+}
+
+blockquote, blockquote.wp-block-quote {
+	margin: 1.5em 0;
+	position:relative;
+	font-style: italic;
+	text-align: center;
+	cite {
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 0;
+			width: 30px;
+			height: 1px;
+			background: #6c757d;
+			content: '';
+			bottom: 0;
+			margin: 10px 0 13px -40px;
+		}
+		&:after {
+			position: absolute;
+			top: 0;
+			width: 30px;
+			height: 1px;
+			background: #6c757d;
+			content: '';
+			bottom: 0;
+			right: 0;
+			margin: 10px -40px 13px 0px;
+		}
+	}
+	&:before {
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+		font-size: 30px;
+		font-style: normal;
+		color: $base-color;
+		top: 0;
+		left: 0;
+	}
+	&.is-style-large {
+		margin: 35px 0;
+		cite {
+			position: relative;
+			&:before, &:after {
+				content: none;
+			}
+		}
+	}
+}
