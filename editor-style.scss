@@ -1,5 +1,4 @@
 
-
 $base-color: #393939;
 $base-color-darker: #2f6b71;
 $secondary-color: #928478;
@@ -13,35 +12,158 @@ body {
   font-family: "Mulish";
   font-weight: 600;
   line-height: 27px;
-	// max-width: 960px;
+	// max-width: 856px;
 	margin: 0 auto;
 }
-//
-// .edit-post-visual-editor {
-// 	max-width: 960px;
-// 	margin: 0 auto;
-// }
+
+.editor-styles-wrapper .has-text-align-center {
+  text-align: center;
+}
+
+.editor-styles-wrapper .has-text-align-right {
+	text-align: right;
+}
+
+
+.editor-styles-wrapper .has-text-align-left {
+	text-align: left;
+}
+
+.editor-styles-wrapper .has-background {
+	margin: 30px 0;
+  padding: 20px !important;
+}
+
+.editor-styles-wrapper .has-small-font-size {
+	line-height: 2;
+	margin: 15px 0;
+}
+
+.editor-styles-wrapper .has-normal-font-size {
+	line-height: 2;
+	margin: 10px 0;
+}
+
+.editor-styles-wrapper .has-medium-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+.editor-styles-wrapper .has-large-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+.editor-styles-wrapper .has-huge-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+.editor-styles-wrapper p {
+  font-size: 16px;
+  margin-top: 10px 0;
+	line-height: 2;
+}
+
+.editor-styles-wrapper p.has-drop-cap.has-medium-font-size {
+	&:first-letter {
+		font-size:4.0em;
+		line-height:1;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+.editor-styles-wrapper p.has-drop-cap.has-large-font-size {
+	&:first-letter {
+		font-size:6.0em;
+		line-height:0.85;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+.editor-styles-wrapper p.has-drop-cap.has-huge-font-size {
+	&:first-letter {
+		font-size:6.0em;
+		line-height:0.9;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+.editor-styles-wrapper p.has-drop-cap:not(:focus) {
+  &:first-letter {
+     float:left;
+     text-transform:uppercase;
+     font-style:normal;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding-top: 14px;
+  }
+}
+
+
+.block-editor-block-list__layout {
+  max-width: 856px;
+  margin: 0 auto !important;
+}
+
+
 /* Main column width */
-.wp-block {
-    max-width: 960px;
-		margin: 0 auto;
+.editor-styles-wrapper .wp-block {
+  figure {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+    max-width: 856px;
+		margin: 0 0 20px 0;
 }
 
 /* Width of "wide" blocks */
-.wp-block[data-align='wide'] {
-	// max-width: 960px;
-	margin: 0 auto;
+.editor-styles-wrapper .wp-block[data-align='wide'] {
+	// max-width: 856px;
+	// margin: 0 auto;
 }
 
 /* Width of "full-wide" blocks */
-.wp-block[data-align='full'] {
-	// max-width: 960px;
-	margin: 0 auto;
+.editor-styles-wrapper .wp-block[data-align='full'] {
+	// max-width: 856px;
+	// margin: 0 auto;
 }
 
-.wp-block-button {
-	margin-top: 10px;
-	margin-bottom: 15px;
+.editor-styles-wrapper .wp-block[data-align='left'] {
+ img {
+   margin: 10px 30px 30px 0 !important;
+ }
+
+ .wp-block-button {
+   margin: 10px 30px 30px 0 !important;
+ }
+ div[data-type='core/cover'] {
+   margin: 10px 30px 30px 0 !important;
+ }
+}
+
+.editor-styles-wrapper .wp-block[data-align='right'] {
+  img {
+    margin: 10px 0 30px 30px !important;
+  }
+
+  .wp-block-button {
+    margin: 10px 0 30px 30px !important;
+  }
+
+  div[data-type='core/cover'] {
+    margin: 10px 0 30px 30px !important;
+  }
+}
+
+.editor-styles-wrapper .wp-block-button {
+	margin: 30px 0;
 	&__link {
 		line-height: 18px;
 		font-size: 14px;
@@ -51,35 +173,42 @@ body {
 }
 
 
-.wp-block-image {
+.editor-styles-wrapper .wp-block-image {
 	figcaption {
-		max-width: 960px;
-		margin: 0 auto;
 		color: $medium-grey;
 		font-weight: 400;
-		margin-top: 0px;
+		margin-top: 5px;
 	}
 }
 
 
-.wp-block-pullquote {
-	// max-width: 960px;
-	margin: 0 auto;
+.editor-styles-wrapper .wp-block-pullquote {
+	margin: 35px auto !important;
 	border-width: 3px;
     border-bottom-style: solid;
     border-top-style: solid;
-		margin: 35px 0;
 }
 
-blockquote, blockquote.wp-block-quote {
-	// max-width: 960px;
+.editor-styles-wrapper .wp-block-cover {
+	margin: 30px 0;
+}
+
+.editor-styles-wrapper blockquote, .editor-styles-wrapper blockquote.wp-block-quote {
 	margin: 0 auto;
-	margin: 1.5em 0;
 	position:relative;
 	font-style: italic;
-	text-align: center !important;
+  .block-editor-rich-text__editable {
+    margin: 10px 0;
+  }
+	&:not(.has-text-align-right) {
+			text-align: center;
+			cite {
+				text-align: center;
+			}
+	}
 	cite {
 		position: relative;
+    display: inline-block !important;
 		&:before {
 			position: absolute;
 			top: 0;
@@ -88,20 +217,30 @@ blockquote, blockquote.wp-block-quote {
 			background: #6c757d;
 			content: '';
 			bottom: 0;
-			margin: 10px 0 13px -40px;
+			margin: 12px 0 13px -40px;
 		}
 		&:after {
-			position: absolute;
-			top: 0;
-			width: 30px;
-			height: 1px;
-			background: #6c757d;
-			content: '';
-			bottom: 0;
-			right: 0;
-			margin: 10px -40px 13px 0px;
+      position: absolute;
+    top: 0;
+    width: 30px;
+    height: 1px;
+    background: #6c757d;
+    content: "";
+    bottom: 0;
+    right: 0;
+    margin: 12px -40px 13px 0px;
 		}
 	}
+
+  &.has-text-align-right {
+		cite {
+			&:after {
+				content: none;
+			}
+		}
+	}
+
+
 	&:before {
 		font-family: "Font Awesome 5 Free";
 		content: "\f10d" !important;

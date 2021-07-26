@@ -17,9 +17,95 @@ $light-grey: #b6b6b6;
 $white: #ffffff;
 $black: #000000;
 
+.has-text-align-right {
+	text-align: right;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+
+.has-text-align-left {
+	text-align: left;
+}
+
+.has-background {
+	margin: 30px 0;
+	padding: 20px !important;
+}
+
+.has-small-font-size {
+	line-height: 2;
+	margin: 15px 0;
+}
+
+.has-normal-font-size {
+	line-height: 2;
+	margin: 10px 0;
+}
+
+.has-medium-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+.has-large-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+.has-huge-font-size {
+	line-height: 1.4;
+	margin: 30px 0;
+}
+
+p.has-drop-cap.has-medium-font-size {
+	&:first-letter {
+		font-size:4.0em;
+		line-height:1;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+p.has-drop-cap.has-large-font-size {
+	&:first-letter {
+		font-size:6.0em;
+		line-height:0.85;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+p.has-drop-cap.has-huge-font-size {
+	&:first-letter {
+		font-size:6.0em;
+		line-height:0.8;
+		font-weight:900;
+		margin: 0 10px 0 0;
+	}
+}
+
+p.has-drop-cap:not(:focus) {
+  &:first-letter {
+     float:left;
+     text-transform:uppercase;
+     font-style:normal;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding-top: 14px;
+  }
+}
+
+.wp-block {
+	margin: 0 0 20px 0;
+}
+
 .wp-block-button {
-	margin-top: 10px;
-	margin-bottom: 15px;
+	margin: 30px 0;
 	&__link {
 		line-height: 18px;
 		font-size: 14px;
@@ -30,26 +116,48 @@ $black: #000000;
 
 
 .wp-block-image {
+	margin: 35px 0;
+	.aligncenter {
+		margin: 30px auto;
+	}
+	.alignright {
+		float: right;
+		margin: 10px 0 30px 30px;
+	}
+	.alignleft {
+		float: left;
+		margin: 10px 30px 30px 0;
+	}
 	figcaption {
 		color: $medium-grey;
 		font-weight: 400;
-		margin-top: 0px;
+		margin-top: 5px;
 	}
 }
 
 
 .wp-block-pullquote {
+	margin: 35px auto !important;
 	border-width: 3px;
-    border-bottom-style: solid;
-    border-top-style: solid;
-		margin: 35px 0;
+	border-bottom-style: solid;
+	border-top-style: solid;
+}
+
+.wp-block-cover {
+	margin-top: 30px ;
+	margin-bottom: 30px ;
 }
 
 blockquote, blockquote.wp-block-quote {
 	margin: 1.5em 0;
 	position:relative;
 	font-style: italic;
-	text-align: center;
+	&:not(.has-text-align-right) {
+		text-align: center !important;
+		cite {
+			text-align: center;
+		}
+	}
 	cite {
 		position: relative;
 		&:before {
@@ -60,7 +168,7 @@ blockquote, blockquote.wp-block-quote {
 			background: #6c757d;
 			content: '';
 			bottom: 0;
-			margin: 10px 0 13px -40px;
+			margin: 12px 0 13px -40px;
 		}
 		&:after {
 			position: absolute;
@@ -71,12 +179,20 @@ blockquote, blockquote.wp-block-quote {
 			content: '';
 			bottom: 0;
 			right: 0;
-			margin: 10px -40px 13px 0px;
+			margin: 12px -40px 13px 0px;
+		}
+	}
+
+	&.has-text-align-right {
+		cite {
+			&:after {
+				content: none;
+			}
 		}
 	}
 	&:before {
 		font-family: "Font Awesome 5 Free";
-		content: "\f10d";
+		content: "\f10d" !important;
 		font-size: 30px;
 		font-style: normal;
 		color: $base-color;

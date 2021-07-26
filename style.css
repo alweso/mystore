@@ -8,7 +8,6 @@ Description: A basic theme using the Bootstrap framework.
 Version: 1.0
 Text Domain: storezz
 */
-@import url("https://use.fontawesome.com/releases/v5.14.0/css/all.css");
 /*bootstrap override
 */
 /* ---------------------------------- WP classes ----------------------------------- */
@@ -75,37 +74,44 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 36px;
-  line-height: 44px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 h2 {
   font-size: 30px;
-  line-height: 36px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 h3 {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 h4 {
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 h5 {
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 h6 {
   font-size: 14px;
-  line-height: 28px;
+  line-height: 1.4;
+  margin: 30px 0;
 }
 
 p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 2;
 }
 
 em em,
@@ -133,6 +139,20 @@ a:hover {
 
 hr {
   margin: 3em 8em;
+}
+
+ol {
+  padding-left: 30px;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+li {
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 1.5;
 }
 
 input[type=search], input[type=text], input[type=password], textarea, select, option {
@@ -171,18 +191,16 @@ button {
 
 .alignright {
   float: right;
-  margin-left: 20px;
-  margin-bottom: 10px;
+  margin: 10px 0 10px 30px;
 }
 
 .alignleft {
   float: left;
-  margin-right: 20px;
-  margin-bottom: 10px;
+  margin: 10px 30px 10px 0;
 }
 
 .aligncenter {
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 /* --------------------------- comment-form --------------------------- */
@@ -342,7 +360,7 @@ ul.dropdown-menu li > ul.dropdown-menu {
   background: #928478;
   padding: 0px 10px;
   border-radius: 3px;
-  margin-right: 3px;
+  margin: 0 3px 10px 0;
 }
 .storezz-entry-header .post-categories li a {
   color: #fff;

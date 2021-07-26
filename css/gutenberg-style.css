@@ -9,9 +9,87 @@ Description: A basic theme using the Bootstrap framework.
 Version: 1.0
 Text Domain: storezz
 */
+.has-text-align-right {
+  text-align: right;
+}
+
+.has-text-align-right {
+  text-align: right;
+}
+
+.has-text-align-left {
+  text-align: left;
+}
+
+.has-background {
+  margin: 30px 0;
+  padding: 20px !important;
+}
+
+.has-small-font-size {
+  line-height: 2;
+  margin: 15px 0;
+}
+
+.has-normal-font-size {
+  line-height: 2;
+  margin: 10px 0;
+}
+
+.has-medium-font-size {
+  line-height: 1.4;
+  margin: 30px 0;
+}
+
+.has-large-font-size {
+  line-height: 1.4;
+  margin: 30px 0;
+}
+
+.has-huge-font-size {
+  line-height: 1.4;
+  margin: 30px 0;
+}
+
+p.has-drop-cap.has-medium-font-size:first-letter {
+  font-size: 4em;
+  line-height: 1;
+  font-weight: 900;
+  margin: 0 10px 0 0;
+}
+
+p.has-drop-cap.has-large-font-size:first-letter {
+  font-size: 6em;
+  line-height: 0.85;
+  font-weight: 900;
+  margin: 0 10px 0 0;
+}
+
+p.has-drop-cap.has-huge-font-size:first-letter {
+  font-size: 6em;
+  line-height: 0.8;
+  font-weight: 900;
+  margin: 0 10px 0 0;
+}
+
+p.has-drop-cap:not(:focus):first-letter {
+  float: left;
+  text-transform: uppercase;
+  font-style: normal;
+}
+p.has-drop-cap:not(:focus):after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 14px;
+}
+
+.wp-block {
+  margin: 0 0 20px 0;
+}
+
 .wp-block-button {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin: 30px 0;
 }
 .wp-block-button__link {
   line-height: 18px;
@@ -20,23 +98,47 @@ Text Domain: storezz
   padding: 15px 20px;
 }
 
+.wp-block-image {
+  margin: 35px 0;
+}
+.wp-block-image .aligncenter {
+  margin: 30px auto;
+}
+.wp-block-image .alignright {
+  float: right;
+  margin: 10px 0 30px 30px;
+}
+.wp-block-image .alignleft {
+  float: left;
+  margin: 10px 30px 30px 0;
+}
 .wp-block-image figcaption {
   color: #959595;
   font-weight: 400;
-  margin-top: 0px;
+  margin-top: 5px;
 }
 
 .wp-block-pullquote {
+  margin: 35px auto !important;
   border-width: 3px;
   border-bottom-style: solid;
   border-top-style: solid;
-  margin: 35px 0;
+}
+
+.wp-block-cover {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 blockquote, blockquote.wp-block-quote {
   margin: 1.5em 0;
   position: relative;
   font-style: italic;
+}
+blockquote:not(.has-text-align-right), blockquote.wp-block-quote:not(.has-text-align-right) {
+  text-align: center !important;
+}
+blockquote:not(.has-text-align-right) cite, blockquote.wp-block-quote:not(.has-text-align-right) cite {
   text-align: center;
 }
 blockquote cite, blockquote.wp-block-quote cite {
@@ -50,7 +152,7 @@ blockquote cite:before, blockquote.wp-block-quote cite:before {
   background: #6c757d;
   content: "";
   bottom: 0;
-  margin: 10px 0 13px -40px;
+  margin: 12px 0 13px -40px;
 }
 blockquote cite:after, blockquote.wp-block-quote cite:after {
   position: absolute;
@@ -61,11 +163,14 @@ blockquote cite:after, blockquote.wp-block-quote cite:after {
   content: "";
   bottom: 0;
   right: 0;
-  margin: 10px -40px 13px 0px;
+  margin: 12px -40px 13px 0px;
+}
+blockquote.has-text-align-right cite:after, blockquote.wp-block-quote.has-text-align-right cite:after {
+  content: none;
 }
 blockquote:before, blockquote.wp-block-quote:before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "" !important;
   font-size: 30px;
   font-style: normal;
   color: #393939;

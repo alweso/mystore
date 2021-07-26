@@ -18,19 +18,29 @@ function storezz_scripts_and_styles() {
   wp_enqueue_style( 'google_fonts ', 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap', false );
   wp_enqueue_style( 'storezz_gutenberg', get_template_directory_uri() . '/css/gutenberg-style.css', 'storezz' );
   wp_enqueue_style( 'storezz_style', get_stylesheet_uri(), 'storezz' );
-  wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/editor-style.css' ), false, '1.0', 'all' );
+  // wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/editor-style.css' ), false, '1.0', 'all' );
 }
 
 add_action( 'wp_enqueue_scripts', 'storezz_scripts_and_styles' );
 
 
-//* Loading editor styles for the block editor (Gutenberg)
-function site_block_editor_styles() {
-    wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/editor-style.css' ), false, '1.0', 'all' );
+
+
+
+function prefix_block_styles() {
+  wp_enqueue_style( 'prefix-editor-font', get_template_directory_uri() . '/vendors/Fontawesome/css/all.css');
+  wp_enqueue_style( 'prefix-editor-font', 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap');
+  wp_enqueue_style( 'prefix-editor-styles', get_theme_file_uri( '/editor-style.css' ) );
+  // add_editor_style('editor-style.css');
+  // add_editor_style('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap');
 }
-add_action( 'enqueue_block_editor_assets', 'site_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'prefix_block_styles' );
+
+//* Loading editor styles for the block editor (Gutenberg)
 
 add_editor_style('editor-style.css');
+add_editor_style('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap');
+
 
 /*** Basic theme settings  ***/
 
