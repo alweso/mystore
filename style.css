@@ -191,12 +191,10 @@ button {
 
 .alignright {
   float: right;
-  margin: 10px 0 10px 30px;
 }
 
 .alignleft {
   float: left;
-  margin: 10px 30px 10px 0;
 }
 
 .aligncenter {
