@@ -16,26 +16,26 @@ Text Domain: storezz
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 
-	0. 	CSS Reset
-	1. 	Document Setup
-	2. 	Element Base
-	3. 	Helper Classes
-	4. 	Site Header
-	5. 	Menu Modal
-	6. 	Search Modal
-	7. 	Page Templates
-		a. 	Template: Cover Template
-		c. 	Template: Full Width
-	8.  Post: Archive
-	9.  Post: Single
-	10. Blocks
-	11. Entry Content
-	12. Comments
-	13. Site Pagination
-	14. Error 404
-	15. Widgets
-	16. Site Footer
-	17. Media Queries
+0. 	CSS Reset
+1. 	Document Setup
+2. 	Element Base
+3. 	Helper Classes
+4. 	Site Header
+5. 	Menu Modal
+6. 	Search Modal
+7. 	Page Templates
+a. 	Template: Cover Template
+c. 	Template: Full Width
+8.  Post: Archive
+9.  Post: Single
+10. Blocks
+11. Entry Content
+12. Comments
+13. Site Pagination
+14. Error 404
+15. Widgets
+16. Site Footer
+17. Media Queries
 /* ----------------------- CSS reset -------------------------------------- */
 html, body {
   border: none;
@@ -51,6 +51,8 @@ strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, capt
   margin: 0;
   padding: 0;
   text-align: inherit;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 blockquote::before,
@@ -68,7 +70,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Mulish";
-  font-weight: 900;
+  font-weight: 700;
   color: #393939;
 }
 
@@ -110,6 +112,7 @@ h6 {
 
 p {
   font-size: 16px;
+  font-weight: 400;
   margin: 10px 0;
   line-height: 2;
 }
@@ -129,12 +132,60 @@ strong {
 }
 
 a {
-  color: #393939;
+  color: #b37b4b;
   text-decoration: none;
 }
 a:hover {
-  color: #393939;
+  color: #b37b4b;
   opacity: 0.9;
+}
+
+code, kbd {
+  color: #b37b4b;
+  background: #b6b6b6;
+  overflow: auto;
+  max-width: 100%;
+  padding: 0 1em;
+  border: 1px solid #b6b6b6;
+  background-color: #f9f9f9;
+  display: inline-block;
+  vertical-align: middle;
+  word-wrap: break-word;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+sup {
+  font-size: 75%;
+}
+
+pre {
+  margin: 30px 0;
+  font-weight: 300;
+  border: 1px solid #b6b6b6;
+  padding: 10px 20px;
+  background: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  border: none;
+}
+
+img, figure {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-collapse: collapse;
 }
 
 hr {
@@ -197,11 +248,27 @@ button {
   float: left;
 }
 
-.aligncenter {
-  margin: 30px auto;
+/* --------------------------- comment-form --------------------------- */
+.storezz-post-comments {
+  padding: 0;
+  list-style-type: none;
+}
+.storezz-post-comments .comment-body {
+  border-bottom: 1px solid #d8d8d8;
+  padding: 20px 0;
+}
+.storezz-post-comments .children {
+  list-style-type: none;
+}
+.storezz-post-comments img.avatar {
+  float: left;
+  margin-right: 20px;
+}
+.storezz-post-comments .comment-content {
+  clear: both;
+  margin-top: 25px;
 }
 
-/* --------------------------- comment-form --------------------------- */
 .comment-form-comment label {
   display: block;
 }
@@ -265,71 +332,6 @@ ul[class^=wp-block-] {
   margin-bottom: 20px;
 }
 
-/* ----------------------------------------- categories native widget ------------------------------------- */
-.wp-block-categories {
-  padding: 10px !important;
-  border: 1px solid #b6b6b6;
-  list-style-type: none;
-}
-
-/* ------------------------------------- recent post native widget --------------------------------------- */
-.wp-block-latest-posts {
-  padding: 10px !important;
-  border: 1px solid #b6b6b6;
-}
-
-/* -------------------------------- Calendar native widget --------------------------------------------- */
-#wp-calendar {
-  width: 100%;
-}
-
-#wp-calendar caption {
-  text-align: right;
-  color: #333;
-  font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-#wp-calendar thead {
-  font-size: 10px;
-}
-
-#wp-calendar thead th {
-  padding-bottom: 10px;
-}
-
-#wp-calendar tbody {
-  color: #aaa;
-}
-
-#wp-calendar tbody td {
-  background: #f5f5f5;
-  outline: 1px solid #d8d8d8;
-  text-align: center;
-  padding: 8px;
-}
-
-#wp-calendar tbody td:hover {
-  background: #fff;
-}
-
-#wp-calendar tbody .pad {
-  background: none;
-}
-
-#wp-calendar tfoot #next {
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: right;
-}
-
-#wp-calendar tfoot #prev {
-  font-size: 10px;
-  text-transform: uppercase;
-  padding-top: 10px;
-}
-
 /* ------------------------------ navbar --------------------------------- */
 ul.dropdown-menu li > ul.dropdown-menu {
   left: 100%;
@@ -363,6 +365,21 @@ ul.dropdown-menu li > ul.dropdown-menu {
 .storezz-entry-header .post-categories li a {
   color: #fff;
 }
+.storezz-entry-header_tags {
+  margin: 30px 0;
+  clear: both;
+}
+.storezz-entry-header_tags ul {
+  padding: 0;
+  list-style-type: none;
+}
+.storezz-entry-header_tags li {
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 3px 11px;
+  margin-right: 5px;
+}
 
 /* ------------------------------ Blog Layouts ------------------------- */
 .blog_1 {
@@ -389,6 +406,17 @@ ul.dropdown-menu li > ul.dropdown-menu {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 15px;
+}
+
+/* -------------------------------------------- Single post --------------------------------------------------- */
+.storezz-entry-media {
+  margin-bottom: 30px;
+}
+.storezz-entry-media figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: 5px;
+  line-height: 20px;
 }
 
 /* ----------------------------------------------- MENU -------------------------------------------------- */

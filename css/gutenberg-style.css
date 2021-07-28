@@ -91,6 +91,12 @@ p.has-drop-cap:not(:focus):after {
 .wp-block-button {
   margin: 30px 0;
 }
+.wp-block-button.alignleft {
+  margin: 10px 30px 10px 0;
+}
+.wp-block-button.alignright {
+  margin: 10px 0 10px 30px;
+}
 .wp-block-button__link {
   line-height: 18px;
   font-size: 14px;
@@ -116,6 +122,55 @@ p.has-drop-cap:not(:focus):after {
   color: #959595;
   font-weight: 400;
   margin-top: 5px;
+  line-height: 20px;
+}
+
+figure.wp-caption .aligncenter {
+  margin: 30px auto;
+}
+figure.wp-caption .alignright {
+  float: right;
+  margin: 10px 0 30px 30px !important;
+}
+figure.wp-caption .alignleft {
+  float: left;
+  margin: 10px 30px 30px 0 !important;
+}
+figure.wp-caption figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: 5px;
+  line-height: 20px;
+}
+
+img.aligncenter, figure.aligncenter {
+  margin: 30px auto;
+}
+img.alignright, figure.alignright {
+  float: right;
+  margin: 10px 0 30px 30px !important;
+}
+img.alignleft, figure.alignleft {
+  float: left;
+  margin: 10px 30px 30px 0 !important;
+}
+img.alignnone, figure.alignnone {
+  margin: 30px 0;
+}
+
+.wp-block-table {
+  margin-bottom: 30px;
+}
+.wp-block-table.is-style-stripes {
+  border: 1px solid #dbdbdb;
+}
+.wp-block-table table tbody {
+  border: none;
+}
+
+.wp-block-verse {
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .wp-block-pullquote {
@@ -128,6 +183,53 @@ p.has-drop-cap:not(:focus):after {
 .wp-block-cover {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+.wp-block-cover.alignleft {
+  margin: 10px 30px 30px 0;
+}
+.wp-block-cover.alignright {
+  margin: 10px 0 30px 30px;
+}
+
+.wp-block-columns {
+  margin-bottom: 30px;
+}
+
+.wp-block-embed figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: -5px;
+  line-height: 20px;
+}
+
+.wp-block-gallery {
+  margin: 20px 0;
+}
+.wp-block-gallery.alignleft {
+  margin: 10px 30px 30px 0;
+}
+.wp-block-gallery.alignright {
+  margin: 10px 0 30px 30px;
+}
+.wp-block-gallery figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: -10px;
+  line-height: 20px;
+}
+
+hr.wp-block-separator {
+  width: 30%;
+  height: 1px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+hr.wp-block-separator.is-style-wide {
+  width: 80%;
+}
+hr.wp-block-separator.is-style-dots:before {
+  font-size: 35px;
 }
 
 blockquote, blockquote.wp-block-quote {
@@ -185,6 +287,161 @@ blockquote.is-style-large cite, blockquote.wp-block-quote.is-style-large cite {
 }
 blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blockquote.wp-block-quote.is-style-large cite:before, blockquote.wp-block-quote.is-style-large cite:after {
   content: none;
+}
+
+/* -------------------------------- Calendar native widget --------------------------------------------- */
+.wp-block-calendar {
+  margin-bottom: 30px;
+  margin-top: 70px;
+}
+.wp-block-calendar .wp-calendar-table {
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+}
+.wp-block-calendar .wp-calendar-table a {
+  text-decoration: none;
+}
+.wp-block-calendar .wp-calendar-table caption {
+  color: #ffffff !important;
+  font-size: 15px;
+  position: absolute;
+  top: -50px;
+  background: #b37b4b;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+.wp-block-calendar .wp-calendar-table thead {
+  font-size: 14px;
+}
+.wp-block-calendar .wp-calendar-table thead th {
+  padding: 10px 0;
+}
+.wp-block-calendar .wp-calendar-table tbody {
+  color: #aaa;
+}
+.wp-block-calendar .wp-calendar-table tbody td {
+  background: #f5f5f5;
+  outline: 1px solid #d8d8d8;
+  text-align: center;
+  padding: 8px;
+  position: relative;
+}
+.wp-block-calendar .wp-calendar-table tbody td:hover {
+  background: #fff;
+}
+.wp-block-calendar .wp-calendar-table tbody td .pad {
+  background: none;
+}
+.wp-block-calendar .wp-calendar-table tbody td a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #928478;
+  top: 0;
+  left: 0;
+  line-height: 42px;
+  color: white;
+  opacity: 0.7;
+}
+.wp-block-calendar .wp-calendar-table tfoot #next {
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: right;
+}
+.wp-block-calendar .wp-calendar-table tfoot #prev {
+  font-size: 10px;
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+.wp-block-calendar .wp-calendar-nav a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.wp-block-latest-comments a {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ----------------------------------------- categories native widget ------------------------------------- */
+.wp-block-categories {
+  list-style-type: none;
+}
+
+/* ------------------------------------- recent post native widget --------------------------------------- */
+.wp-block-latest-posts {
+  margin: 30px 0;
+}
+.wp-block-latest-posts time {
+  color: #717171;
+}
+
+.wp-block-latest-comments {
+  padding: 0;
+  margin: 30px 0;
+}
+
+.wp-block-tag-cloud {
+  margin: 30px 0;
+  line-height: 1.6;
+}
+
+.wp-block-archives-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.gallery {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.gallery figcaption {
+  color: #959595;
+  font-weight: 400;
+  margin-top: 5px;
+  line-height: 20px;
+}
+.gallery .gallery-item {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 10px;
+}
+.gallery .gallery-item img {
+  max-width: 100%;
+}
+.gallery.gallery-columns-1 .gallery-item {
+  width: 100%;
+}
+.gallery.gallery-columns-2 .gallery-item {
+  width: 50%;
+}
+.gallery.gallery-columns-3 .gallery-item {
+  width: 33.3%;
+}
+.gallery.gallery-columns-4 .gallery-item {
+  width: 25%;
+}
+.gallery.gallery-columns-5 .gallery-item {
+  width: 20%;
+}
+.gallery.gallery-columns-6 .gallery-item {
+  width: 16.6%;
+}
+.gallery.gallery-columns-7 .gallery-item {
+  width: 14.2%;
+}
+.gallery.gallery-columns-8 .gallery-item {
+  width: 12.5%;
+}
+.gallery.gallery-columns-9 .gallery-item {
+  width: 11.11%;
+}
+
+.twitter-tweet {
+  margin: 30px 0 !important;
 }
 
 /*# sourceMappingURL=gutenberg-style.css.map */

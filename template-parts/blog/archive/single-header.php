@@ -8,7 +8,7 @@ if ( $show_categories === 'yes' ) : ?>
 <div class="storezz-entry-header_categories">
   <?php the_category() ?>
 </div>
-<?php endif; 
+<?php endif;
 
 if ( is_single() ) :
   the_title( '<h1 class="entry-title">', '</h1>' );
@@ -17,7 +17,7 @@ if ( is_single() ) :
 endif;
 
 if ( $show_tags === 'yes' ) : ?>
-<div class="storezz-entry-header_tags">
+<div class="storezz-entry-header_tags clearfix">
   <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 </div>
 <?php endif ?>
