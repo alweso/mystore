@@ -206,13 +206,19 @@ li {
   line-height: 1.5;
 }
 
-input[type=search], input[type=text], input[type=password], textarea, select, option {
+input[type=search], input[type=text], input[type=password], input[type=Name], input[type=url],
+input[type=email], input[type=date], input[type=datetime-local], input[type=month], input[type=number],
+textarea, select, option {
   box-sizing: border-box;
   border: 1px solid #b6b6b6;
   border-radius: 2px;
   box-shadow: none;
   height: 37px;
   padding-left: 10px;
+}
+
+textarea {
+  min-height: 150px;
 }
 
 button, input[type=submit], input[type=reset] {
@@ -268,12 +274,57 @@ button {
   clear: both;
   margin-top: 25px;
 }
+.storezz-post-comments a.comment-reply-link {
+  background: #393939;
+  padding: 6px 20px;
+  color: #ffffff;
+  margin: 5px 0;
+  display: inline-block;
+}
 
-.comment-form-comment label {
+.comment-form label {
   display: block;
 }
 .comment-form-comment textarea {
   width: 100%;
+}
+.comment-form-cookies-consent label {
+  display: inline-block;
+}
+.comment-form-cookies-consent input {
+  margin-right: 5px;
+}
+.comment-form .form-submit {
+  margin: 20px 0;
+}
+
+.comment-respond .comments-closed {
+  margin: 30px 0;
+}
+.comment-respond .comment-reply-title {
+  font-size: 20px;
+}
+.comment-respond small {
+  font-size: 16px;
+  display: block;
+  margin: 20px 0;
+}
+
+.storezz-comments-pagination {
+  margin: 30px 0;
+}
+.storezz-comments-pagination a.page-numbers {
+  border: 1px solid;
+  padding: 10px 17px;
+  margin-right: 10px;
+}
+.storezz-comments-pagination span.page-numbers.current {
+  padding: 10px 15px;
+  background: #b37b4b;
+  color: #ffffff;
+}
+.storezz-comments-pagination span.page-numbers.dots {
+  padding: 10px 15px;
 }
 
 /* ------------------------------- Wordpress elements ---------------------------------------- */
@@ -338,7 +389,8 @@ ul.dropdown-menu li > ul.dropdown-menu {
   top: 0;
 }
 
-.menu-item-has-children:hover > ul.dropdown-menu {
+.menu-item-has-children:hover > ul.dropdown-menu,
+.menu-item-has-children:focus > ul.dropdown-menu {
   display: block !important;
 }
 
@@ -539,21 +591,25 @@ ul.dropdown-menu li > ul.dropdown-menu {
 }
 
 #storezz-menu ul li ul li:hover > a,
-#storezz-menu ul li ul li.active > a {
+#storezz-menu ul li ul li.active > a,
+#storezz-menu ul li ul li.focus > a {
   color: #4cb6ea;
 }
 
 #storezz-menu ul li ul li:hover:after,
-#storezz-menu ul li ul li.active:after {
+#storezz-menu ul li ul li.active:after,
+#storezz-menu ul li ul li.focus:after {
   background: #4cb6ea;
 }
 
-#storezz-menu ul li ul li:hover > ul {
+#storezz-menu ul li ul li:hover > ul,
+#storezz-menu ul li ul li:focus > ul {
   left: 100%;
   top: 0;
 }
 
-#storezz-menu ul li ul li:hover > ul > li {
+#storezz-menu ul li ul li:hover > ul > li,
+#storezz-menu ul li ul li:focus > ul > li {
   max-height: 72px;
   position: relative;
 }
@@ -579,12 +635,14 @@ ul.dropdown-menu li > ul.dropdown-menu {
   float: right;
 }
 
-#storezz-menu.align-right > ul > li:hover > ul {
+#storezz-menu.align-right > ul > li:hover > ul,
+#storezz-menu.align-right > ul > li:focus > ul {
   left: auto;
   right: 0;
 }
 
-#storezz-menu.align-right ul ul li:hover > ul {
+#storezz-menu.align-right ul ul li:hover > ul,
+#storezz-menu.align-right ul ul li:focus > ul {
   right: 100%;
   left: auto;
 }
@@ -650,30 +708,34 @@ ul.dropdown-menu li > ul.dropdown-menu {
 }
 
 #storezz-menu > ul > li:hover:after,
-#storezz-menu > ul > li.active:after {
+#storezz-menu > ul > li.active:after,
+#storezz-menu > ul > li.focus:after {
   height: 100%;
 }
 
 #storezz-menu > ul > li:hover > a,
-#storezz-menu > ul > li.active > a {
+#storezz-menu > ul > li.active > a,
+#storezz-menu > ul > li.focus > a {
   color: #000000;
 }
 
 #storezz-menu > ul > li:hover > a:after,
-#storezz-menu > ul > li.active > a:after {
+#storezz-menu > ul > li.active > a:after #storezz-menu > ul > li.focus > a:after {
   background: #000000;
 }
 
 #storezz-menu > ul > li:hover > a:before,
-#storezz-menu > ul > li.active > a:before {
+#storezz-menu > ul > li.active > a:before #storezz-menu > ul > li.focus > a:before {
   border-top-color: #ffffff;
 }
 
-#storezz-menu > ul > li:hover > ul {
+#storezz-menu > ul > li:hover > ul,
+#storezz-menu > ul > li:focus > ul {
   left: 0;
 }
 
-#storezz-menu > ul > li:hover > ul > li {
+#storezz-menu > ul > li:hover > ul > li,
+#storezz-menu > ul > li:focus > ul > li {
   max-height: 72px;
   position: relative;
 }

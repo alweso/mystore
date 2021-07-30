@@ -178,6 +178,8 @@ img.alignnone, figure.alignnone {
   border-width: 3px;
   border-bottom-style: solid;
   border-top-style: solid;
+  font-size: 1em;
+  padding: 40px 20px !important;
 }
 
 .wp-block-cover {
@@ -198,7 +200,7 @@ img.alignnone, figure.alignnone {
 .wp-block-embed figcaption {
   color: #959595;
   font-weight: 400;
-  margin-top: -5px;
+  margin-top: 5px;
   line-height: 20px;
 }
 
@@ -224,18 +226,23 @@ hr.wp-block-separator {
   border: none;
   margin-left: auto;
   margin-right: auto;
+  background: #393939;
 }
 hr.wp-block-separator.is-style-wide {
   width: 80%;
 }
 hr.wp-block-separator.is-style-dots:before {
-  font-size: 35px;
+  font-size: 30px;
+  padding-left: 30px;
 }
 
 blockquote, blockquote.wp-block-quote {
   margin: 1.5em 0;
   position: relative;
   font-style: italic;
+}
+blockquote p strong em a, blockquote.wp-block-quote p strong em a {
+  color: #393939;
 }
 blockquote:not(.has-text-align-right), blockquote.wp-block-quote:not(.has-text-align-right) {
   text-align: center !important;

@@ -204,6 +204,8 @@ line-height: 32px;
 	border-width: 3px;
 	border-bottom-style: solid;
 	border-top-style: solid;
+	font-size: 1em;
+	padding: 40px 20px !important;
 }
 
 .wp-block-cover {
@@ -225,7 +227,7 @@ line-height: 32px;
 	figcaption {
 		color: $medium-grey;
 		font-weight: 400;
-		margin-top: -5px;
+		margin-top: 5px;
 		line-height: 20px;
 	}
 }
@@ -252,12 +254,14 @@ hr.wp-block-separator {
   border: none;
 	margin-left: auto;
 	margin-right: auto;
+	background: $base-color;
 	&.is-style-wide {
 		width: 80%;
 	}
 	&.is-style-dots {
 		&:before {
-			  font-size: 35px;
+			 font-size: 30px;
+			 padding-left: 30px;
 		}
 	}
 }
@@ -270,6 +274,9 @@ blockquote, blockquote.wp-block-quote {
 	margin: 1.5em 0;
 	position:relative;
 	font-style: italic;
+	p strong em a {
+		color: $base-color;
+	}
 	&:not(.has-text-align-right) {
 		text-align: center !important;
 		cite {

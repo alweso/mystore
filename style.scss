@@ -265,8 +265,19 @@ li {
 	margin: 10px 0;
 	line-height: 1.5;
 }
-input[type=search], input[type=text], input[type=password], textarea, select, option {box-sizing: border-box;border: 1px solid $light-grey;border-radius:2px;box-shadow:none;    height: 37px;
-	padding-left: 10px;}
+input[type=search], input[type=text], input[type=password], input[type=Name], input[type=url],
+input[type=email], input[type=date], input[type=datetime-local], input[type=month], input[type=number],
+textarea, select, option {
+	box-sizing: border-box;
+	border: 1px solid $light-grey;
+	border-radius:2px;
+	box-shadow:none;
+	height: 37px;
+	padding-left: 10px;
+}
+textarea {
+	min-height: 150px;
+}
 	button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
 	button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
 	button {position:relative;overflow:hidden;}
@@ -309,16 +320,65 @@ select {
 		clear: both;
 		margin-top: 25px;
 	}
+	a.comment-reply-link {
+    background: $base-color;
+    padding: 6px 20px;
+    color: $white;
+		margin: 5px 0;
+		display: inline-block;
+}
 }
 
 	.comment-form {
+		label {
+			display: block;
+		}
 		&-comment {
-			label {
-				display: block;
-			}
 			textarea {
 				width: 100%;
 			}
+		}
+		&-cookies-consent {
+			label {
+				display: inline-block;
+			}
+			input {
+				margin-right: 5px;
+			}
+		}
+		.form-submit {
+			margin: 20px 0;
+		}
+	}
+
+	.comment-respond {
+		.comments-closed {
+			margin: 30px 0;
+		}
+		.comment-reply-title {
+			font-size: 20px;
+		}
+		small {
+			font-size: 16px;
+	    display: block;
+	    margin: 20px 0;
+		}
+	}
+
+	.storezz-comments-pagination {
+		margin: 30px 0;
+		a.page-numbers {
+			border: 1px solid;
+	    padding: 10px 17px;
+	    margin-right: 10px;
+		}
+		span.page-numbers.current {
+			padding: 10px 15px;
+	    background: $secondary-color-darker;
+	    color: $white;
+		}
+		span.page-numbers.dots {
+			padding: 10px 15px;
 		}
 	}
 
@@ -391,7 +451,8 @@ select {
 		top: 0;
 	}
 
-	.menu-item-has-children:hover > ul.dropdown-menu {
+	.menu-item-has-children:hover > ul.dropdown-menu,
+	.menu-item-has-children:focus > ul.dropdown-menu {
 		display: block !important;
 	}
 
@@ -593,18 +654,22 @@ select {
 		padding: 11px 10px 11px 20px;
 	}
 	#storezz-menu ul li ul li:hover > a,
-	#storezz-menu ul li ul li.active > a {
+	#storezz-menu ul li ul li.active > a,
+	#storezz-menu ul li ul li.focus > a {
 		color: #4cb6ea;
 	}
 	#storezz-menu ul li ul li:hover:after,
-	#storezz-menu ul li ul li.active:after {
+	#storezz-menu ul li ul li.active:after,
+		#storezz-menu ul li ul li.focus:after {
 		background: #4cb6ea;
 	}
-	#storezz-menu ul li ul li:hover > ul {
+	#storezz-menu ul li ul li:hover > ul,
+	#storezz-menu ul li ul li:focus > ul {
 		left: 100%;
 		top: 0;
 	}
-	#storezz-menu ul li ul li:hover > ul > li {
+	#storezz-menu ul li ul li:hover > ul > li,
+	#storezz-menu ul li ul li:focus > ul > li {
 		max-height: 72px;
 		position: relative;
 	}
@@ -624,11 +689,13 @@ select {
 	#storezz-menu.align-right > ul {
 		float: right;
 	}
-	#storezz-menu.align-right > ul > li:hover > ul {
+	#storezz-menu.align-right > ul > li:hover > ul,
+	#storezz-menu.align-right > ul > li:focus > ul {
 		left: auto;
 		right: 0;
 	}
-	#storezz-menu.align-right ul ul li:hover > ul {
+	#storezz-menu.align-right ul ul li:hover > ul,
+	#storezz-menu.align-right ul ul li:focus > ul {
 		right: 100%;
 		left: auto;
 	}
@@ -687,25 +754,31 @@ select {
 		position: relative;
 	}
 	#storezz-menu > ul > li:hover:after,
-	#storezz-menu > ul > li.active:after {
+	#storezz-menu > ul > li.active:after,
+	#storezz-menu > ul > li.focus:after {
 		height: 100%;
 	}
 	#storezz-menu > ul > li:hover > a,
-	#storezz-menu > ul > li.active > a {
+	#storezz-menu > ul > li.active > a,
+	#storezz-menu > ul > li.focus > a {
 		color: #000000;
 	}
 	#storezz-menu > ul > li:hover > a:after,
-	#storezz-menu > ul > li.active > a:after {
+	#storezz-menu > ul > li.active > a:after
+	#storezz-menu > ul > li.focus > a:after {
 		background: #000000;
 	}
 	#storezz-menu > ul > li:hover > a:before,
-	#storezz-menu > ul > li.active > a:before {
+	#storezz-menu > ul > li.active > a:before
+	#storezz-menu > ul > li.focus > a:before {
 		border-top-color: #ffffff;
 	}
-	#storezz-menu > ul > li:hover > ul {
+	#storezz-menu > ul > li:hover > ul,
+	#storezz-menu > ul > li:focus > ul {
 		left: 0;
 	}
-	#storezz-menu > ul > li:hover > ul > li {
+	#storezz-menu > ul > li:hover > ul > li,
+	#storezz-menu > ul > li:focus > ul > li {
 		max-height: 72px;
 		position: relative;
 	}
