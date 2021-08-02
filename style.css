@@ -41,16 +41,15 @@ html, body {
   border: none;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+
+dl {
+  line-height: 2;
 }
 
 h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small,
 strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
-  border: none;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  padding: 0;
-  text-align: inherit;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
@@ -62,10 +61,10 @@ blockquote::after {
 
 /* -------------------- Document Setup -------------------------------- */
 body {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Mulish";
   font-weight: 600;
-  line-height: 27px;
+  line-height: 2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,43 +74,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 2rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 h6 {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.4;
   margin: 30px 0;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   margin: 10px 0;
   line-height: 2;
@@ -177,6 +176,12 @@ img, figure {
   max-width: 100%;
 }
 
+figcaption {
+  color: #959595;
+  font-weight: 400;
+  line-height: 20px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -201,7 +206,7 @@ ul {
 }
 
 li {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 10px 0;
   line-height: 1.5;
 }
@@ -302,10 +307,10 @@ button {
   margin: 30px 0;
 }
 .comment-respond .comment-reply-title {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .comment-respond small {
-  font-size: 16px;
+  font-size: 1rem;
   display: block;
   margin: 20px 0;
 }
@@ -366,7 +371,7 @@ button {
 .storezz-search-form-wrap .storezz-search-close {
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 1.875rem;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -580,7 +585,7 @@ ul.dropdown-menu li > ul.dropdown-menu {
 }
 
 #storezz-menu ul li ul li a {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   text-transform: none;
   color: #000000;
@@ -702,7 +707,7 @@ ul.dropdown-menu li > ul.dropdown-menu {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 0.875rem;
   z-index: 2;
   position: relative;
 }

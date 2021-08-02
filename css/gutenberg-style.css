@@ -52,21 +52,21 @@ Text Domain: storezz
 }
 
 p.has-drop-cap.has-medium-font-size:first-letter {
-  font-size: 4em;
+  font-size: 4.5rem;
   line-height: 1;
   font-weight: 900;
   margin: 0 10px 0 0;
 }
 
 p.has-drop-cap.has-large-font-size:first-letter {
-  font-size: 6em;
+  font-size: 12rem;
   line-height: 0.85;
   font-weight: 900;
   margin: 0 10px 0 0;
 }
 
 p.has-drop-cap.has-huge-font-size:first-letter {
-  font-size: 6em;
+  font-size: 16rem;
   line-height: 0.8;
   font-weight: 900;
   margin: 0 10px 0 0;
@@ -99,7 +99,7 @@ p.has-drop-cap:not(:focus):after {
 }
 .wp-block-button__link {
   line-height: 18px;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 0;
   padding: 15px 20px;
 }
@@ -119,10 +119,7 @@ p.has-drop-cap:not(:focus):after {
   margin: 10px 30px 30px 0;
 }
 .wp-block-image figcaption {
-  color: #959595;
-  font-weight: 400;
   margin-top: 5px;
-  line-height: 20px;
 }
 
 figure.wp-caption .aligncenter {
@@ -137,10 +134,7 @@ figure.wp-caption .alignleft {
   margin: 10px 30px 30px 0 !important;
 }
 figure.wp-caption figcaption {
-  color: #959595;
-  font-weight: 400;
   margin-top: 5px;
-  line-height: 20px;
 }
 
 img.aligncenter, figure.aligncenter {
@@ -169,8 +163,8 @@ img.alignnone, figure.alignnone {
 }
 
 .wp-block-verse {
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 .wp-block-pullquote {
@@ -198,10 +192,7 @@ img.alignnone, figure.alignnone {
 }
 
 .wp-block-embed figcaption {
-  color: #959595;
-  font-weight: 400;
   margin-top: 5px;
-  line-height: 20px;
 }
 
 .wp-block-gallery {
@@ -214,10 +205,7 @@ img.alignnone, figure.alignnone {
   margin: 10px 0 30px 30px;
 }
 .wp-block-gallery figcaption {
-  color: #959595;
-  font-weight: 400;
   margin-top: -10px;
-  line-height: 20px;
 }
 
 hr.wp-block-separator {
@@ -232,7 +220,7 @@ hr.wp-block-separator.is-style-wide {
   width: 80%;
 }
 hr.wp-block-separator.is-style-dots:before {
-  font-size: 30px;
+  font-size: 1.875rem;
   padding-left: 30px;
 }
 
@@ -280,7 +268,7 @@ blockquote.has-text-align-right cite:after, blockquote.wp-block-quote.has-text-a
 blockquote:before, blockquote.wp-block-quote:before {
   font-family: "Font Awesome 5 Free";
   content: "" !important;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-style: normal;
   color: #393939;
   top: 0;
@@ -311,7 +299,7 @@ blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blo
 }
 .wp-block-calendar .wp-calendar-table caption {
   color: #ffffff !important;
-  font-size: 15px;
+  font-size: 1rem;
   position: absolute;
   top: -50px;
   background: #b37b4b;
@@ -321,7 +309,7 @@ blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blo
   line-height: 50px;
 }
 .wp-block-calendar .wp-calendar-table thead {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .wp-block-calendar .wp-calendar-table thead th {
   padding: 10px 0;
@@ -354,22 +342,22 @@ blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blo
   opacity: 0.7;
 }
 .wp-block-calendar .wp-calendar-table tfoot #next {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   text-align: right;
 }
 .wp-block-calendar .wp-calendar-table tfoot #prev {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   padding-top: 10px;
 }
 .wp-block-calendar .wp-calendar-nav a {
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
 }
 
 .wp-block-latest-comments a {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -406,10 +394,7 @@ blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blo
   margin-right: -10px;
 }
 .gallery figcaption {
-  color: #959595;
-  font-weight: 400;
   margin-top: 5px;
-  line-height: 20px;
 }
 .gallery .gallery-item {
   display: inline-block;

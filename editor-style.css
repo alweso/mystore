@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Mulish";
   font-weight: 600;
   line-height: 27px;
@@ -54,7 +54,7 @@ body {
 }
 
 .editor-styles-wrapper p {
-  font-size: 16px;
+  font-size: 1rem;
   margin-top: 10px 0;
   line-height: 2;
 }
@@ -138,7 +138,7 @@ body {
 }
 .editor-styles-wrapper .wp-block-button__link {
   line-height: 18px;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 0;
   padding: 15px 20px;
 }
@@ -213,7 +213,7 @@ body {
 .editor-styles-wrapper blockquote:before, .editor-styles-wrapper blockquote.wp-block-quote:before {
   font-family: "Font Awesome 5 Free";
   content: "" !important;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-style: normal;
   color: #393939;
   top: 0;
@@ -241,7 +241,7 @@ body {
   width: 80%;
 }
 .editor-styles-wrapper hr.wp-block-separator.is-style-dots:before {
-  font-size: 35px;
+  font-size: 2.25rem;
 }
 
 .editor-styles-wrapper .blocks-gallery-grid .blocks-gallery-image figcaption, .editor-styles-wrapper .blocks-gallery-grid .blocks-gallery-item figcaption, .editor-styles-wrapper .wp-block-gallery .blocks-gallery-image figcaption, .editor-styles-wrapper .wp-block-gallery .blocks-gallery-item figcaption {
@@ -249,8 +249,8 @@ body {
 }
 
 .editor-styles-wrapper .block-editor-rich-text__editable.block-editor-block-list__block.wp-block-verse.rich-text {
-  font-size: 16px;
-  line-height: 32px;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 .editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce .gallery-item .wp-caption-text {
@@ -284,7 +284,7 @@ body {
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-table caption {
   color: #ffffff !important;
-  font-size: 15px;
+  font-size: 1rem;
   position: absolute;
   top: -50px;
   background: #b37b4b;
@@ -294,7 +294,7 @@ body {
   line-height: 50px;
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-table thead {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-table thead th {
   padding: 10px 0;
@@ -327,22 +327,22 @@ body {
   opacity: 0.7;
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-table tfoot #next {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   text-align: right;
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-table tfoot #prev {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   padding-top: 10px;
 }
 .editor-styles-wrapper .wp-block-calendar .wp-calendar-nav a {
-  font-size: 16px;
+  font-size: 1rem;
   text-decoration: none;
 }
 
 .editor-styles-wrapper .wp-block-latest-comments__comment-excerpt p {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .editor-styles-wrapper .wp-block-tag-cloud {
