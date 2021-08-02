@@ -9,6 +9,7 @@ Description: A basic theme using the Bootstrap framework.
 Version: 1.0
 Text Domain: storezz
 */
+/* ------------------------------- Margins and paddings  ---------------------------------------*/
 .has-text-align-right {
   text-align: right;
 }
@@ -36,19 +37,25 @@ Text Domain: storezz
   margin: 10px 0;
 }
 
-.has-medium-font-size {
+.has-medium-font-size, .has-large-font-size, .has-huge-font-size {
   line-height: 1.4;
   margin: 30px 0;
 }
 
-.has-large-font-size {
-  line-height: 1.4;
-  margin: 30px 0;
+.wp-caption, .wp-caption-text, .screen-reader-text, .gallery-caption, .bypostauthor {
+  display: block;
 }
 
-.has-huge-font-size {
-  line-height: 1.4;
-  margin: 30px 0;
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.aligncenter {
+  text-align: center;
 }
 
 p.has-drop-cap.has-medium-font-size:first-letter {
@@ -219,13 +226,16 @@ hr.wp-block-separator {
 hr.wp-block-separator.is-style-wide {
   width: 80%;
 }
+hr.wp-block-separator.is-style-dots {
+  margin: 10px auto;
+}
 hr.wp-block-separator.is-style-dots:before {
   font-size: 1.875rem;
   padding-left: 30px;
 }
 
 blockquote, blockquote.wp-block-quote {
-  margin: 1.5em 0;
+  margin: 30px 0;
   position: relative;
   font-style: italic;
 }

@@ -206,7 +206,7 @@ body {
 }
 
 .editor-styles-wrapper blockquote, .editor-styles-wrapper blockquote.wp-block-quote {
-	margin: 0 auto;
+	margin: $margin-updown-big;
 	position:relative;
 	font-style: italic;
   border-left: none !important;

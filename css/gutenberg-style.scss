@@ -21,6 +21,13 @@ $very-light-grey: #f9f9f9;
 $white: #ffffff;
 $black: #000000;
 
+
+/* ------------------------------- Margins and paddings  ---------------------------------------*/
+
+$margin-updown-big: 30px 0;
+$margin-updown-small: 10px 0;
+
+
 .has-text-align-right {
 	text-align: right;
 }
@@ -34,7 +41,7 @@ $black: #000000;
 }
 
 .has-background {
-	margin: 30px 0;
+	margin: $margin-updown-big;
 	padding: 20px !important;
 }
 
@@ -48,19 +55,25 @@ $black: #000000;
 	margin: 10px 0;
 }
 
-.has-medium-font-size {
+.has-medium-font-size, .has-large-font-size, .has-huge-font-size {
 	line-height: 1.4;
-	margin: 30px 0;
+	margin: $margin-updown-big;
 }
 
-.has-large-font-size {
-	line-height: 1.4;
-	margin: 30px 0;
+.wp-caption, .wp-caption-text,  .screen-reader-text, .gallery-caption, .bypostauthor {
+	display: block;
 }
 
-.has-huge-font-size {
-	line-height: 1.4;
-	margin: 30px 0;
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
 }
 
 p.has-drop-cap.has-medium-font-size {
@@ -109,7 +122,7 @@ p.has-drop-cap:not(:focus) {
 }
 
 .wp-block-button {
-	margin: 30px 0;
+	margin: $margin-updown-big;
 	&.alignleft {
 		margin: 10px 30px 10px 0;
 	}
@@ -123,7 +136,6 @@ p.has-drop-cap:not(:focus) {
 		padding: 15px 20px;
 	}
 }
-
 
 .wp-block-image {
 	margin: 35px 0;
@@ -173,10 +185,9 @@ img, figure {
 		margin: 10px 30px 30px 0 !important;
 	}
 	&.alignnone {
-		margin: 30px 0;
+		margin: $margin-updown-big;
 	}
 }
-
 
 .wp-block-table {
 	margin-bottom: 30px;
@@ -247,6 +258,7 @@ hr.wp-block-separator {
 		width: 80%;
 	}
 	&.is-style-dots {
+		margin: 10px auto;
 		&:before {
 			 font-size: 1.875rem;
 			 padding-left: 30px;
@@ -259,7 +271,7 @@ hr.wp-block-separator {
 
 
 blockquote, blockquote.wp-block-quote {
-	margin: 1.5em 0;
+	margin: $margin-updown-big;
 	position:relative;
 	font-style: italic;
 	p strong em a {
@@ -416,9 +428,9 @@ blockquote, blockquote.wp-block-quote {
       list-style-type: none;
     }
     /* ------------------------------------- recent post native widget --------------------------------------- */
-		//
+
     .wp-block-latest-posts {
-			margin: 30px 0;
+			margin: $margin-updown-big;
 			time {
 				color: $darker-grey;
 			}
@@ -426,11 +438,11 @@ blockquote, blockquote.wp-block-quote {
 
 		.wp-block-latest-comments {
 			padding: 0;
-			margin: 30px 0;
+			margin: $margin-updown-big;
 		}
 
 .wp-block-tag-cloud {
-		margin: 30px 0;
+		margin: $margin-updown-big;
 		line-height: 1.6;
 }
 		.wp-block-archives-list {
@@ -509,5 +521,5 @@ blockquote, blockquote.wp-block-quote {
 }
 
 .twitter-tweet {
-	margin: 30px 0 !important;
+	margin: $margin-updown-big !important;
 }

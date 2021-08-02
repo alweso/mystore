@@ -11,7 +11,6 @@ Text Domain: storezz
 /*bootstrap override
 */
 /* ---------------------------------- WP classes ----------------------------------- */
-/* ---------------------------------- variables ------------------------------------- */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -36,12 +35,80 @@ c. 	Template: Full Width
 15. Widgets
 16. Site Footer
 17. Media Queries
-/* ----------------------- CSS reset -------------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+/* ---------------------------------- Variables ------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* ------------------------------- Colours ---------------------------------------*/
+/* ------------------------------- Margins and paddings  ---------------------------------------*/
+/* -------------------------------------------------------------------------- */
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+html,
+body {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+  content: "";
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Main html elements -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 html, body {
   border: none;
   margin: 0;
   padding: 0;
   font-size: 16px;
+}
+
+body {
+  font-family: "Mulish";
+  font-weight: 600;
+  line-height: 2;
 }
 
 dl {
@@ -59,54 +126,36 @@ blockquote::after {
   content: "";
 }
 
-/* -------------------- Document Setup -------------------------------- */
-body {
-  font-size: 0.875rem;
-  font-family: "Mulish";
-  font-weight: 600;
-  line-height: 2;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: "Mulish";
+  line-height: 1.4;
   font-weight: 700;
   color: #393939;
+  margin: 30px 0;
 }
 
 h1 {
   font-size: 2rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 h2 {
   font-size: 1.875rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 h3 {
   font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 h4 {
   font-size: 1.125rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 h5 {
   font-size: 1rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 h6 {
   font-size: 0.875rem;
-  line-height: 1.4;
-  margin: 30px 0;
 }
 
 p {
@@ -144,7 +193,6 @@ code, kbd {
   background: #b6b6b6;
   overflow: auto;
   max-width: 100%;
-  padding: 0 1em;
   border: 1px solid #b6b6b6;
   background-color: #f9f9f9;
   display: inline-block;
@@ -194,14 +242,10 @@ table th, table td {
 }
 
 hr {
-  margin: 3em 8em;
+  margin: 30px 0;
 }
 
-ol {
-  padding-left: 30px;
-}
-
-ul {
+ol, ul {
   padding-left: 30px;
 }
 
@@ -247,19 +291,9 @@ button {
   overflow: hidden;
 }
 
-.wp-caption, .wp-caption-text, .screen-reader-text, .gallery-caption, .bypostauthor {
-  display: block;
-}
-
-.alignright {
-  float: right;
-}
-
-.alignleft {
-  float: left;
-}
-
-/* --------------------------- comment-form --------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Comments -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 .storezz-post-comments {
   padding: 0;
   list-style-type: none;
@@ -347,7 +381,9 @@ button {
   display: none !important;
 }
 
-/* ------------------------ Breadcrumbs ------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Breadcrumbs -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 .breadcrumbs li {
   display: inline-block;
 }

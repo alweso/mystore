@@ -60,19 +60,6 @@ Text Domain: storezz
 // .wp-post-image {
 //   height: auto;
 // }
-/* ---------------------------------- variables ------------------------------------- */
-
-$base-color: #393939;
-$base-color-darker: #2f6b71;
-$secondary-color: #928478;
-$secondary-color-darker: #b37b4b;
-$darker-grey: #717171;
-$medium-grey: #959595;
-$light-grey: #b6b6b6;
-$lighter-grey: #dbdbdb;
-$very-light-grey: #f9f9f9;
-$white: #ffffff;
-$black: #000000;
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -98,7 +85,92 @@ c. 	Template: Full Width
 15. Widgets
 16. Site Footer
 17. Media Queries
-/* ----------------------- CSS reset -------------------------------------- */
+/* ----------------------------------------------------------------------------------- */
+/* ---------------------------------- Variables ------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
+
+/* ------------------------------- Colours ---------------------------------------*/
+
+$base-color: #393939;
+$base-color-darker: #2f6b71;
+$secondary-color: #928478;
+$secondary-color-darker: #b37b4b;
+$darker-grey: #717171;
+$medium-grey: #959595;
+$light-grey: #b6b6b6;
+$lighter-grey: #dbdbdb;
+$very-light-grey: #f9f9f9;
+$white: #ffffff;
+$black: #000000;
+
+
+/* ------------------------------- Margins and paddings  ---------------------------------------*/
+
+$margin-updown-big: 30px 0;
+$margin-updown-small: 10px 0;
+
+/* -------------------------------------------------------------------------- */
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+
+
+html,
+body {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+address,
+big,
+cite,
+code,
+em,
+font,
+img,
+small,
+strike,
+sub,
+sup,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tr,
+th,
+td {
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+blockquote::before,
+blockquote::after {
+	content: "";
+}
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Main html elements -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
 
 
 
@@ -109,9 +181,17 @@ html, body {
 	font-size: 16px;
 }
 
+
+body {
+	font-family: "Mulish";
+	font-weight: 600;
+	line-height: 2;
+}
+
 dl {
 	line-height: 2;
 }
+
 h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small,
 strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
 	-ms-word-wrap: break-word;
@@ -123,57 +203,42 @@ blockquote::after {
 	content: "";
 }
 
-
-/* -------------------- Document Setup -------------------------------- */
-body {
-	font-size: 0.875rem;
+h1,h2,h3,h4,h5,h6 {
 	font-family: "Mulish";
-	font-weight: 600;
-	line-height: 2;
+	line-height: 1.4;
+	font-weight:700;
+	color: $base-color;
+	margin: $margin-updown-big;
 }
-
-h1,h2,h3,h4,h5,h6 {font-family: "Mulish";font-weight:700;color: $base-color;}
 
 h1 {
 	font-size: 2rem;
-	line-height: 1.4;
-	margin: 30px 0;
 }
 
 h2 {
 	font-size: 1.875rem;
-	line-height:  1.4;
-	margin: 30px 0;
 }
 
 h3 {
 	font-size: 1.5rem;
-	line-height:  1.4;
-	margin: 30px 0;
 }
 
 h4 {
 	font-size: 1.125rem;
-	line-height:  1.4;
-	margin: 30px 0;
 }
 
 h5 {
 	font-size: 1rem;
-	line-height:  1.4;
-	margin: 30px 0;
 }
 
 h6 {
 	font-size: 0.875rem;
-	line-height:  1.4;
-	margin: 30px 0;
 }
 
 p {
 	font-size: 1rem;
 	font-weight: 400;
-	margin: 10px 0;
+	margin: $margin-updown-small;
 	line-height: 2;
 }
 
@@ -205,21 +270,20 @@ code, kbd {
 	background: $light-grey;
 	overflow: auto;
 	max-width: 100%;
-	padding: 0 1em;
 	border: 1px solid $light-grey;
 	background-color: $very-light-grey;
 	display: inline-block;
 	vertical-align: middle;
 	word-wrap: break-word;
 	padding: 5px 10px;
-	margin: 10px 0;
+	margin: $margin-updown-small;
 }
 sup {
 	font-size: 75%;
 }
 
 pre {
-	margin: 30px 0;
+	margin: $margin-updown-big;
 	code {
 		padding: 0;
 		border: none;
@@ -242,9 +306,6 @@ figcaption {
 	line-height: 20px;
 }
 
-span {}
-label {}
-
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -257,20 +318,19 @@ table {
 }
 
 hr {
-	margin: 3em 8em;
+	margin: $margin-updown-big;
 }
 
-ol {
+ol, ul {
 	padding-left: 30px;
 }
-ul {
-	padding-left: 30px;
-}
+
 li {
 	font-size: 1rem;
-	margin: 10px 0;
+	margin: $margin-updown-small;
 	line-height: 1.5;
 }
+
 input[type=search], input[type=text], input[type=password], input[type=Name], input[type=url],
 input[type=email], input[type=date], input[type=datetime-local], input[type=month], input[type=number],
 textarea, select, option {
@@ -281,39 +341,30 @@ textarea, select, option {
 	height: 37px;
 	padding-left: 10px;
 }
+
 textarea {
 	min-height: 150px;
 }
-	button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
-	button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
-	button {position:relative;overflow:hidden;}
 
-select {
-
-}
-
-	.wp-caption, .wp-caption-text,  .screen-reader-text, .gallery-caption, .bypostauthor {display: block;}
-	.alignright {
-		float: right;
-		// margin: 10px 0 10px 30px;
-	}
-	.alignleft {
-		float: left;
-		// margin: 10px 30px 10px 0;
-	}
-	.aligncenter {
-
-	}
+button, input[type=submit], input[type=reset] {box-sizing: border-box;background: $base-color; color: #fff; border: none; border-radius: 2px;height:37px;padding: 0 21px;}
+button.light, input[type=submit].light, input[type=reset].light {background: transparent;border: 2px solid rgba(255,255,255,0.3);color: rgba(255,255,255,0.8)}
+button {position:relative;overflow:hidden;}
 
 
-	/* --------------------------- comment-form --------------------------- */
+
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Comments -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+
 
 .storezz-post-comments {
 	padding: 0;
 	list-style-type: none;
 	.comment-body {
 		border-bottom: 1px solid #d8d8d8;
-    padding: 20px 0;
+		padding: 20px 0;
 	}
 	.children {
 		list-style-type: none;
@@ -327,218 +378,217 @@ select {
 		margin-top: 25px;
 	}
 	a.comment-reply-link {
-    background: $base-color;
-    padding: 6px 20px;
-    color: $white;
+		background: $base-color;
+		padding: 6px 20px;
+		color: $white;
 		margin: 5px 0;
 		display: inline-block;
-}
+	}
 }
 
-	.comment-form {
+.comment-form {
+	label {
+		display: block;
+	}
+	&-comment {
+		textarea {
+			width: 100%;
+		}
+	}
+	&-cookies-consent {
 		label {
-			display: block;
-		}
-		&-comment {
-			textarea {
-				width: 100%;
-			}
-		}
-		&-cookies-consent {
-			label {
-				display: inline-block;
-			}
-			input {
-				margin-right: 5px;
-			}
-		}
-		.form-submit {
-			margin: 20px 0;
-		}
-	}
-
-	.comment-respond {
-		.comments-closed {
-			margin: 30px 0;
-		}
-		.comment-reply-title {
-			font-size: 1.25rem;
-		}
-		small {
-			font-size: 1rem;
-	    display: block;
-	    margin: 20px 0;
-		}
-	}
-
-	.storezz-comments-pagination {
-		margin: 30px 0;
-		a.page-numbers {
-			border: 1px solid;
-	    padding: 10px 17px;
-	    margin-right: 10px;
-		}
-		span.page-numbers.current {
-			padding: 10px 15px;
-	    background: $secondary-color-darker;
-	    color: $white;
-		}
-		span.page-numbers.dots {
-			padding: 10px 15px;
-		}
-	}
-
-	/* ------------------------------- Wordpress elements ---------------------------------------- */
-
-	.entry-title {margin-bottom: 20px;}
-
-	.thumbnail {
-		position: relative;
-		background: $white;
-		padding: 7px;
-	}
-	//
-	//
-	// .wp-widget-categories ul {
-	//   list-style-type: none;
-	//   padding: 0;
-	// }
-	.hidden {display: none !important;}
-
-	/* ------------------------ Breadcrumbs ------------------------------------------- */
-
-	.breadcrumbs {
-		li {
 			display: inline-block;
 		}
+		input {
+			margin-right: 5px;
+		}
 	}
+	.form-submit {
+		margin: 20px 0;
+	}
+}
 
-	/* ------------------------- Search form ---------------------------------------- */
-	.storezz-search-trigger {
+.comment-respond {
+	.comments-closed {
+		margin: $margin-updown-big;
+	}
+	.comment-reply-title {
+		font-size: 1.25rem;
+	}
+	small {
+		font-size: 1rem;
+		display: block;
+		margin: 20px 0;
+	}
+}
+
+.storezz-comments-pagination {
+	margin: $margin-updown-big;
+	a.page-numbers {
+		border: 1px solid;
+		padding: 10px 17px;
+		margin-right: 10px;
+	}
+	span.page-numbers.current {
+		padding: 10px 15px;
+		background: $secondary-color-darker;
+		color: $white;
+	}
+	span.page-numbers.dots {
+		padding: 10px 15px;
+	}
+}
+
+/* ------------------------------- Wordpress elements ---------------------------------------- */
+
+.entry-title {margin-bottom: 20px;}
+
+.thumbnail {
+	position: relative;
+	background: $white;
+	padding: 7px;
+}
+
+.hidden {display: none !important;}
+
+
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------------------- Breadcrumbs -------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+
+
+.breadcrumbs {
+	li {
+		display: inline-block;
+	}
+}
+
+/* ------------------------- Search form ---------------------------------------- */
+.storezz-search-trigger {
+	cursor: pointer;
+}
+.storezz-search-form-wrap {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.95);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	text-align: center;
+	.storezz-search-close {
+		text-transform: uppercase;
 		cursor: pointer;
+		font-size: 1.875rem;
+		position: absolute;
+		top: 20px;
+		right: 20px;
 	}
-	.storezz-search-form-wrap {
-		display: none;
-		width: 100%;
-		height: 100%;
-		background: rgba(255,255,255,0.95);
-		position: fixed;
-		left: 0;
-		top: 0;
-		z-index: 1;
-		text-align: center;
-		.storezz-search-close {
-			text-transform: uppercase;
-			cursor: pointer;
-			font-size: 1.875rem;
-			position: absolute;
-			top: 20px;
-			right: 20px;
+	&--inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%
+	}
+}
+
+/* =========================================== NATIVE WIDGETS ================================================= */
+
+ul[class^="wp-block-"] {
+	margin-bottom: 20px;
+}
+
+
+
+/* ------------------------------ navbar --------------------------------- */
+ul.dropdown-menu li > ul.dropdown-menu{
+	left: 100%;
+	top: 0;
+}
+
+.menu-item-has-children:hover > ul.dropdown-menu,
+.menu-item-has-children:focus > ul.dropdown-menu {
+	display: block !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.storezz-entry-header {
+	.entry-title {
+		margin-bottom: 10px;
+	}
+
+	.storezz-post-details {
+		color: $medium-grey;
+		span {
+			margin-right: 5px;
 		}
-		&--inner {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100%
-		}
-	}
-
-	/* =========================================== NATIVE WIDGETS ================================================= */
-
-	ul[class^="wp-block-"] {
-		margin-bottom: 20px;
 	}
 
 
-
-	/* ------------------------------ navbar --------------------------------- */
-	ul.dropdown-menu li > ul.dropdown-menu{
-		left: 100%;
-		top: 0;
-	}
-
-	.menu-item-has-children:hover > ul.dropdown-menu,
-	.menu-item-has-children:focus > ul.dropdown-menu {
-		display: block !important;
-	}
-
-	/* ------------------------------------------------------------------------------------------------------------ */
-
-	.storezz-entry-header {
-		.entry-title {
-			margin-bottom: 10px;
-		}
-
-		.storezz-post-details {
-			color: $medium-grey;
-			span {
-				margin-right: 5px;
+	.post-categories {
+		padding: 0;
+		li {
+			display: inline-block;
+			background: $secondary-color;
+			padding: 0px 10px;
+			border-radius: 3px;
+			margin: 0 3px 10px 0;
+			a {
+				color: #fff;
 			}
 		}
+	}
 
-
-		.post-categories {
+	&_tags {
+		margin: $margin-updown-big;
+		clear: both;
+		ul {
 			padding: 0;
-			li {
-				display: inline-block;
-				background: $secondary-color;
-				padding: 0px 10px;
-				border-radius: 3px;
-				margin: 0 3px 10px 0;
-				a {
-					color: #fff;
-				}
-			}
+			list-style-type: none;
 		}
-
-		&_tags {
-			margin: 30px 0;
-			clear: both;
-			ul {
-				padding: 0;
-				list-style-type: none;
-			}
-			li {
-				display: inline-block;
-				border: 1px solid grey;
-				border-radius: 20px;
-				padding: 3px 11px;
-				margin-right: 5px;
-			}
+		li {
+			display: inline-block;
+			border: 1px solid grey;
+			border-radius: 20px;
+			padding: 3px 11px;
+			margin-right: 5px;
 		}
 	}
+}
 
 
-	/* ------------------------------ Blog Layouts ------------------------- */
-	.blog_1 {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 15px;
+/* ------------------------------ Blog Layouts ------------------------- */
+.blog_1 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+}
+
+.blog_2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+	&>div:first-of-type {
+		grid-column: 1/3;
 	}
+}
 
-	.blog_2 {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 15px;
-		&>div:first-of-type {
-			grid-column: 1/3;
-		}
+.blog_3 {
+	.storezz-entry-media {
+		width: 50%;
+		float: left;
 	}
+}
 
-	.blog_3 {
-		.storezz-entry-media {
-			width: 50%;
-			float: left;
-		}
-	}
+.blog_4 {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 15px;
+}
 
-	.blog_4 {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 15px;
-	}
-
-	/* -------------------------------------------- Single post --------------------------------------------------- */
+/* -------------------------------------------- Single post --------------------------------------------------- */
 .storezz-entry-media {
 	margin-bottom: 30px;
 	figcaption {
@@ -548,291 +598,291 @@ select {
 		line-height: 20px;
 	}
 }
-	/* ----------------------------------------------- MENU -------------------------------------------------- */
+/* ----------------------------------------------- MENU -------------------------------------------------- */
 
 
 
-	#storezz-menu {
-		background: #4cb6ea;
-		margin: 0;
-		width: auto;
-		padding: 0;
-		line-height: 1;
-		display: block;
+#storezz-menu {
+	background: #4cb6ea;
+	margin: 0;
+	width: auto;
+	padding: 0;
+	line-height: 1;
+	display: block;
+	position: relative;
+	font-family: 'PT Sans', sans-serif;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+#storezz-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#storezz-menu ul:after,
+#storezz-menu:after {
+	content: ' ';
+	display: block;
+	font-size: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#storezz-menu ul li {
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: relative;
+}
+#storezz-menu ul li a {
+	text-decoration: none;
+	display: block;
+	margin: 0;
+	-webkit-transition: color .2s ease;
+	-moz-transition: color .2s ease;
+	-ms-transition: color .2s ease;
+	-o-transition: color .2s ease;
+	transition: color .2s ease;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#storezz-menu ul li ul {
+	position: absolute;
+	left: -9999px;
+	top: auto;
+}
+#storezz-menu ul li ul li {
+	max-height: 0;
+	position: absolute;
+	-webkit-transition: max-height 0.4s ease-out;
+	-moz-transition: max-height 0.4s ease-out;
+	-ms-transition: max-height 0.4s ease-out;
+	-o-transition: max-height 0.4s ease-out;
+	transition: max-height 0.4s ease-out;
+	background: #ffffff;
+}
+#storezz-menu ul li ul li.has-sub:after {
+	display: block;
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	border-radius: 5px;
+	background: #000000;
+	z-index: 1;
+	top: 13px;
+	right: 15px;
+}
+#storezz-menu.align-right ul li ul li.has-sub:after {
+	right: auto;
+	left: 15px;
+}
+#storezz-menu ul li ul li.has-sub:before {
+	display: block;
+	position: absolute;
+	content: '';
+	height: 0;
+	width: 0;
+	border: 3px solid transparent;
+	border-left-color: #ffffff;
+	z-index: 2;
+	top: 15px;
+	right: 15px;
+}
+#storezz-menu.align-right ul li ul li.has-sub:before {
+	right: auto;
+	left: 15px;
+	border-left-color: transparent;
+	border-right-color: #ffffff;
+}
+#storezz-menu ul li ul li a {
+	font-size: 0.875rem;
+	font-weight: 400;
+	text-transform: none;
+	color: #000000;
+	letter-spacing: 0;
+	display: block;
+	width: 170px;
+	padding: 11px 10px 11px 20px;
+}
+#storezz-menu ul li ul li:hover > a,
+#storezz-menu ul li ul li.active > a,
+#storezz-menu ul li ul li.focus > a {
+	color: #4cb6ea;
+}
+#storezz-menu ul li ul li:hover:after,
+#storezz-menu ul li ul li.active:after,
+#storezz-menu ul li ul li.focus:after {
+	background: #4cb6ea;
+}
+#storezz-menu ul li ul li:hover > ul,
+#storezz-menu ul li ul li:focus > ul {
+	left: 100%;
+	top: 0;
+}
+#storezz-menu ul li ul li:hover > ul > li,
+#storezz-menu ul li ul li:focus > ul > li {
+	max-height: 72px;
+	position: relative;
+}
+#storezz-menu > ul > li {
+	float: left;
+}
+#storezz-menu.align-center > ul > li {
+	float: none;
+	display: inline-block;
+}
+#storezz-menu.align-center > ul {
+	text-align: center;
+}
+#storezz-menu.align-center ul ul {
+	text-align: left;
+}
+#storezz-menu.align-right > ul {
+	float: right;
+}
+#storezz-menu.align-right > ul > li:hover > ul,
+#storezz-menu.align-right > ul > li:focus > ul {
+	left: auto;
+	right: 0;
+}
+#storezz-menu.align-right ul ul li:hover > ul,
+#storezz-menu.align-right ul ul li:focus > ul {
+	right: 100%;
+	left: auto;
+}
+#storezz-menu.align-right ul ul li a {
+	text-align: right;
+}
+#storezz-menu > ul > li:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 0;
+	top: 0;
+	z-index: 0;
+	background: #ffffff;
+	-webkit-transition: height .2s;
+	-moz-transition: height .2s;
+	-ms-transition: height .2s;
+	-o-transition: height .2s;
+	transition: height .2s;
+}
+#storezz-menu > ul > li.has-sub > a {
+	padding-right: 40px;
+}
+#storezz-menu > ul > li.has-sub > a:after {
+	display: block;
+	content: '';
+	background: #ffffff;
+	height: 12px;
+	width: 12px;
+	position: absolute;
+	border-radius: 13px;
+	right: 14px;
+	top: 16px;
+}
+#storezz-menu > ul > li.has-sub > a:before {
+	display: block;
+	content: '';
+	border: 4px solid transparent;
+	border-top-color: #4cb6ea;
+	z-index: 2;
+	height: 0;
+	width: 0;
+	position: absolute;
+	right: 16px;
+	top: 21px;
+}
+#storezz-menu > ul > li > a {
+	color: #ffffff;
+	padding: 15px 20px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	z-index: 2;
+	position: relative;
+}
+#storezz-menu > ul > li:hover:after,
+#storezz-menu > ul > li.active:after,
+#storezz-menu > ul > li.focus:after {
+	height: 100%;
+}
+#storezz-menu > ul > li:hover > a,
+#storezz-menu > ul > li.active > a,
+#storezz-menu > ul > li.focus > a {
+	color: #000000;
+}
+#storezz-menu > ul > li:hover > a:after,
+#storezz-menu > ul > li.active > a:after
+#storezz-menu > ul > li.focus > a:after {
+	background: #000000;
+}
+#storezz-menu > ul > li:hover > a:before,
+#storezz-menu > ul > li.active > a:before
+#storezz-menu > ul > li.focus > a:before {
+	border-top-color: #ffffff;
+}
+#storezz-menu > ul > li:hover > ul,
+#storezz-menu > ul > li:focus > ul {
+	left: 0;
+}
+#storezz-menu > ul > li:hover > ul > li,
+#storezz-menu > ul > li:focus > ul > li {
+	max-height: 72px;
+	position: relative;
+}
+#storezz-menu #menu-button {
+	display: none;
+}
+#storezz-menu > ul > li > a {
+	display: block;
+}
+#storezz-menu > ul > li {
+	width: auto;
+}
+#storezz-menu > ul > li > ul {
+	width: 170px;
+	display: block;
+}
+#storezz-menu > ul > li > ul > li {
+	width: 170px;
+	display: block;
+}
+
+/* --------------------------------------------------- FOOTER ----------------------------------------------------- */
+
+.storezz-site-footer {
+	background: $black;
+}
+
+/* ---------------------------------- woocommerce ------------------------------------ */
+
+.storezz-product-vertical {
+	.woocommerce-product-gallery {
 		position: relative;
-		font-family: 'PT Sans', sans-serif;
-		-webkit-box-sizing: content-box;
-		-moz-box-sizing: content-box;
-		box-sizing: content-box;
-	}
-
-	#storezz-menu ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: block;
-	}
-	#storezz-menu ul:after,
-	#storezz-menu:after {
-		content: ' ';
-		display: block;
-		font-size: 0;
-		height: 0;
-		clear: both;
-		visibility: hidden;
-	}
-	#storezz-menu ul li {
-		margin: 0;
-		padding: 0;
-		display: block;
-		position: relative;
-	}
-	#storezz-menu ul li a {
-		text-decoration: none;
-		display: block;
-		margin: 0;
-		-webkit-transition: color .2s ease;
-		-moz-transition: color .2s ease;
-		-ms-transition: color .2s ease;
-		-o-transition: color .2s ease;
-		transition: color .2s ease;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	#storezz-menu ul li ul {
-		position: absolute;
-		left: -9999px;
-		top: auto;
-	}
-	#storezz-menu ul li ul li {
-		max-height: 0;
-		position: absolute;
-		-webkit-transition: max-height 0.4s ease-out;
-		-moz-transition: max-height 0.4s ease-out;
-		-ms-transition: max-height 0.4s ease-out;
-		-o-transition: max-height 0.4s ease-out;
-		transition: max-height 0.4s ease-out;
-		background: #ffffff;
-	}
-	#storezz-menu ul li ul li.has-sub:after {
-		display: block;
-		position: absolute;
-		content: '';
-		height: 10px;
-		width: 10px;
-		border-radius: 5px;
-		background: #000000;
-		z-index: 1;
-		top: 13px;
-		right: 15px;
-	}
-	#storezz-menu.align-right ul li ul li.has-sub:after {
-		right: auto;
-		left: 15px;
-	}
-	#storezz-menu ul li ul li.has-sub:before {
-		display: block;
-		position: absolute;
-		content: '';
-		height: 0;
-		width: 0;
-		border: 3px solid transparent;
-		border-left-color: #ffffff;
-		z-index: 2;
-		top: 15px;
-		right: 15px;
-	}
-	#storezz-menu.align-right ul li ul li.has-sub:before {
-		right: auto;
-		left: 15px;
-		border-left-color: transparent;
-		border-right-color: #ffffff;
-	}
-	#storezz-menu ul li ul li a {
-		font-size: 0.875rem;
-		font-weight: 400;
-		text-transform: none;
-		color: #000000;
-		letter-spacing: 0;
-		display: block;
-		width: 170px;
-		padding: 11px 10px 11px 20px;
-	}
-	#storezz-menu ul li ul li:hover > a,
-	#storezz-menu ul li ul li.active > a,
-	#storezz-menu ul li ul li.focus > a {
-		color: #4cb6ea;
-	}
-	#storezz-menu ul li ul li:hover:after,
-	#storezz-menu ul li ul li.active:after,
-		#storezz-menu ul li ul li.focus:after {
-		background: #4cb6ea;
-	}
-	#storezz-menu ul li ul li:hover > ul,
-	#storezz-menu ul li ul li:focus > ul {
-		left: 100%;
-		top: 0;
-	}
-	#storezz-menu ul li ul li:hover > ul > li,
-	#storezz-menu ul li ul li:focus > ul > li {
-		max-height: 72px;
-		position: relative;
-	}
-	#storezz-menu > ul > li {
-		float: left;
-	}
-	#storezz-menu.align-center > ul > li {
-		float: none;
-		display: inline-block;
-	}
-	#storezz-menu.align-center > ul {
-		text-align: center;
-	}
-	#storezz-menu.align-center ul ul {
-		text-align: left;
-	}
-	#storezz-menu.align-right > ul {
-		float: right;
-	}
-	#storezz-menu.align-right > ul > li:hover > ul,
-	#storezz-menu.align-right > ul > li:focus > ul {
-		left: auto;
-		right: 0;
-	}
-	#storezz-menu.align-right ul ul li:hover > ul,
-	#storezz-menu.align-right ul ul li:focus > ul {
-		right: 100%;
-		left: auto;
-	}
-	#storezz-menu.align-right ul ul li a {
-		text-align: right;
-	}
-	#storezz-menu > ul > li:after {
-		content: '';
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 0;
-		top: 0;
-		z-index: 0;
-		background: #ffffff;
-		-webkit-transition: height .2s;
-		-moz-transition: height .2s;
-		-ms-transition: height .2s;
-		-o-transition: height .2s;
-		transition: height .2s;
-	}
-	#storezz-menu > ul > li.has-sub > a {
-		padding-right: 40px;
-	}
-	#storezz-menu > ul > li.has-sub > a:after {
-		display: block;
-		content: '';
-		background: #ffffff;
-		height: 12px;
-		width: 12px;
-		position: absolute;
-		border-radius: 13px;
-		right: 14px;
-		top: 16px;
-	}
-	#storezz-menu > ul > li.has-sub > a:before {
-		display: block;
-		content: '';
-		border: 4px solid transparent;
-		border-top-color: #4cb6ea;
-		z-index: 2;
-		height: 0;
-		width: 0;
-		position: absolute;
-		right: 16px;
-		top: 21px;
-	}
-	#storezz-menu > ul > li > a {
-		color: #ffffff;
-		padding: 15px 20px;
-		font-weight: 700;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		font-size: 0.875rem;
-		z-index: 2;
-		position: relative;
-	}
-	#storezz-menu > ul > li:hover:after,
-	#storezz-menu > ul > li.active:after,
-	#storezz-menu > ul > li.focus:after {
-		height: 100%;
-	}
-	#storezz-menu > ul > li:hover > a,
-	#storezz-menu > ul > li.active > a,
-	#storezz-menu > ul > li.focus > a {
-		color: #000000;
-	}
-	#storezz-menu > ul > li:hover > a:after,
-	#storezz-menu > ul > li.active > a:after
-	#storezz-menu > ul > li.focus > a:after {
-		background: #000000;
-	}
-	#storezz-menu > ul > li:hover > a:before,
-	#storezz-menu > ul > li.active > a:before
-	#storezz-menu > ul > li.focus > a:before {
-		border-top-color: #ffffff;
-	}
-	#storezz-menu > ul > li:hover > ul,
-	#storezz-menu > ul > li:focus > ul {
-		left: 0;
-	}
-	#storezz-menu > ul > li:hover > ul > li,
-	#storezz-menu > ul > li:focus > ul > li {
-		max-height: 72px;
-		position: relative;
-	}
-	#storezz-menu #menu-button {
-		display: none;
-	}
-	#storezz-menu > ul > li > a {
-		display: block;
-	}
-	#storezz-menu > ul > li {
-		width: auto;
-	}
-	#storezz-menu > ul > li > ul {
-		width: 170px;
-		display: block;
-	}
-	#storezz-menu > ul > li > ul > li {
-		width: 170px;
-		display: block;
-	}
-
-	/* --------------------------------------------------- FOOTER ----------------------------------------------------- */
-
-	.storezz-site-footer {
-		background: $black;
-	}
-
-	/* ---------------------------------- woocommerce ------------------------------------ */
-
-	.storezz-product-vertical {
-		.woocommerce-product-gallery {
-			position: relative;
-			padding-left: 120px;
-			.flex-control-thumbs {
-				display: block !important;
-				margin: 0 !important;
-				padding-right: 20px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 120px;
-				height: 100%;
-				overflow: hidden;
-				li {
-					width: 100% !important;
-					padding-top: 0;
-					padding-bottom: 15px;
-				}
+		padding-left: 120px;
+		.flex-control-thumbs {
+			display: block !important;
+			margin: 0 !important;
+			padding-right: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 120px;
+			height: 100%;
+			overflow: hidden;
+			li {
+				width: 100% !important;
+				padding-top: 0;
+				padding-bottom: 15px;
 			}
 		}
 	}
+}
