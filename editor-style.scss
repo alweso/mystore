@@ -11,12 +11,22 @@ $very-light-grey: #f9f9f9;
 $white: #ffffff;
 $black: #000000;
 
+/* ------------------------------- Margins and paddings  ---------------------------------------*/
+
+$margin-updown-big: 2rem 0;
+$margin-updown-small: 1rem 0;
+
+
 body {
   font-size: 16px;
   font-family: "Mulish";
   font-weight: 600;
   line-height: 27px;
 	margin: 0 auto;
+}
+
+.editor-styles-wrapper [class^="wp-block"]:not(.alignleft):not(.alignright) {
+	clear: both;
 }
 
 .editor-styles-wrapper a {

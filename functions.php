@@ -18,6 +18,7 @@ function storezz_scripts_and_styles() {
   wp_enqueue_style( 'google_fonts ', 'https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap', false );
   wp_enqueue_style( 'storezz_gutenberg', get_template_directory_uri() . '/css/gutenberg-style.css', 'storezz' );
   wp_enqueue_style( 'storezz_style', get_stylesheet_uri(), 'storezz' );
+  wp_enqueue_style( 'woocommerce_style', get_theme_file_uri( '/woocommerce.css' ), 'storezz' );
   // wp_enqueue_style( 'site-block-editor-styles', get_theme_file_uri( '/editor-style.css' ), false, '1.0', 'all' );
 }
 
@@ -62,6 +63,8 @@ function storezz_theme_setup() {
   add_theme_support( 'editor-styles' );
   add_theme_support( 'responsive-embeds' );
   add_theme_support( 'responsive-videos' );
+  add_theme_support ('align-wide');
+  add_theme_support ('align-full');  
   add_theme_support(
       'custom-logo',
       array(
