@@ -775,8 +775,8 @@ figure.wp-caption {
 .wp-block-cover:not(.alignleft):not(.alignright),
 .wp-block-embed:not(.alignleft):not(.alignright),
 .wp-block-gallery:not(.alignleft):not(.alignright),
-// .wp-block-group:not(.has-background):not(.alignwide):not(.alignfull),
-.wp-block-image figure:not(.alignleft):not(.alignright),
+.wp-block-group:not(.alignleft):not(.alignright),
+.wp-block-image:not(.alignleft):not(.alignright),
 .wp-block-site-logo:not(.alignleft):not(.alignright),
 .wp-block-latest-comments:not(.alignleft):not(.alignright),
 .wp-block-latest-posts:not(.alignleft):not(.alignright),
@@ -797,10 +797,6 @@ figure.wp-caption {
 	margin-bottom: 3rem;
 	margin-top: 3rem;
 }
-
-// [class^="wp-block"]:not(.alignleft):not(.alignright) {
-// 	clear: both;
-// }
 
 .wp-block-image {
 	figcaption {
@@ -1106,6 +1102,77 @@ blockquote, blockquote.wp-block-quote {
 
 
 
+
+.gallery {
+	margin-left: -10px;
+	margin-right: -10px;
+	figcaption {
+		margin-top: 5px;
+	}
+	.gallery-item {
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 10px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+		&.gallery-columns-1 {
+			.gallery-item {
+				width: 100%;
+			}
+		}
+
+		&.gallery-columns-2 {
+			.gallery-item {
+				width: 50%;
+			}
+		}
+
+		&.gallery-columns-3 {
+			.gallery-item {
+				width: 33.3%;
+			}
+		}
+
+		&.gallery-columns-4 {
+			.gallery-item {
+				width: 25%;
+			}
+		}
+
+		&.gallery-columns-5 {
+			.gallery-item {
+				width: 20%;
+			}
+		}
+
+		&.gallery-columns-6 {
+			.gallery-item {
+				width: 16.6%;
+			}
+		}
+
+		&.gallery-columns-7 {
+			.gallery-item {
+				width: 14.2%;
+			}
+		}
+
+		&.gallery-columns-8 {
+			.gallery-item {
+				width: 12.5%;
+			}
+		}
+
+		&.gallery-columns-9 {
+			.gallery-item {
+				width: 11.11%;
+			}
+		}
+}
+
 /* ------------------------------------------------------------------------------------------ */
 /* -------------------------------------- Comments -------------------------------- */
 /* ------------------------------------------------------------------------------------------ */
@@ -1289,7 +1356,7 @@ blockquote, blockquote.wp-block-quote {
 			border: 1px solid grey;
 			border-radius: 20px;
 			padding: 3px 11px;
-			margin-right: 5px;
+			margin: 8px 5px 8px 0;
 		}
 	}
 }
