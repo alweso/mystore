@@ -76,7 +76,7 @@ if ( $comments ) {
 				}
 				?>
 
-				<nav class="storezz-comments-pagination <?php  esc_html_e( $pagination_classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'storezz' ); ?>">
+				<nav class="comments-pagination <?php  esc_html_e( $pagination_classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>" aria-label="<?php esc_attr_e( 'Comments', 'storezz' ); ?>">
 					<?php echo wp_kses_post( $comment_pagination ); ?>
 				</nav>
 

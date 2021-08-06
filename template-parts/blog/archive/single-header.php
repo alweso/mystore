@@ -16,7 +16,7 @@ if ( is_single() ) :
   the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
 endif;
 
-if ( $show_tags === 'yes' ) : ?>
+if ( $show_tags === 'yes' && has_tag() ) : ?>
 <div class="storezz-entry-header_tags clearfix">
   <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 </div>

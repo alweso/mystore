@@ -464,7 +464,7 @@ body {
   bottom: 0;
   margin: 17px 0 13px -40px !important;
 }
-.editor-styles-wrapper blockquote cite:after, .editor-styles-wrapper blockquote.wp-block-quote cite:after {
+.editor-styles-wrapper blockquote cite:before:after, .editor-styles-wrapper blockquote.wp-block-quote cite:before:after {
   position: absolute;
   top: 0;
   width: 30px;
@@ -475,13 +475,13 @@ body {
   right: 0;
   margin: 17px -40px 13px 0px !important;
 }
-.editor-styles-wrapper blockquote.has-text-align-right cite:after, .editor-styles-wrapper blockquote.wp-block-quote.has-text-align-right cite:after {
+.editor-styles-wrapper blockquote cite.has-text-align-right cite:after, .editor-styles-wrapper blockquote.wp-block-quote cite.has-text-align-right cite:after {
   content: none;
 }
-.editor-styles-wrapper blockquote.has-text-align-left cite:before, .editor-styles-wrapper blockquote.wp-block-quote.has-text-align-left cite:before {
+.editor-styles-wrapper blockquote cite.has-text-align-left cite:before, .editor-styles-wrapper blockquote.wp-block-quote cite.has-text-align-left cite:before {
   content: none;
 }
-.editor-styles-wrapper blockquote:before, .editor-styles-wrapper blockquote.wp-block-quote:before {
+.editor-styles-wrapper blockquote cite:before, .editor-styles-wrapper blockquote.wp-block-quote cite:before {
   font-family: "Font Awesome 5 Free";
   content: "" !important;
   font-size: 1.875rem;
@@ -490,10 +490,10 @@ body {
   top: 0;
   left: 0;
 }
-.editor-styles-wrapper blockquote.is-style-large cite, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large cite {
+.editor-styles-wrapper blockquote cite.is-style-large cite, .editor-styles-wrapper blockquote.wp-block-quote cite.is-style-large cite {
   position: relative;
 }
-.editor-styles-wrapper blockquote.is-style-large cite:before, .editor-styles-wrapper blockquote.is-style-large cite:after, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large cite:before, .editor-styles-wrapper blockquote.wp-block-quote.is-style-large cite:after {
+.editor-styles-wrapper blockquote cite.is-style-large cite:before, .editor-styles-wrapper blockquote cite.is-style-large cite:after, .editor-styles-wrapper blockquote.wp-block-quote cite.is-style-large cite:before, .editor-styles-wrapper blockquote.wp-block-quote cite.is-style-large cite:after {
   content: none;
 }
 

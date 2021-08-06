@@ -1276,7 +1276,7 @@ blockquote, blockquote.wp-block-quote {
 	}
 }
 
-.storezz-comments-pagination {
+.comments-pagination {
 	margin: $margin-updown-big;
 	a.page-numbers {
 		border: 1px solid;
@@ -1400,6 +1400,18 @@ blockquote, blockquote.wp-block-quote {
 /* ---------------------------------------- Blog Page Layouts ----------------------------------------------- */
 /* --------------------------------------------------------------------------------------------------------- */
 
+body.blog .blog_4 {
+	article {
+		 border-bottom: 1px solid $lighter-grey;
+		 margin-bottom: 2rem;
+    padding-bottom: 20px;
+		.entry-title {
+			a {
+				color: $base-color;
+			}
+		}
+	}
+}
 
 .blog_1 {
 	display: grid;
@@ -1417,7 +1429,7 @@ blockquote, blockquote.wp-block-quote {
 }
 
 .blog_3 {
-	.storezz-entry-media {
+	.entry-media {
 		width: 50%;
 		float: left;
 	}
@@ -1434,7 +1446,7 @@ blockquote, blockquote.wp-block-quote {
 /* --------------------------------------------------------------------------------------------------------- */
 
 
-.storezz-entry-media {
+.entry-media {
 	margin-bottom: 30px;
 	figcaption {
 	// 	color: $medium-grey;
