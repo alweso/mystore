@@ -652,25 +652,39 @@ button {
   margin-right: calc( -45vw + 50% );
 }
 
-p.has-drop-cap.has-medium-font-size:first-letter {
-  font-size: 4.5rem;
-  line-height: 1;
-  font-weight: 900;
+p.has-drop-cap:first-letter {
+  font-size: 4.5rem !important;
+  line-height: 0.9 !important;
+  font-weight: 900 !important;
   margin: 0 10px 0 0;
+}
+
+p.has-drop-cap.has-small-font-size:first-letter {
+  font-size: 4.5rem;
+  line-height: 0.85 !important;
+}
+
+p.has-drop-cap.has-normal-font-size:first-letter {
+  font-size: 4.5rem;
+  line-height: 0.9 !important;
+}
+
+p.has-drop-cap.has-medium-font-size:first-letter {
+  font-size: 4.5rem !important;
+  line-height: 0.9 !important;
+  margin: 0 20px 0 0;
 }
 
 p.has-drop-cap.has-large-font-size:first-letter {
-  font-size: 12rem;
-  line-height: 0.85;
-  font-weight: 900;
-  margin: 0 10px 0 0;
+  font-size: 12rem !important;
+  line-height: 0.75 !important;
 }
 
 p.has-drop-cap.has-huge-font-size:first-letter {
-  font-size: 16rem;
-  line-height: 0.8;
+  font-size: 16rem !important;
+  line-height: 0.8 !important;
   font-weight: 900;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
 }
 
 p.has-drop-cap:not(:focus):first-letter {
@@ -685,6 +699,10 @@ p.has-drop-cap:not(:focus):after {
   padding-top: 14px;
 }
 
+figure.wp-caption [class*=wp-image-] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 figure.wp-caption figcaption {
   margin-top: 5px;
 }
@@ -726,11 +744,20 @@ figure.wp-caption figcaption {
   margin-top: 3rem;
 }
 
-.wp-block-image figcaption {
+[class*=wp-image-]:not(.alignleft):not(.alignright) {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.wp-block-image [class*=wp-image-], .wp-block-cover [class*=wp-image-] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.wp-block-image figcaption, .wp-block-cover figcaption {
   margin-top: 5px;
 }
 
-.wp-block-button:not(.alignleft):not(.align-right) {
+.wp-block-button:not(.alignleft):not(.alignright) {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

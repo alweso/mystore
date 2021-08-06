@@ -64,7 +64,7 @@ function storezz_theme_setup() {
   add_theme_support( 'responsive-embeds' );
   add_theme_support( 'responsive-videos' );
   add_theme_support ('align-wide');
-  add_theme_support ('align-full');  
+  add_theme_support ('align-full');
   add_theme_support(
       'custom-logo',
       array(
