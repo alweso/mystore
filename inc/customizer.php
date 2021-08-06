@@ -69,7 +69,6 @@ $wp_customize->add_control( 'storezz-choose-blog-layout', array(
     'blog_1' => esc_html__( 'Blog 1', 'storezz' ),
     'blog_2' => esc_html__( 'Blog 2', 'storezz' ),
     'blog_3' => esc_html__( 'Blog 3', 'storezz' ),
-    'blog_4' => esc_html__( 'Blog 4', 'storezz' ),
   ),
 )
 );

@@ -55,7 +55,7 @@ function storezz_theme_setup() {
   register_nav_menus( array(
       'secondary' => __( 'Footer', 'storezz' ),
   ) );
-  set_post_thumbnail_size( 850, 560, ['center', 'center'] );
+  set_post_thumbnail_size(1000, 550, ['center', 'center'] );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) );
   add_theme_support( 'automatic-feed-links' );

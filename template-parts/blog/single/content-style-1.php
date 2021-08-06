@@ -7,7 +7,7 @@
 		</div>
 		<?php
 		if ( $show_tags === 'yes' ) : ?>
-		<div class="storezz-entry-header_tags clearfix">
+		<div class="entry-header_tags clearfix">
 			<?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 		</div>
 	<?php endif;

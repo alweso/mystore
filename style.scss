@@ -99,7 +99,7 @@ $darker-grey: #717171;
 $medium-grey: #959595;
 $light-grey: #b6b6b6;
 $lighter-grey: #dbdbdb;
-$very-light-grey: #f9f9f9;
+$very-light-grey: #f3f3f3;
 $white: #ffffff;
 $black: #000000;
 
@@ -207,7 +207,7 @@ blockquote::after {
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: "Mulish";
-	line-height: 1.4;
+	line-height: 1.3;
 	font-weight:700;
 	color: $base-color;
 	margin: $margin-updown-big;
@@ -1352,7 +1352,7 @@ blockquote, blockquote.wp-block-quote {
 
 /* ------------------------------------------------------------------------------------------------------------ */
 
-.storezz-entry-header {
+.entry-header {
 	.entry-title {
 		margin-bottom: 10px;
 	}
@@ -1361,6 +1361,7 @@ blockquote, blockquote.wp-block-quote {
 		color: $medium-grey;
 		span {
 			margin-right: 5px;
+			font-weight: 300;
 		}
 	}
 
@@ -1375,6 +1376,7 @@ blockquote, blockquote.wp-block-quote {
 			margin: 0 3px 10px 0;
 			a {
 				color: #fff;
+				font-weight: 300;
 			}
 		}
 	}
@@ -1400,42 +1402,72 @@ blockquote, blockquote.wp-block-quote {
 /* ---------------------------------------- Blog Page Layouts ----------------------------------------------- */
 /* --------------------------------------------------------------------------------------------------------- */
 
-body.blog .blog_4 {
+.blog_1,.blog_2, .blog_3 {
 	article {
 		 border-bottom: 1px solid $lighter-grey;
 		 margin-bottom: 2rem;
-    padding-bottom: 20px;
+    	padding-bottom: 20px;
+		&.sticky {
+			padding: 20px;
+			background: $very-light-grey;
+			border-bottom: none;
+		}
 		.entry-title {
+			font-weight: 900;
 			a {
 				color: $base-color;
 			}
+		}
+		.entry-header {
+				.entry-title {
+					margin-top: 10px;
+				}
+				&_tags {
+					margin: 1rem 0;
+				}
 		}
 	}
 }
 
 .blog_1 {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 15px;
+	>div:not(:first-of-type) {
+		article {
+			.entry-header {
+				&_tags {
+					clear: none;
+					height: auto;
+					display: inline-block;
+					margin: 0 0 10px 0;
+				}
+			}
+			.entry-media {
+				width: 50%;
+				float: left;
+				margin: 0 30px 10px 0;
+			}
+		}
+	}
 }
 
 .blog_2 {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 15px;
-	&>div:first-of-type {
-		grid-column: 1/3;
-	}
+		article {
+			.entry-header {
+				&_tags {
+					clear: none;
+					height: auto;
+					display: inline-block;
+					margin: 0 0 10px 0;
+				}
+			}
+			.entry-media {
+				width: 50%;
+				float: left;
+				margin: 0 30px 10px 0;
+			}
+		}
 }
 
 .blog_3 {
-	.entry-media {
-		width: 50%;
-		float: left;
-	}
-}
-
-.blog_4 {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 15px;

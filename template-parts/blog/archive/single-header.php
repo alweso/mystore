@@ -1,11 +1,11 @@
-<header class="storezz-entry-header entry-header">
+<header class="entry-header entry-header">
 <?php
 
 $show_categories = get_theme_mod( 'storezz-show-categories-blog', 'yes' );
 $show_tags = get_theme_mod( 'storezz-show-tags-blog', 'yes' );
 
 if ( $show_categories === 'yes' ) : ?>
-<div class="storezz-entry-header_categories">
+<div class="entry-header_categories">
   <?php the_category() ?>
 </div>
 <?php endif;
@@ -17,7 +17,7 @@ if ( is_single() ) :
 endif;
 
 if ( $show_tags === 'yes' && has_tag() ) : ?>
-<div class="storezz-entry-header_tags clearfix">
+<div class="entry-header_tags clearfix">
   <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
 </div>
 <?php endif ?>

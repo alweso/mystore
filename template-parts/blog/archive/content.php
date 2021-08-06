@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class();?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix');?> >
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php get_template_part( 'template-parts/blog/archive/post-media'); ?>
 	<?php endif; ?>
