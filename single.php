@@ -8,7 +8,7 @@
 get_header();
 $single_layout = get_theme_mod( 'storezz-choose-single-layout');
 ?>
-<main id="main-content" class="container storezz-post-container">
+<main id="main-content" class="container single-post">
 	<div class="row">
 		<?php
 		storezz_breadcrumbs();

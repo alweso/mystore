@@ -56,6 +56,7 @@ function storezz_theme_setup() {
       'secondary' => __( 'Footer', 'storezz' ),
   ) );
   set_post_thumbnail_size(1000, 550, ['center', 'center'] );
+  add_image_size( 'single_post', 2000, 1100, array( 'center', 'center' ) );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails', array( 'post', 'page', 'product' ) );
   add_theme_support( 'automatic-feed-links' );
@@ -139,7 +140,7 @@ function storezz_widgets_init() {
     register_sidebar( array(
         'name'          => 'Blog sidebar',
         'id'            => 'blog_sidebar',
-        'before_widget' => '<div class="storezz-blog-sidebar">',
+        'before_widget' => '<div class="storezz-blog-sidebar sidebar-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
@@ -148,7 +149,7 @@ function storezz_widgets_init() {
     register_sidebar( array(
         'name'          => 'Single sidebar',
         'id'            => 'single_sidebar',
-        'before_widget' => '<div class="storezz-single-sidebar>',
+        'before_widget' => '<div class="storezz-single-sidebar sidebar-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
@@ -157,7 +158,7 @@ function storezz_widgets_init() {
     register_sidebar( array(
         'name'          => 'Page sidebar',
         'id'            => 'page_sidebar',
-        'before_widget' => '<div class="storezz-page-sidebar">',
+        'before_widget' => '<div class="storezz-page-sidebar sidebar-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
@@ -166,7 +167,7 @@ function storezz_widgets_init() {
     register_sidebar( array(
         'name'          => 'Shop sidebar',
         'id'            => 'shop_sidebar',
-        'before_widget' => '<div class="storezz-shop-sidebar">',
+        'before_widget' => '<div class="storezz-shop-sidebar sidebar-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
@@ -175,7 +176,7 @@ function storezz_widgets_init() {
     register_sidebar( array(
         'name'          => 'Product sidebar',
         'id'            => 'product_sidebar',
-        'before_widget' => '<div class="storezz-product-sidebar">',
+        'before_widget' => '<div class="storezz-product-sidebar sidebar-widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',

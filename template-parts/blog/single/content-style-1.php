@@ -1,5 +1,8 @@
+<?php $single_layout = get_theme_mod( 'storezz-choose-single-layout'); ?>
 <?php $show_tags = get_theme_mod( 'storezz-show-tags-single', 'yes' ); ?>
+
 <div class="col-9">
+	<div class="<?php esc_html_e( $single_layout ) ?>">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php get_template_part( 'template-parts/blog/single/single-header-1'); ?>
 		<div class="entry-content">
@@ -19,4 +22,5 @@
 		</div>
 	<?php endif ?>
 		</article>
+	</div>
 	</div>

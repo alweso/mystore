@@ -1,26 +1,46 @@
-
-
 /* ---------------------------------- woocommerce ------------------------------------ */
-
-.storezz-product-vertical {
-	.woocommerce-product-gallery {
-		position: relative;
-		padding-left: 120px;
-		.flex-control-thumbs {
-			display: block !important;
-			margin: 0 !important;
-			padding-right: 20px;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 120px;
-			height: 100%;
-			overflow: hidden;
-			li {
-				width: 100% !important;
-				padding-top: 0;
-				padding-bottom: 15px;
-			}
-		}
-	}
+.storezz-product-vertical .woocommerce-product-gallery {
+  position: relative;
+  padding-left: 120px;
 }
+.storezz-product-vertical .woocommerce-product-gallery .flex-control-thumbs {
+  display: block !important;
+  margin: 0 !important;
+  padding-right: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  overflow: hidden;
+}
+.storezz-product-vertical .woocommerce-product-gallery .flex-control-thumbs li {
+  width: 100% !important;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.widget_shopping_cart_content li a:nt-child(2) {
+  width: 50px;
+  display: block;
+  float: left;
+}
+
+.woocommerce-mini-cart-item {
+  text-align: right;
+  position: relative;
+}
+.woocommerce-mini-cart-item a:nth-of-type(2) {
+  width: 100%;
+}
+.woocommerce-mini-cart-item a:nth-of-type(2) img {
+  width: 80px;
+  display: block;
+  float: left;
+}
+.woocommerce-mini-cart-item a.remove.remove_from_cart_button {
+  position: absolute;
+  right: 0;
+}
+
+/*# sourceMappingURL=woocommerce.css.map */

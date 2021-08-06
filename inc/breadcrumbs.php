@@ -22,14 +22,18 @@ function storezz_breadcrumbs() {
     if ( !is_front_page() ) {
 
         // Build the breadcrumbs
-        echo '<ul id="' . esc_attr( $breadcrumbs_id ) . '" class="' . esc_attr( $breadcrumbs_class ) . '">';
+        echo '<div class="breadcrumbs">';
+        echo '<div class="container">';
+        echo '<div class="row">';
+        echo '<div class="col-12 text-center">';
+        echo '<ul id="' . esc_attr( $breadcrumbs_id ) . '">';
 
         // Home page
         echo '<li class="item-home"><a class="bread-link bread-home" href="' . esc_url( get_home_url() ) . '" title="' . esc_attr( $home_title ) . '">' . esc_html( $home_title ) . '</a></li>';
         echo '<li class="separator separator-home"> ' . esc_html( $separator ) . ' </li>'; //esc html?
 
         if ( is_archive() && !is_tax() && !is_category() && !is_tag() ) {
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . the_archive_title() . '</strong></li>';
+            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . the_archive_title() . '</span></li>';
 
         } else if ( is_archive() && is_tax() && !is_category() && !is_tag() ) {
 
@@ -48,7 +52,7 @@ function storezz_breadcrumbs() {
             }
 
             $custom_tax_name = get_queried_object()->name;
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . esc_html( $custom_tax_name ) . '</strong></li>';
+            echo '<li class="item-current item-archive"><span class="bread-current bread-archive">' . esc_html( $custom_tax_name ) . '</span></li>';
 
         } else if ( is_single() ) {
 
@@ -93,14 +97,14 @@ function storezz_breadcrumbs() {
             // Check if the post is in a category
             if ( !empty( $last_category ) ) {
                 echo wp_kses_post( $cat_display );
-                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><strong class="bread-current bread-' . esc_attr( $post->ID ) . '" title="' . esc_attr( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><span class="bread-current bread-' . esc_attr( $post->ID ) . '" title="' . esc_attr( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</span></li>';
             } else {
-                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><strong class="bread-current bread-' . esc_attr( $post->ID ) . '" title="' . esc_attr( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><span class="bread-current bread-' . esc_attr( $post->ID ) . '" title="' . esc_attr( get_the_title() ) . '">' . esc_html( get_the_title() ) . '</span></li>';
             }
 
         } else if ( is_category() ) {
             // Category page
-            echo '<li class="item-current item-cat"><strong class="bread-current bread-cat">' . esc_html( single_cat_title('', false) ) . '</strong></li>';
+            echo '<li class="item-current item-cat"><span class="bread-current bread-cat">' . esc_html( single_cat_title('', false) ) . '</span></li>';
         } else if ( is_page() ) {
 
             // Standard page
@@ -128,7 +132,7 @@ function storezz_breadcrumbs() {
             } else {
 
                 // Just display current page if not parents
-                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><strong class="bread-current bread-' . esc_attr( $post->ID ) . '"> ' . esc_html( get_the_title() ) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><span class="bread-current bread-' . esc_attr( $post->ID ) . '"> ' . esc_html( get_the_title() ) . '</span></li>';
 
             }
 
@@ -146,7 +150,7 @@ function storezz_breadcrumbs() {
             $get_term_name  = $terms[0]->name;
 
             // Display the tag name
-            echo '<li class="item-current item-tag-' . esc_attr( $get_term_id ) . ' item-tag-' . esc_attr( $get_term_slug ) . '"><strong class="bread-current bread-tag-' . esc_attr( $get_term_id ) . ' bread-tag-' . esc_attr( $get_term_slug ) . '">' . esc_html( $get_term_name ) . '</strong></li>';
+            echo '<li class="item-current item-tag-' . esc_attr( $get_term_id ) . ' item-tag-' . esc_attr( $get_term_slug ) . '"><span class="bread-current bread-tag-' . esc_attr( $get_term_id ) . ' bread-tag-' . esc_attr( $get_term_slug ) . '">' . esc_html( $get_term_name ) . '</span></li>';
 
         } elseif ( is_day() ) {
 
@@ -161,7 +165,7 @@ function storezz_breadcrumbs() {
             echo '<li class="separator separator-' . esc_attr( get_the_time('m') ) . '"> ' . esc_html( $separator ) . ' </li>';
 
             // Day display
-            echo '<li class="item-current item-' .  esc_attr( get_the_time('j') ) . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
+            echo '<li class="item-current item-' .  esc_attr( get_the_time('j') ) . '"><span class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</span></li>';
 
         } else if (is_home()) {
           echo '<li class="item-current"><strong>' . 'Blog' . '</strong></li>';
@@ -179,7 +183,7 @@ function storezz_breadcrumbs() {
         } else if ( is_year() ) {
 
             // Display year archive
-            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></li>';
+            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><span class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</span></li>';
 
         } else if ( is_author() ) {
 
@@ -190,17 +194,17 @@ function storezz_breadcrumbs() {
             $userdata = get_userdata( $author );
 
             // Display author name
-            echo '<li class="item-current item-current-' . esc_attr( $userdata->user_nicename ) . '"><strong class="bread-current bread-current-' . esc_attr( $userdata->user_nicename ) . '" title="' . esc_attr( $userdata->display_name ) . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
+            echo '<li class="item-current item-current-' . esc_attr( $userdata->user_nicename ) . '"><span class="bread-current bread-current-' . esc_attr( $userdata->user_nicename ) . '" title="' . esc_attr( $userdata->display_name ) . '">' . 'Author: ' . $userdata->display_name . '</span></li>';
 
         } else if ( get_query_var('paged') ) {
 
             // Paginated archives
-            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page', 'storezz') . ' ' . get_query_var('paged') . '</strong></li>';
+            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><span class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">'.__('Page', 'storezz') . ' ' . get_query_var('paged') . '</span></li>';
 
         } else if ( is_search() ) {
 
             // Search results page
-            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
+            echo '<li class="item-current item-current-' . get_search_query() . '"><span class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</span></li>';
 
         } elseif ( is_404() ) {
 
@@ -209,6 +213,10 @@ function storezz_breadcrumbs() {
         }
 
         echo '</ul>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
 
     }
 
