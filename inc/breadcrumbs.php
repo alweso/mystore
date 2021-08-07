@@ -9,7 +9,7 @@
 function storezz_breadcrumbs() {
 
     // Settings
-    $separator          = '&gt;';
+    $separator          = '/';
     $breadcrumbs_id      = 'breadcrumbs';
     $breadcrumbs_class   = 'breadcrumbs';
     $home_title         = 'Homepage';
@@ -127,7 +127,7 @@ function storezz_breadcrumbs() {
                 echo wp_kses_post( $parents );
 
                 // Current page
-                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><strong title="' . esc_attr( get_the_title() ) . '"> ' . esc_html( get_the_title() ) . '</strong></li>';
+                echo '<li class="item-current item-' . esc_attr( $post->ID ) . '"><span title="' . esc_attr( get_the_title() ) . '"> ' . esc_html( get_the_title() ) . '</span></li>';
 
             } else {
 
@@ -168,7 +168,7 @@ function storezz_breadcrumbs() {
             echo '<li class="item-current item-' .  esc_attr( get_the_time('j') ) . '"><span class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</span></li>';
 
         } else if (is_home()) {
-          echo '<li class="item-current"><strong>' . 'Blog' . '</strong></li>';
+          echo '<li class="item-current"><span>' . 'Blog' . '</span></li>';
         } else if ( is_month() ) {
 
             // Month Archive
@@ -178,7 +178,7 @@ function storezz_breadcrumbs() {
             echo '<li class="separator separator-' . get_the_time('Y') . '"> ' . esc_html( $separator ) . ' </li>';
 
             // Month display
-            echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</strong></li>';
+            echo '<li class="item-month item-month-' . get_the_time('m') . '"><span class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</span></li>';
 
         } else if ( is_year() ) {
 

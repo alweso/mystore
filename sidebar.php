@@ -4,7 +4,7 @@
  * @since 1.0.0
  **/
 
- if ( is_home() || is_archive() ) {
+ if ( (is_home() || is_archive()) && !is_shop() ) {
    $sidebar_id = 'blog_sidebar';
  } elseif ( is_single() && !is_product() ) {
 	 $sidebar_id = 'single_sidebar';
