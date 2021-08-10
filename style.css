@@ -265,10 +265,12 @@ textarea, select, option {
   border: 1px solid #b6b6b6;
   border-radius: 2px;
   box-shadow: none;
-  height: 37px;
+  height: 38px;
   padding-left: 10px;
 }
 
+/* Base for label sty
+// ling */
 textarea {
   min-height: 150px;
 }
@@ -873,21 +875,21 @@ hr.wp-block-separator.is-style-dots:before {
   padding: 0;
   list-style-type: none;
 }
-#sidebar .cat-item, #sidebar li {
+#sidebar .wp-block-categories-list .cat-item, #sidebar .wp-block-categories-list li, #sidebar .wp-block-archives .cat-item, #sidebar .wp-block-archives li {
   border-bottom: 1px solid #dbdbdb;
   padding: 12px 0;
   margin: 0;
   text-align: right;
 }
-#sidebar .cat-item:first-of-type, #sidebar li:first-of-type {
+#sidebar .wp-block-categories-list .cat-item:first-of-type, #sidebar .wp-block-categories-list li:first-of-type, #sidebar .wp-block-archives .cat-item:first-of-type, #sidebar .wp-block-archives li:first-of-type {
   border-top: 1px solid #dbdbdb;
 }
-#sidebar .cat-item:after, #sidebar li:after {
+#sidebar .wp-block-categories-list .cat-item:after, #sidebar .wp-block-categories-list li:after, #sidebar .wp-block-archives .cat-item:after, #sidebar .wp-block-archives li:after {
   content: "";
   clear: both;
   display: table;
 }
-#sidebar .cat-item a, #sidebar li a {
+#sidebar .wp-block-categories-list .cat-item a, #sidebar .wp-block-categories-list li a, #sidebar .wp-block-archives .cat-item a, #sidebar .wp-block-archives li a {
   float: left;
   color: #393939;
 }
@@ -1099,6 +1101,21 @@ blockquote.is-style-large cite:before, blockquote.is-style-large cite:after, blo
 }
 .gallery.gallery-columns-9 .gallery-item {
   width: 11.11%;
+}
+
+/* --------------------------------- widgets ------------------------------------- */
+.tagcloud {
+  text-align: left;
+}
+.tagcloud a.tag-cloud-link {
+  font-size: 1rem !important;
+  background: rgba(224, 157, 132, 0.2);
+  font-weight: 400;
+  color: black;
+  padding: 6px 10px;
+  margin: 0 2px 6px 0;
+  display: inline-block;
+  line-height: 1;
 }
 
 /* ------------------------------------------------------------------------------------------ */

@@ -31,6 +31,12 @@ body {
   margin: 0 auto !important;
 }
 
+.wp-block-widget-area__panel-body-content .editor-styles-wrapper { 
+  max-width: auto !important;
+  width: auto !important;
+  margin: auto !important;
+}
+
 .editor-styles-wrapper .wp-block:not([data-align=left]):not([data-align=right]) {
   .wp-block-categories,
   .wp-block-code,
