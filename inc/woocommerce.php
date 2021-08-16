@@ -50,9 +50,11 @@ function storezz_add_bootstrap_single_product_opening() {
 add_action('woocommerce_after_single_product', 'storezz_add_bootstrap_single_product_closing', 4);
 
 function storezz_add_bootstrap_single_product_closing() {
-  echo '</div></div></div>';
+  echo '</div></div></div></section>';
 }
 
+
+add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 /* -------------------- Adding opening Bootstrap divs ---------------------------------------------------------- */
 
@@ -63,10 +65,10 @@ function storezz_add_bootstrap_opening() {
   $shop_layout = get_theme_mod( 'storezz-choose-shop-layout' );
   echo '<div class="row">';
 
-  if ( ( is_shop() || is_product_category() ) && ( $shop_layout === 'layout_2' ||  $shop_layout === 'layout_4') ) :
+  if ( ( is_shop() || is_product_category() || is_product_tag() ) && ( $shop_layout === 'layout_2' ||  $shop_layout === 'layout_4') ) :
     get_sidebar();
   endif;
-  if ( ( is_shop() || is_product_category() ) && ( $shop_layout === 'layout_1' || $shop_layout === 'layout_2' || $shop_layout === 'layout_3' || $shop_layout === 'layout_4' ) ) :
+  if ( ( is_shop() || is_product_category() || is_product_tag() ) && ( $shop_layout === 'layout_1' || $shop_layout === 'layout_2' || $shop_layout === 'layout_3' || $shop_layout === 'layout_4' ) ) :
     echo '<div class="col-9">';
   else :
     echo '<div class="col-12">';
@@ -80,11 +82,23 @@ add_action('woocommerce_after_shop_loop', 'storezz_add_bootstrap_closing', 3);
 function storezz_add_bootstrap_closing() {
 $shop_layout = get_theme_mod( 'storezz-choose-shop-layout' );
 echo '</div>';
-if ( ( is_shop() || is_product_category() ) && ( $shop_layout === 'layout_1' ||  $shop_layout === 'layout_3') ) :
+if ( ( is_shop() || is_product_category() || is_product_tag() ) && ( $shop_layout === 'layout_1' ||  $shop_layout === 'layout_3') ) :
   get_sidebar();
 endif;
-echo '</div>';
+echo '</div></section>';
 }
+//
+// /* -------------------- Closing Bootstrap divs ---------------------------------------------------------- */
+//
+// add_action('woocommerce_after_main_content', 'storezz_add_bootstrap_closing_main_content', 3);
+//
+// function storezz_add_bootstrap_closing_main_content() {
+// echo '</div></div></div>';
+// echo '</div>';
+// echo '</div>';
+// echo 'blablabla';
+// }
+
 
 /* -------------------- Add to cart ajaxify ---------------------------------------------------------- */
 
@@ -100,10 +114,12 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
   return $fragments;
 }
 
-/* -------------------- Removing reviews title  ---------------------------------------------------------- */
+/* -------------------- Removing tab titles  ---------------------------------------------------------- */
 
-add_filter( 'woocommerce_reviews_title', 'storezz_reviews_heading', 10, 3 );
-function storezz_reviews_heading( $heading, $count, $product ) {
-  return '';
-}
+add_filter( 'woocommerce_reviews_title', '__return_null' );
+add_filter( 'woocommerce_product_description_heading', '__return_null' );
+add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
+
+
 ?>

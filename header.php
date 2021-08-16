@@ -14,6 +14,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <script
+  type="text/javascript"
+  src="https://use.fontawesome.com/releases/v5.15.4/js/conflict-detection.js">
+</script>
   <?php wp_body_open();
   if ( get_theme_mod( 'storezz-header-navmenu' ) ) :
     $navmenu = get_theme_mod( 'storezz-navmenu' );
