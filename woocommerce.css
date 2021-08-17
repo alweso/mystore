@@ -93,8 +93,17 @@
   text-align: left;
 }
 .woocommerce ul.products li.product span.price {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
+}
+.woocommerce ul.products li.product span.price ins {
+  text-decoration: none;
+}
+.woocommerce ul.products li.product span.price ins > span > bdi {
+  font-weight: 800;
+}
+.woocommerce ul.products li.product span.price > del > .woocommerce-Price-amount.amount {
+  font-weight: 300;
 }
 .woocommerce ul.products li.product span.price * {
   color: #393939;

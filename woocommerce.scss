@@ -129,8 +129,17 @@ $margin-updown-small: 1rem 0;
     }
   }
   span.price {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
+		ins {
+			text-decoration: none;
+			&>span>bdi {
+				font-weight: 800;
+			}
+		}
+		&>del>.woocommerce-Price-amount.amount {
+			font-weight: 300;
+		}
     * {
       color: $base-color;
     }
